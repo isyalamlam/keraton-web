@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div id="app" class="container" v-cloak>
+        <div class="image">
+            <div class="decor">
+                <div class="logo">
+                    <img src="/assets/images/logo_keraton.png">
+                    <h5>KERATON KASEPUHAN CIREBON</h5>
+                </div>
+                <h1>Bersama Lestarikan 
+                    Keraton Tertua di Kota Cirebon</h1>
+            </div>
+            <img src="/assets/images/keraton.png" alt="Gambar">
+        </div>
+        <div>
+            <form @submit.prevent="submitForm" class="form">
+                <h1>Sign In</h1>
+                <h3 class="text">Email</h3>
+                <div class="box">     
+                    <input type="email">
+                    <h3 class="error-message" v-show="emailError">{{ emailErrorMessage }}</h3>
+                </div>
+                <h3 class="text">Password</h3>
+                <div :class="{ 'box': true, 'error-border': passwordError }">
+                    <input type="password" >
+                    <h3 class="error-message" v-show="passwordError">{{ passwordErrorMessage }}</h3>
+                </div>
+                <div class="pass">
+                    <div class="box2"> 
+                <h3 class="text">Password</h3>
+                    <input type="password" placeholder="6+ Characters">
+                    <h3 class="error-message" v-show="emailError">{{ emailErrorMessage }}</h3>
+                </div>
+                <div class="box2"> 
+                <h3 class="text">Konfirmasi Password</h3> 
+                    <input type="password">
+                    <h3 class="error-message" v-show="emailError">{{ emailErrorMessage }}</h3>
+                </div>
+            </div>
+                <button class="button">Sign In</button>
+                <h3 class="signup">Sudah buat akun? <span class="highlight" href="signup.html">Sign In</span></h3>
+                <h3 class="terms">Dengan signin ke Keraton Kasepuhan Cirebon, anda setuju dengan <b>Terms</b> dan <b>Privacy Policy</b>.</h3>
+            </form>
+        </div>
+    </div>
+
+    <script>
+new Vue({
+    el: '#app',
+    data: {
+        email: '',
+        password: '',
+        emailError: false,
+        passwordError: false,
+        emailErrorMessage: "Please type your email",
+        passwordErrorMessage: "Please type your password"
+    },
+    methods: {
+        submitForm() {
+            // Validasi input sebelum mengirimkan data
+            this.emailError = !this.email.trim();
+            this.passwordError = !this.password.trim();
+
+            if (!this.email.trim() || !this.password.trim()) {
+                // Menampilkan pesan kesalahan jika email atau password tidak diisi
+                return;
+            }
+
+            // Lakukan penanganan form selanjutnya jika valid
+            console.log('Email:', this.email);
+            console.log('Password:', this.password);
+        }
+    }
+});
+
+    </script>
+</body>
+</html>
