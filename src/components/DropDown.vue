@@ -15,6 +15,5 @@
 <script>
 export default {
     name: 'dropDown',
-    // props: ['title', 'items']
     }                
 </script>
