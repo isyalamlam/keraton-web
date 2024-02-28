@@ -3,38 +3,47 @@
     <header>
       <Navbar />
     </header>
+    <RouterView />
   </div>
 </template>
 
-<script>
-import Navbar from './components/Navbar';
+<script setup>
+import { RouterView, createRouter, createWebHistory } from 'vue-router';
+import Navbar from './components/NavBar';
+import SignIn from './views/signIn.vue';
 
-export default {
-  name: 'app',
-  components: {
-    Navbar
+const routes = [
+  {
+    path: '/signin',
+    component: SignIn
   }
-}
+];
+
+// Menggunakan createWebHistory
+createRouter({
+  history: createWebHistory(),
+  routes
+});
 </script>
 
-
 <style>
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;}
-  
-  header{
-    width: 60vw;
-    height: 40vw;
-    background-color: white;
-    box-shadow: 0px 2px 0px rgb(51, 51, 51);
-    padding: 15px;
-    margin-left: 20vh;
-    margin-top: 10vh;
-  }
+  font-family: sans-serif;
+}
+
+header {
+  width: 60vw;
+  height: 40vw;
+  background-color: white;
+  box-shadow: 0px 2px 0px rgb(51, 51, 51);
+  padding: 15px;
+  margin-left: 20vh;
+  margin-top: 10vh;
+}
 </style>
