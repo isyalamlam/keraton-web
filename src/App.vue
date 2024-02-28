@@ -1,30 +1,10 @@
-<template>
-  <div id="app">
-    <header>
-      <Navbar />
-    </header>
-    <RouterView />
-  </div>
-</template>
-
 <script setup>
-import { RouterView, createRouter, createWebHistory } from 'vue-router';
-import Navbar from './components/NavBar';
-import SignIn from './views/signIn.vue';
-
-const routes = [
-  {
-    path: '/signin',
-    component: SignIn
-  }
-];
-
-// Menggunakan createWebHistory
-createRouter({
-  history: createWebHistory(),
-  routes
-});
+import { RouterView } from 'vue-router'
 </script>
+
+<template>
+  <RouterView />
+</template>
 
 <style>
 * {
