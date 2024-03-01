@@ -1,7 +1,7 @@
 
 <template>
   <nav>
-    <navbar />
+    <!-- <navbar /> -->
   </nav>
     <div class="body">
       <div class="group1">
@@ -12,7 +12,7 @@
       </div>
       <div class="group2">
         <div class="icon-group2">
-          <img src="./assets/Frame.svg" alt="">
+          <img src="../assets/svg/Frame.svg" alt="">
         </div>
         <div class="txt-group1">
           <h6>Pastikan pesanan Anda BENAR sebelum checkout ya!</h6>
@@ -23,7 +23,7 @@
         <div id="detailPemesanan">
             <div class="atas">
                 <div class="icon">
-                  <img src="./assets/account.svg" alt="">
+                  <img src="../assets/svg/account.svg" alt="">
                 </div>
                 <div class="txt-group17">
                   <p>Detail Pemesanan</p>
@@ -41,7 +41,7 @@
            <div class="pilih-kategori">
             <div class="atas">
                 <div class="icon">
-                  <img src="./assets/Framecard.svg" alt="">
+                  <img src="../assets/svg/Framecard.svg" alt="">
                 </div>
                 <div class="txt-group17">
                   <p>Pilih Kategori</p>
@@ -162,7 +162,7 @@
                       <div class="txt-checkout">
                         <p>Checkout</p>
                       </div>
-                      <p><img src="./assets/arrow-btn-checkout.svg" alt=""></p>
+                      <p><img src="../assets/svg/arrow-btn-checkout.svg" alt=""></p>
                     </div>
                   </button>
             </div>
@@ -472,7 +472,7 @@
   }
   
   input[type="date"]::-webkit-calendar-picker-indicator {
-    background-image: url('./components/Icondate.svg');
+    background-image: url('../assets/svg/Icondate.svg');
     background-size: 20px; 
     background-repeat: no-repeat;
     background-position: right center; 
@@ -601,7 +601,7 @@
   </style>
   <script setup>
   import { ref, computed } from 'vue'
-  import navbar from "./components/NavBar.vue";
+  // import navbar from "./components/NavBar.vue";
   
   const count = ref(1)
   const layanan = 2500

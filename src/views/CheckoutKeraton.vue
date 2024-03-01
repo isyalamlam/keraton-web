@@ -80,7 +80,7 @@
     </div>
     <div class="content-5">
       <div class="met-pembayaran">
-        <img src="../assets/images/Frame.svg">
+        <img src="../assets/svg/Frame.svg">
         <p class="plh-pembayaran">Pilih Pembayaran</p>
       </div>
       <div>
