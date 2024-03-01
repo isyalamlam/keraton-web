@@ -495,6 +495,7 @@ import {ref, computed} from 'vue'
       color: #000000;
     }
     #ringkasanBooking{
+      position: absolute;
       margin-right: 88px;
       width: 542px;
       height: 348px;
