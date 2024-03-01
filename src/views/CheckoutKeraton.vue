@@ -499,7 +499,7 @@ import {ref, computed} from 'vue'
       margin-right: 88px;
       width: 542px;
       height: 348px;
-      top: 100px;
+      top: 10px;
       left: 650px;
       border-radius: 15px;
       padding: 20px, 23px,20px, 23px;
