@@ -39,7 +39,7 @@ import {ref, computed} from 'vue'
       <div class="txt">
         <img src="../assets/images/Frame.png" class="image-koin">
         <div>
-          <h6>pastikan pesanan anda BENAR sebelum checkout ya!</h6>
+          <h6 class="pstikan">pastikan pesanan anda BENAR sebelum checkout ya!</h6>
         </div>
       </div>
       </div>
@@ -127,7 +127,7 @@ import {ref, computed} from 'vue'
                 <h6 class="ringkasan">Total Pemesanan</h6>
                 <div class="totalHarga">
                   <p>Total Harga ({{ count }} Tiket)</p>
-                    <p class="harga">Rp.10. 000</p>
+                    <p class="harga">Rp.{{ harga }}</p>
                 </div>
             </div>
             <div class="biaya">
@@ -135,18 +135,18 @@ import {ref, computed} from 'vue'
                 <h6 class="ringkasan">Biaya Transaksi</h6>
                 <div class="totalHarga">
                     <p>Biaya Layanan</p>
-                    <p class="harga">Rp.2. 500</p>
+                    <p class="harga">Rp.{{ layanan }}</p>
                 </div>
                 <div class="totalHarga">
                     <p>Biaya Jasa Aplikasi</p>
-                    <p class="harga">Rp.1. 000</p>
+                    <p class="harga">Rp.{{ jasaApp }}</p>
                 </div>
             </div>
             </div>
             <hr>
             <div class="totalTagihan">
                 <h5 class="txt-total-tagihan">Total Tagihan</h5>
-                <h6 class="ringkasan">Rp.{{ totalTagihan }}</h6>
+                <h6 class="ringkasan">Rp.{{ totalPemesanan }}</h6>
             </div>
             <div class="containerbtn">
               <button class="btn">
@@ -165,7 +165,17 @@ import {ref, computed} from 'vue'
   <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-
+  .pstikan{
+    font-family: 'Raleway';
+    color: black;
+    width: 495px;
+    height: 28px;
+    top: 203px;
+    left: 144px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+  }
   input[type="date"]::-webkit-calendar-picker-indicator{
     background-image: url(../assets/icon.svg);
     background-repeat: no-repeat;
@@ -198,6 +208,7 @@ import {ref, computed} from 'vue'
   }
 
   .tambah{
+    position:relative;
     margin-left: 16px;
     width: 24px;
     height: 24px;
@@ -217,6 +228,7 @@ import {ref, computed} from 'vue'
 
   .input-tiket2{
     margin-left: 16px;
+    width: 28px;
     color: #000000;
     font-family: 'Manrope';
     font-weight: 600;
@@ -415,6 +427,7 @@ import {ref, computed} from 'vue'
     z-index: 10000;
   }
   .txt-tiket{
+    font-family: 'Raleway';
     color: black;
     width: 305px;
     height: 40px;
@@ -461,15 +474,7 @@ import {ref, computed} from 'vue'
 
   .txt{
     display: flex;
-    align-items: center;
-    color: black;
-    width: 495px;
-    height: 28px;
-    top: 146px;
-    left: 88px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
+    margin-top: 13px;
   }
   .txt img{
     margin-right: 5px;
@@ -494,10 +499,10 @@ import {ref, computed} from 'vue'
       margin-right: 88px;
       width: 542px;
       height: 348px;
-      top: 295px;
+      top: 100px;
       left: 650px;
       border-radius: 15px;
-      /* padding: 20px, 23px,20px, 23px; */
+      padding: 20px, 23px,20px, 23px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       padding: 20px;
       background-color: #FFFFFF;
