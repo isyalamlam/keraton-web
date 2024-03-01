@@ -3,6 +3,7 @@ import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
 import CheckoutKeraton from '../views/CheckoutKeraton.vue'
 import Checkout from '../views/CheckOut.vue'
+import BeranDa from '../views/BeranDa.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,7 +27,12 @@ const router = createRouter({
       path: '/checkout',
       name: 'checkout',
       component: Checkout
-    }
+    },
+    {
+      path: '/beranda',
+      name: 'beranda',
+      component: BeranDa
+    },
   ]
 })
 

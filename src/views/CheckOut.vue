@@ -1,7 +1,7 @@
 
 <template>
   <nav>
-    <!-- <navbar /> -->
+    <navbar />
   </nav>
     <div class="body">
       <div class="group1">
@@ -189,8 +189,8 @@
     display: flex;
   }
   .group1{
-    top: 146px;
-    margin-top: 42px;
+    /* top: 146px; */
+    top: 42px;
     position: relative;
   }
   .group2{
@@ -220,6 +220,7 @@
     width: 305px;
     height: 40px;
     margin-left: 88px;
+    margin-top: 42px
   }
   .txt-pesan-tiket-langsung h4{
     font-weight: 400;
@@ -233,7 +234,7 @@
     height: 582px;
     margin-left: 88px;
     top: 295px;
-    margin-top: 191px;
+    margin-top: 64px;
     margin-right: 40px;
     right: 670px;
     gap: 37px;
@@ -501,7 +502,7 @@
     height: 348px;
     margin-right: 88px;
     top: 295px;
-    margin-top: 191px;
+    margin-top: 64px;
     left: 650px;
     border-radius: 15px;
     /* padding: 20px, 23px,20px, 23px; */
@@ -601,7 +602,7 @@
   </style>
   <script setup>
   import { ref, computed } from 'vue'
-  // import navbar from "./components/NavBar.vue";
+  import navbar from "../components/NavBar.vue";
   
   const count = ref(1)
   const layanan = 2500
