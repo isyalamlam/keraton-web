@@ -495,14 +495,13 @@ import {ref, computed} from 'vue'
       color: #000000;
     }
     #ringkasanBooking{
-      position: absolute;
       margin-right: 88px;
       width: 542px;
       height: 348px;
-      top: 10px;
+      top: 295px;
       left: 650px;
       border-radius: 15px;
-      padding: 20px, 23px,20px, 23px;
+      /* padding: 20px, 23px,20px, 23px; */
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       padding: 20px;
       background-color: #FFFFFF;
