@@ -162,432 +162,181 @@ import {ref, computed} from 'vue'
     
   </template>
 
-  <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+.highlight{
+  text-decoration: none;
+}
+
+h1{
+  margin-bottom: 73px;
+}
+
+b{
+  font-weight: 1000;
+}
+.error {
+  color: #FF5656;
+  font-size: 12px; 
+  margin-top: 5px; 
+}
+
+.error-border {
+  border: 2px solid #FF5656;
+}
+
+.error-message {
+  color: #FF5656;
+  font-size: 12px;
+  margin-top: 8px; 
+  font-weight: 700;
+}
 
 
-  input[type="date"]::-webkit-calendar-picker-indicator{
-    background-image: url(../assets/icon.svg);
-    background-repeat: no-repeat;
-    background-size: 14px;
-  }
+body {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway';
+  width: fit-content;
+  height: fit-content;
+}
 
-  .plh-pembayaran{
-    margin-top: 5px;
-    margin-left: 6px;
-    color: #5E5E5E;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-  }
+.container{
+  width: 1280px;
+  height: 832px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
 
-  .met-pembayaran{
-    display: flex;
-  }
+h1{
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Raleway';
+}
 
-  .content-5{
-    margin-top: 37px;
-  }
+.form {
+  height: 354px;
+  width: 418px;
+  margin: auto;
+  margin-top: 169px;
+}
 
-  .input-tiket1{
-    display: flex;
-  }
+.text{
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  font-family: 'Raleway';
+  margin-bottom: 4px;
+}
 
-  .tmbh-brg{
-    margin-top: 20px;
-  }
+.box {
+  background-color: #f0f0f0; 
+  border-radius: 8px;
+  width: 416px;
+  height: 40px;
+  margin-bottom: 38px;
+}
 
-  .tambah{
-    margin-left: 16px;
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
-    color: white;
-    background-color: #000000;
-  }
+.box input {
+  border: none; 
+  outline: none; 
+  background: none; 
+  width: 416px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.box input::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  justify-content: center ;
+  top:36px;
+}
 
-  .kurang{
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
-    border: solid 1.5px;
-    color: #B0BEC5;
-    background-color: #FFFFFF;
-  }
+.button {
+  background-color: #123B32;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 416px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Raleway';
+}
 
-  .input-tiket2{
-    margin-left: 16px;
-    color: #000000;
-    font-family: 'Manrope';
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 21.86px;
-  }
-  .hrg{
-    margin-top: 4px;
-    color: #000000;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-  }
+.signup{
+  font-weight: 400;
+  width: 418px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 38px;
+  font-family: 'Raleway';
+  text-decoration: none;
+}
 
-  .content-4{
-    margin-top: 28px;
-  }
+.highlight{
+  color: #4F3CC9;
+  cursor: pointer;
+}
 
-  .tiket-masuk{
-    color: #000000;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-  }
+.terms{
+  font-family: 'Inter';
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #AFAFAF;
+}
 
-  .mm-dd-yyy{
-    color: #49454F;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    margin-left: 16px;
-  }
+.image{
+  width: 66%; /* Ubah lebar gambar menjadi 66% dari lebar kontainer */
+  height: 832px;
+  position: relative;
+}
 
-  .tgl-pemesan{
-    font-family: 'Roboto';
-    margin-bottom: -14px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    color: #DAA520;
-  }
+.image h1{
+  font-size: 30px;
+  color: #FAE084;
+  font-weight: 700;
+  line-height: 40px;
+  position: absolute;
+  width: 313px;
+  height: 120px;
+  text-align: left;
+}
 
-  fieldset{
-    width: 312px;
-    height: 56px;
-    border: solid 3px;
-    border-radius: 4px;
-    gap: 10px;
-    border-color: #DAA520;
-  }
+.decor{
+  padding: 64px 137.16px 30px 64px;
+  width: 100%;
+  height: 304px;
+  margin-left: 64px;
+  margin-top: 64px;
+  position: absolute;
+  z-index: 1;
+}
 
-  .date-tgl{
-    background: transparent;
-    border: none;
-    width: 312px;
-    height: 48px;
-    padding: 4px, 0px, 4px, 0px;
-  }
-  .date-tgl:focus{
-    outline: transparent;
-  }
+.logo{
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 152px;
+  height: 59px;
+  padding: 0px 0px 0px 0px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 31px;
+}
 
-  .content-3{
-    margin-top: 37px;
-  }
-  .txt4{
-    display: flex;
-  }
-
-  .det-tiket{
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-left: 6px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #5e5e5e;
-  }
-
-  .btn-pilih{
-      margin-top: 6px;
-    display: flex;
-  }
-
-  .btn-umum,
-  .btn-pelajar,
-  .btn-mancanegara {
-    display: flex;
-    align-items: center;
-  }
-
-  .btn-umum{
-    margin-left: 20px;
-    width: 122px;
-    height: 48px;
-    top: 133px;
-    padding: 12px, 20px, 12px, 20px;
-  }
-  .btn-pelajar{
-    width: 125px;
-    height: 48px;
-    top: 133px;
-    left: 149px;
-    padding: 12px, 20px, 12px, 20px;
-  }
-  .btn-mancanegara{
-    width: 175px;
-    height: 48px;
-    top: 133px;
-    left: 301px;
-    padding: 12px, 20px, 12px, 20px;
-  }
-  input[type='radio'] {
-    width: 18px;
-    height: 18px;
-    accent-color: yellow;
-
-  }
-
-  label{
-    color: black;
-    margin-left: 10px;
-  }
-
-  .nav2{
-    align-items: center;
-    position: absolute;
-    width: 522px;
-    height: 600px;
-    top: 295px;
-    left: 88px;
-    gap: 37px;
-  }
-
-  .pil-kategori {
-    color: #5e5e5e;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 5px;
-    margin-left: 6px;
-  }
-
-  .email-user{
-    color: black;
-    margin-left: 5px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .det-profil{
-    display: flex;
-    align-items: center;
-  }
-
-  .nm-user{
-    font-family: 'Raleway';
-    color: black;
-    width: 90px;
-    height: 28px;
-    top: 34px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .det-pemesan{
-    color: #5e5e5e;
-    width: 116px;
-    height: 24px;
-    top: 4px;
-    left: 38px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    margin-top: 5px;
-    margin-left: 5px;
-  }
-
-  h1{
-    color :black
-  }
-  body{
-    background-color: white;
-    font-family: 'Raleway';
-  }
-
-  .navbar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 10000;
-  }
-  .txt-tiket{
-    color: black;
-    width: 305px;
-    height: 40px;
-    top: 146px;
-    left: 88px;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 40px;
-  }
-  .title{
-    position: absolute;
-    top: 146px;
-    left : 88px;
-  }
-
-  .image-koin{
-    top: 199px;
-    left: 108px;
-    margin-left: 20px ;
-    display: flex;
-  }
-
-  .img-user{
-    display: flex;
-  }
-
-  .txt2{
-    display: flex;
-  }
-
-  .txt3{
-    display: flex;
-  }
-  .content-1{
-    width: 350px;
-    height: 62px;
-  }
-
-  .content-2{
-    margin-top: 37px;
-    width: 476px;
-    height: 82px;
-  }
-
-  .txt{
-    display: flex;
-    align-items: center;
-    color: black;
-    width: 495px;
-    height: 28px;
-    top: 146px;
-    left: 88px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-  }
-  .txt img{
-    margin-right: 5px;
-  }
-
-
-
-  /* ...................................................................................... */
-  .text{
-      width: 305px;
-      height: 40px;
-      background-color: yellow;
-      top: 14.6%;
-      left: 88px;
-      font-weight: 400;
-      font-size: 30px;
-      line-height: 40px;
-      color: #000000;
-    }
-    #ringkasanBooking{
-      position: absolute;
-      margin-right: 88px;
-      width: 542px;
-      height: 348px;
-      top: 295px;
-      left: 650px;
-      border-radius: 15px;
-      /* padding: 20px, 23px,20px, 23px; */
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      padding: 20px;
-      background-color: #FFFFFF;
-    }
-    .containerbtn{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 22px;
-    }
-    .btn{
-      width: 542px;
-      top: 295px;
-      left: 650px;
-      height: 43.93px;
-      margin-top: 22px;
-      padding: 5px;
-      gap: 10px;
-      border-radius: 10px;
-      border: none;
-      background-color: #DAA520;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-      text-align: center;
-    }
-    .btn-checkout{
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-    }
-    .txt-checkout{
-      margin-left: 10px;
-      width: 74px;
-      height: 24px;
-    }
-    .txt-checkout p{
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      font-family: 'Raleway';
-    }
-    h5{
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 32px;
-      font-family: 'Raleway';
-      color: #000000;
-    
-    }
-    .totalPemesanan{
-      padding-top: 20px;
-    }
-    .ringkasan{
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 28px;
-      color: #000000;
-      font-family: 'Raleway';
-    }
-    .totalTagihan{
-      padding-top: 10px;
-      display: flex;
-      justify-content: space-between;
-    
-    }
-    .txt-total-tagihan{
-      font-family: 'Raleway';
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 32px;
-    }
-    .totalHarga{
-      width: 496px;
-      height: 24px;
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-      font-family: 'Raleway';
-      color: #000000;
-    }
-    .biaya{
-      width: 496px;
-      height: 122px;
-      padding: 15px, 0px, 15px, 0px;
-    }
-    hr{
-      margin-top: 15px;
-    }
-    .biayaTransaksi{
-      margin-top: 8px;
-      padding-top: 20px;
-    }
-    
-  </style>
+.logo h5{
+  color: #FAE084;
+  font-size: 14px;
+  line-height: 20px;
+  width: 98px;
+  height: 59px;
+}
+</style>
