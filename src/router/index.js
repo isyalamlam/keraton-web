@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
-
+import HistoryTransaksi from '../views/HistoryTransaksi.vue'
 import AreaKeraton from '../views/AreaKeraton.vue'
 import Museum from '../views/Museum.vue'
 
@@ -47,7 +47,12 @@ const router = createRouter({
       path: '/beranda',
       name: 'beranda',
       component: BeranDa
-    }
+    },
+    {
+      path: '/historytransaksi',
+      name: 'historytransaksi',
+      component: HistoryTransaksi
+    },
   ]
 })
 
