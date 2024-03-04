@@ -608,7 +608,7 @@
   const jasaApp = 1000
   const harga = ref(10000)
   
-  const tanggalSekarang = new Date().toISOString().substr(0, 10); // Mendapatkan tanggal saat ini dalam format YYYY-MM-DD
+  const tanggalSekarang = new Date().toISOString().substr(0, 10); 
   
   const totalPemesanan = computed(() => harga.value + layanan + jasaApp)
   
