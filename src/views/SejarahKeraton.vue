@@ -312,16 +312,19 @@
    margin-top: 22px;
    line-height: 28px;
    font-family: "Raleway";
+   border: none;
 
   }
   .button1 {
    font-family:'Raleway';
-   font-weight: 700px; 
+   font-weight: 700; 
    border-radius: 5px; 
    width: 162px; 
    height: 34px;
    background-color: #123B32; 
    color: #ffffff;
+   border: none;
+   
   }
   .textAll {
     font-family: "Raleway", sans-serif;
