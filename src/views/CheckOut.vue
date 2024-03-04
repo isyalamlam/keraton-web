@@ -1,7 +1,7 @@
 
 <template>
   <nav>
-    <!-- <navbar /> -->
+    <navbar />
   </nav>
     <div class="body">
       <div class="group1">
@@ -71,7 +71,7 @@
                   <p>Detail Tiket</p>
                 </div>
             </div>
-            <div class="date">
+            <div class="date"> 
               <fieldset class="my-fieldset" @click.stop="focusInput">
                 <legend class="my-legend">
                   <div class="tgl">
@@ -80,11 +80,11 @@
                 </legend>
                 <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" disabled>
               </fieldset>
-            </div>
-            <div class="supporting-text">
+              <div class="supporting-text">
               <div class="supporting-txt">
                 <small>MM/DD/YY</small>
               </div>
+            </div>
             </div>
             <div class="tiket-masuk">
               <h6>Tiket masuk Keraton Kasepuhan Cirebon</h6>
@@ -175,7 +175,7 @@
     
   
   </template>
-  <style>
+  <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@500&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@500&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
@@ -189,7 +189,7 @@
     display: flex;
   }
   .group1{
-    top: 146px;
+    /* top: 146px; */
     margin-top: 42px;
     position: relative;
   }
@@ -220,6 +220,7 @@
     width: 305px;
     height: 40px;
     margin-left: 88px;
+    margin-top: 42px
   }
   .txt-pesan-tiket-langsung h4{
     font-weight: 400;
@@ -233,7 +234,7 @@
     height: 582px;
     margin-left: 88px;
     top: 295px;
-    margin-top: 191px;
+    margin-top: 64px;
     margin-right: 40px;
     right: 670px;
     gap: 37px;
@@ -371,13 +372,17 @@
     height: 256px;
     border-radius: 4px, 4px, 0px, 0px;
   }
+  .date{
+    color: #999999;
+    opacity: 0.5;
+  }
   fieldset{
     width: 312px;
     height: 66px;
     top: 266px;
     border-radius: 4px;
-    color: #DAA520;
-    border: 3px solid #DAA520;
+    /* color: #999999; */
+    border: 1px solid #999999;
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -388,6 +393,7 @@
     height: 20px;
     padding: 4px, 16px, 0px, 16px;
     gap: 10px;
+    color: #999999;
   }
   .supporting-txt{
     width: 280px;
@@ -400,7 +406,6 @@
     line-height: 16px;
     letter-spacing: 0em;
     text-align: left;
-    color: #49454F;
     margin-left: 16px;
   }
   .tiket-masuk{
@@ -463,6 +468,7 @@
   .plus{
     width: 24px;
     height: 24px;
+    /* border: 1.5px solid #d5d5d5; */
     border: none;
     background-color: #000000;
     border-radius: 8px;
@@ -488,20 +494,22 @@
     letter-spacing: 0.5px;
     text-align: left;
     border: none;
+    background: transparent;
+    margin-left: 16px;
   }
   input[type="date"]:focus {
     outline: none;
   }
-  
-  legend{
-  
-  }
+
+legend{
+  height: 16px;
+}
   #ringkasanBooking{
     width: 542px;
     height: 348px;
     margin-right: 88px;
     top: 295px;
-    margin-top: 191px;
+    margin-top: 64px;
     left: 650px;
     border-radius: 15px;
     /* padding: 20px, 23px,20px, 23px; */
@@ -523,6 +531,9 @@
     background-color: #DAA520;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
+  }
+  .btn:hover{
+    background-color: #ffc122;
   }
   .containerbtn{
     display: flex;
@@ -601,16 +612,20 @@
   </style>
   <script setup>
   import { ref, computed } from 'vue'
-  // import navbar from "./components/NavBar.vue";
+  import navbar from "../components/NavBar.vue";
   
   const count = ref(1)
   const layanan = 2500
   const jasaApp = 1000
   const harga = ref(10000)
   
-  const tanggalSekarang = new Date().toISOString().substr(0, 10); 
+  const hargaString = harga.value.toLocaleString('id-ID');
+  const layananString = layanan.toLocaleString('id-ID');
+  const jasaAppString = jasaApp.toLocaleString('id-ID');
+
+  const totalPemesanan = computed(() => (harga.value + layanan + jasaApp).toLocaleString('id-ID'));
+
   
-  const totalPemesanan = computed(() => harga.value + layanan + jasaApp)
   
   const tambah = () => {
     count.value++;
@@ -623,7 +638,8 @@
         harga.value = 10000 * count.value;
     }
   }
-  
+    const tanggalSekarang = new Date().toISOString().substr(0, 10); 
+
   const focusInput = () => {
     const input = document.getElementById('tanggalPemesanan').focus();
     input.focus();
