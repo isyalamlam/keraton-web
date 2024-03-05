@@ -383,7 +383,6 @@ import navbar from '../components/NavBar.vue'
 
   .email-user{
     color: black;
-    margin-left: 5px;
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
@@ -392,12 +391,13 @@ import navbar from '../components/NavBar.vue'
   .det-profil{
     display: flex;
     align-items: center;
+    width: 1000px;
   }
 
   .nm-user{
     font-family: 'Raleway';
     color: black;
-    width: 90px;
+    width: 95px;
     height: 28px;
     top: 34px;
     font-weight: 700;
@@ -407,7 +407,7 @@ import navbar from '../components/NavBar.vue'
 
   .det-pemesan{
     color: #5e5e5e;
-    width: 116px;
+    width: 128px;
     height: 24px;
     top: 4px;
     left: 38px;
