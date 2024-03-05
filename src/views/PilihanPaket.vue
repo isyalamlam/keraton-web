@@ -1,7 +1,7 @@
 <script setup>
 import {ref, computed} from 'vue'
 import navbar from '../components/NavBar.vue'
- const count = ref(1)
+ const count = ref(35)
   const layanan = 2500
   const jasaApp = 1000
   const harga = ref(10000)
@@ -16,7 +16,7 @@ import navbar from '../components/NavBar.vue'
   }
   
   const kurang = () => {
-    if (count.value > 1) {
+    if (count.value > 35) {
         count.value--;
         harga.value = 10000 * count.value;
     }
@@ -58,13 +58,13 @@ import navbar from '../components/NavBar.vue'
         </div>
       <div class="btn-pilih">
         <div class="btn-umum">
-          <input type="radio" name="pilih-kategori"><label >Umum</label>
+          <input type="radio" name="pilih-kategori" checked disabled><label >Umum</label>
         </div>
         <div class="btn-pelajar">
-          <input type="radio" name="pilih-kategori"><label>Pelajar</label>
+          <input type="radio" name="pilih-kategori" disabled><label>Pelajar</label>
         </div>
         <div class="btn-mancanegara">
-          <input type="radio" name="pilih-kategori"><label>Mancanegara</label>
+          <input type="radio" name="pilih-kategori" disabled><label>Mancanegara</label>
         </div>
       </div>
       <div class="content-3">
@@ -86,10 +86,10 @@ import navbar from '../components/NavBar.vue'
         <div>
         <div class="content-4">
         <div>
-          <h6 class="tiket-masuk">Tiket masuk Keraton Kesepuhan Cirebon</h6>
+          <h6 class="tiket-masuk">Paket Wisata Silaturahmi I</h6>
         </div>
         <div>
-          <h6 class="hrg">Rp. 10.000,00</h6>
+          <h6 class="hrg">Rp. 85.000,00</h6>
         </div>
       </div>
       <div class="tmbh-brg">
@@ -211,7 +211,7 @@ import navbar from '../components/NavBar.vue'
   }
 
   .tambah{
-    margin-left: -5px;
+    margin-left: 8px;
     border: none;
     width: 24px;
     height: 24px;
