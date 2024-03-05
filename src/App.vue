@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 </script>
-
+=======
 <template>
   <RouterView />
 </template>
@@ -14,7 +14,14 @@ import { RouterView } from 'vue-router'
 }
 
 body {
-  font-family: sans-serif;
+
+  font-family: 'montserrat', sans-serif;
+}
+
+header {
+  width: 100vw;
+  background-color: #222;
+  padding: 15px;
 }
 
 header {
@@ -27,3 +34,4 @@ header {
   margin-top: 10vh;
 }
 </style>
+

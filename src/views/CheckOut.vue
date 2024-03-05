@@ -35,7 +35,7 @@
                   <h6>John Doe</h6>
                 </div>
                 <div class="johndoe">
-                  <h6>- (johndoe01@keraton.com)</h6>
+                  <h6> - (johndoe01@keraton.com)</h6>
                 </div>
            </div>
            <div class="pilih-kategori">
@@ -49,13 +49,13 @@
             </div>
             <div class="radioBtn">
               <div class="umum">
-                <input type="radio" name="pilih-kategori"><label for="umum">Umum</label>
+                <input type="radio" name="pilih-kategori" id="radio" checked><label for="umum">Umum</label>
               </div>
               <div class="pelajar">
-                <input type="radio" name="pilih-kategori"><label for="pelajar">Pelajar</label>
+                <input type="radio" name="pilih-kategori" id="radio"><label for="pelajar">Pelajar</label>
               </div>
               <div class="macanegara">
-                <input type="radio" name="pilih-kategori"><label for="mancanegara">Mancanegara</label>
+                <input type="radio" name="pilih-kategori" id="radio"><label for="mancanegara">Mancanegara</label>
               </div>
             </div>
            </div>
@@ -87,10 +87,10 @@
             </div>
             </div>
             <div class="tiket-masuk">
-              <h6>Tiket masuk Keraton Kasepuhan Cirebon</h6>
+              <h6>Tadarus di Langgar Alit</h6>
             </div>
             <div class="txt-harga">
-              <h6>Rp. 10.000,00</h6>
+              <h6>Rp. {{hargaStringTiket}}</h6>
             </div>
   
             <div class="btn-tiket">
@@ -126,6 +126,8 @@
                   </button>
                 </div>
             </div>
+            <div class="pembayaran">
+            </div>
           </div>
            
         </div>
@@ -135,7 +137,7 @@
                 <h6>Total Pemesanan</h6>
                 <div class="totalHarga">
                   <p>Total Harga ({{ count }} Tiket)</p>
-                    <p class="harga">Rp.{{ harga }}</p>
+                    <p class="harga">Rp. {{ hargaString }}</p>
                 </div>
             </div>
             <div class="biaya">
@@ -143,11 +145,11 @@
                 <h6>Biaya Transaksi</h6>
                 <div class="totalHarga">
                     <p>Biaya Layanan</p>
-                    <p class="harga">Rp.{{ layanan }}</p>
+                    <p class="harga">Rp. {{ layananString }}</p>
                 </div>
                 <div class="totalHarga">
                     <p>Biaya Jasa Aplikasi</p>
-                    <p class="harga">Rp.{{ jasaApp }}</p>
+                    <p class="harga">Rp. {{ jasaAppString }}</p>
                 </div>
             </div>
             </div>
@@ -245,6 +247,12 @@
     height: 62px;
   }
   .atas{
+    align-items: center; 
+    display: flex;
+    gap: 6px;
+  }
+  .pembayaran{
+    margin-top: 37px;
     align-items: center; 
     display: flex;
     gap: 6px;
@@ -382,7 +390,6 @@
     top: 266px;
     border-radius: 4px;
     /* color: #999999; */
-    border: 1px solid #999999;
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -414,7 +421,7 @@
     top: 370px;
   }
   .tiket-masuk h6{
-    margin-top: 28px;
+    margin-top: 10px;
     font-family: 'Raleway';
     font-size: 20px;
     font-weight: 400;
@@ -613,13 +620,20 @@ legend{
   <script setup>
   import { ref, computed } from 'vue'
   import navbar from "../components/NavBar.vue";
-  
+
   const count = ref(1)
   const layanan = 2500
   const jasaApp = 1000
   const harga = ref(10000)
   
-  const hargaString = harga.value.toLocaleString('id-ID');
+  const hargaTiket = harga.value.toLocaleString('id-ID', {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2 
+  });
+
+const hargaStringTiket = ref(hargaTiket); 
+
+  const hargaString = ref(harga.value.toLocaleString('id-ID'));
   const layananString = layanan.toLocaleString('id-ID');
   const jasaAppString = jasaApp.toLocaleString('id-ID');
 
@@ -629,13 +643,15 @@ legend{
   
   const tambah = () => {
     count.value++;
-    harga.value = 10000 * count.value;
+    harga.value = 10000 * count.value
+    hargaString.value = harga.value.toLocaleString('id-ID')
   }
   
   const kurang = () => {
     if (count.value > 1) {
         count.value--;
-        harga.value = 10000 * count.value;
+        harga.value = 10000 * count.value
+        hargaString.value = harga.value.toLocaleString('id-ID')
     }
   }
     const tanggalSekarang = new Date().toISOString().substr(0, 10); 
