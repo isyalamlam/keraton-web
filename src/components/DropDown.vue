@@ -1,4 +1,6 @@
+<!-- dropdown.vue -->
 <template>
+<<<<<<< HEAD
     <div class="menu-item" @click="isOpen = !isOpen">
       <a href="#">
         {{ title }}
@@ -13,20 +15,57 @@
           </div>
         </div>
       </transition>
+=======
+    <div class="dropdown">
+      <button @click="toggleDropdown" class="dropdown-button">
+        {{ selectedOption ? selectedOption.name : '▼' }}
+      </button>
+      <ul v-if="isOpen" class="dropdown-menu">
+        <li v-for="option in options" :key="option.value">
+          <a @click="selectOption(option)">{{ option.name }}</a>
+        </li>
+      </ul>
+>>>>>>> 033b0a5a55fcc5c7d7a3de67eb3840c78649fade
     </div>
   </template>
   
   <script>
   export default {
+<<<<<<< HEAD
     name: 'dropdown',
     props: ['title', 'items'],
     data () {
       return {
         isOpen: false
+=======
+    props: {
+      selectedOption: {
+        type: Object,
+        default: null
+      },
+      options: {
+        type: Array,
+        required: true
+      }
+    },
+    data() {
+      return {
+        isOpen: false,
+      }
+    },
+    methods: {
+      toggleDropdown() {
+        this.isOpen = !this.isOpen;
+      },
+      selectOption(option) {
+        this.$emit('update:selectedOption', option);
+        this.isOpen = false;
+>>>>>>> 033b0a5a55fcc5c7d7a3de67eb3840c78649fade
       }
     }
   }
   </script>
+<<<<<<< HEAD
   
   <style>
   nav .menu-item svg {
@@ -54,3 +93,34 @@
     opacity: 0;
   }
   </style>
+=======
+  <style>
+  .dropdown{
+    background-color: white;
+  }
+  .dropdown-button{
+    border: 0px;
+    background-color: white;
+    color: white;
+    transition: color;
+
+  }
+  .dropdown-button:hover {
+    color: black;
+  }
+  .dropdown-menu{
+  gap: 9px;
+  position: absolute;
+  padding: 11px 40px 11px 14px;
+  width: auto;
+  height: auto;
+  top: 50px;
+  background: #FFFFFF;
+  border: 1px solid #123B32;
+  border-radius: 10px;
+  }
+  ul li{
+    list-style-type: none;
+  }
+</style>
+>>>>>>> 033b0a5a55fcc5c7d7a3de67eb3840c78649fade
