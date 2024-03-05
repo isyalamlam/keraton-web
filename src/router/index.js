@@ -7,7 +7,7 @@ import AreaKeraton from '../views/AreaKeraton.vue'
 import Museum from '../views/Museum.vue'
 import CheckoutKeraton from '../views/CheckoutKeraton.vue'
 import PilihanPaket from '../views/PilihanPaket.vue'
-import Checkout from '../views/CheckOut.vue'
+import CheckOut from '../views/CheckOut.vue'
 import BeranDa from '../views/BeranDa.vue'
 
 
@@ -54,7 +54,7 @@ const router = createRouter({
     {
       path: '/checkout',
       name: 'checkout',
-      component: Checkout
+      component: CheckOut
     },
     {
       path: '/beranda',
