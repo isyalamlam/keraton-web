@@ -8,17 +8,17 @@
       <div class="navbar-right">
         <nav>
           <ul>
-            <li><a href="./components/Beranda.vue">Beranda</a></li>
-            <li><a href="#">Sejarah<div class="dropdown">
+            <li class="short"><a href="./components/Beranda.vue">Beranda</a></li>
+            <li class="short"><a href="#">Sejarah<div class="dropdown">
               <DropDown :selectedOption="selectedHistory" :options="historyOptions" @update:selectedOption="selectedHistory = $event" />
             </div></a></li>
-            <li><a href="#">Booking<div class="dropdown">
+            <li class="short"><a href="#">Booking<div class="dropdown">
               <DropDown :selectedOption="selectedBooking" :options="bookingOptions" @update:selectedOption="selectedBooking = $event" />
             </div></a></li>
-            <li><a href="#">Objek Wisata<div class="dropdown">
+            <li class="short"><a href="#">Objek Wisata<div class="dropdown">
               <DropDown :selectedOption="selectedAttraction" :options="attractionOptions" @update:selectedOption="selectedAttraction = $event" />
             </div></a></li>
-            <button @click="getTickets" style="border-radius: 5px; background-color: #123B32; color: white;">Dapatkan Tiket</button>
+            <button @click="getTickets" style=" margin-top: 10px ;border-radius: 5px;border: none; background-color: #123B32; color: white;width:162px;height: 34px; font-family: 'Raleway'; font-weight: 700;">Dapatkan Tiket</button>
           </ul>
         </nav>
       </div>
@@ -73,26 +73,33 @@
   .navbar {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    
     align-items: center;
-    padding: 10px 0px;
-    gap: 327px;
+    padding: 10px 10px 10px 0px;
     position: relative;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: 'Raleway', sans-serif;
     width: 100%;
-    height: auto;
+    height: 104px;
   }
-  
+  .navbar-right {
+    
+    margin-left: 21.5em;
+    width: 50%;
+    margin-top : 28px;
+    
+    
+   }
   .navbar-left {
     display: flex;
     align-items: center;
     flex: none;
     order: 0;
     flex-grow: 0;
-    width: 217px;
+    width: auto;
     height: 84px;
+    margin-left: 17em;
   }
   
   .app-icon {
@@ -120,9 +127,7 @@
     display: flex;
   }
   
-  nav ul li {
-    margin-right: 30px;
-  }
+  
   
   nav ul li a,
   nav ul li button {
@@ -143,22 +148,30 @@
   nav ul li button:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
-  
-  
+  li :first-child {
+    padding-right: 0.1vw;
+  }
+  .navbar-right button {
+    margin-bottom: 35px;
+  }
+  .short {
+    margin-right: 33px;
+    margin-top: 12px;
+  }
   .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  .dropdown-button {
+  .dropdown button {
     padding: 5px 10px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
     cursor: pointer;
   }
   
-  .dropdown-menu {
-    gap: 9px;
+  .dropdown menu {
+  gap: 9px;
   position: absolute;
   padding: 11px 40px 11px 14px;
   width: auto;
@@ -172,8 +185,7 @@
   
     
   
-  .dropdown-menu li:hover {
+  .dropdown menu li:hover {
     background-color: #f2f2f2;
   }
   </style>
-  
