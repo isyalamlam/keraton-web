@@ -17,7 +17,7 @@
           <h6>Pastikan pesanan Anda BENAR sebelum checkout ya!</h6>
         </div>
       </div>
-    </div>
+  
     <div class="container">
         <div id="detailPemesanan">
             <div class="atas">
@@ -34,7 +34,7 @@
                   <h6>John Doe </h6>
                 </div>
                 <div class="johndoe">
-                  <h6>- (johndoe01@keraton.com)</h6>
+                  <h6>  - (johndoe01@keraton.com)</h6>
                 </div>
           </div>
           <div class="pilih-kategori">
@@ -48,15 +48,24 @@
             </div>
             <div class="radioBtn">
               <div class="umum">
-                <input type="radio" name="pilih-kategori" id="umum" checked>
+                <label class="custom-radio-btn">
+                    <input type="radio" name="pilih-kategori" id="umum" checked>
+                    <span class="checkmark"></span>
+                </label>
                 <label for="umum">Umum</label>
               </div>
               <div class="pelajar">
-                <input type="radio" name="pilih-kategori" id="pelajar" >
+                <label class="custom-radio-btn">
+                    <input type="radio" name="pilih-kategori" id="pelajar" >
+                    <span class="checkmark"></span>
+                </label>
                 <label for="pelajar">Pelajar</label>
               </div>
               <div class="mancanegara">
-                <input type="radio" name="pilih-kategori" id="mancanegara">
+                <label class="custom-radio-btn">
+                    <input type="radio" name="pilih-kategori" id="mancanegara" >
+                    <span class="checkmark"></span>
+                </label>
                 <label for="mancanegara">Mancanegara</label>
               </div>
             </div>
@@ -178,9 +187,8 @@
     </div>
   
   </div>
-  
+</div>
     
-  <SelectPopup ref="selectPopup"/>
 
   </template>
   <style scoped>
@@ -200,6 +208,31 @@
     background-color: #FFFFFF; 
     z-index: 1000; 
   }
+  .custom-radio-btn{
+    width: 20px;
+    height: 20px;
+    border: 2px solid goldenrod;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .custom-radio-btn .checkmark{
+      width: calc(100% - 6px);
+      height: calc(100% - 6px);
+      background-color: goldenrod;
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+  }
+  .custom-radio-btn input{
+      display: none;
+  }
+  .custom-radio-btn input:checked + .checkmark {
+      display: inline-block;
+      opacity: 1;
+  }
   .container{
     display: flex;
   }
@@ -213,6 +246,7 @@
     text-align: center;
     gap: 4px;
     align-items: center;
+    flex-wrap: wrap;
   }
   .icon-group2{
     margin-left: 108px;
@@ -349,6 +383,7 @@
     width: 24px;
     height: 24px;
     background-color: #DAA520;
+    cursor: pointer;
   }
   .umum{
     display: flex;
@@ -569,6 +604,7 @@
     background-color: #DAA520;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
+    cursor: pointer;
   }
   .btn:hover{
     background-color: #ffc122;
