@@ -1,4 +1,3 @@
-
 <template>
   <nav>
     <navbar />
@@ -32,13 +31,13 @@
             
             <div class="nama">
                 <div class="john-doe">
-                  <h6>John Doe</h6>
+                  <h6>John Doe </h6>
                 </div>
                 <div class="johndoe">
                   <h6>- (johndoe01@keraton.com)</h6>
                 </div>
-           </div>
-           <div class="pilih-kategori">
+          </div>
+          <div class="pilih-kategori">
             <div class="atas">
                 <div class="icon">
                   <img src="../assets/svg/Framecard.svg" alt="">
@@ -49,17 +48,20 @@
             </div>
             <div class="radioBtn">
               <div class="umum">
-                <input type="radio" name="pilih-kategori"><label for="umum">Umum</label>
+                <input type="radio" name="pilih-kategori" id="umum" checked>
+                <label for="umum">Umum</label>
               </div>
               <div class="pelajar">
-                <input type="radio" name="pilih-kategori"><label for="pelajar">Pelajar</label>
+                <input type="radio" name="pilih-kategori" id="pelajar" >
+                <label for="pelajar">Pelajar</label>
               </div>
-              <div class="macanegara">
-                <input type="radio" name="pilih-kategori"><label for="mancanegara">Mancanegara</label>
+              <div class="mancanegara">
+                <input type="radio" name="pilih-kategori" id="mancanegara">
+                <label for="mancanegara">Mancanegara</label>
               </div>
             </div>
-           </div>
-           <div class="detail-tiket">
+          </div>
+          <div class="detail-tiket">
             <div class="atas">
                 <div class="icon">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +73,7 @@
                   <p>Detail Tiket</p>
                 </div>
             </div>
-            <div class="date">
+            <div class="date"> 
               <fieldset class="my-fieldset" @click.stop="focusInput">
                 <legend class="my-legend">
                   <div class="tgl">
@@ -80,17 +82,19 @@
                 </legend>
                 <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" disabled>
               </fieldset>
-            </div>
-            <div class="supporting-text">
+              <div class="supporting-text">
               <div class="supporting-txt">
                 <small>MM/DD/YY</small>
               </div>
             </div>
-            <div class="tiket-masuk">
-              <h6>Tiket masuk Keraton Kasepuhan Cirebon</h6>
             </div>
-            <div class="txt-harga">
-              <h6>Rp. 10.000,00</h6>
+            <div class="detail-tiket-masuk">
+              <div class="tiket-masuk">
+                <h6>Tadarus di Langgar Alit</h6>
+              </div>
+              <div class="txt-harga">
+                <h6>Rp. {{hargaStringTiket}}</h6>
+              </div>
             </div>
   
             <div class="btn-tiket">
@@ -126,16 +130,19 @@
                   </button>
                 </div>
             </div>
+            <div class="pembayaran">
+              <payment />
+            </div>
           </div>
-           
+          
         </div>
-        <div id="ringkasanBooking">
+        <div id="ringkasanBooking"  :class="{ 'scroll-active': isScrollActive }">
             <h5>Ringkasan Booking</h5>
             <div class="totalPemesanan">
                 <h6>Total Pemesanan</h6>
                 <div class="totalHarga">
                   <p>Total Harga ({{ count }} Tiket)</p>
-                    <p class="harga">Rp.{{ harga }}</p>
+                    <p class="harga">Rp. {{ hargaString }}</p>
                 </div>
             </div>
             <div class="biaya">
@@ -143,11 +150,11 @@
                 <h6>Biaya Transaksi</h6>
                 <div class="totalHarga">
                     <p>Biaya Layanan</p>
-                    <p class="harga">Rp.{{ layanan }}</p>
+                    <p class="harga">Rp. {{ layananString }}</p>
                 </div>
                 <div class="totalHarga">
                     <p>Biaya Jasa Aplikasi</p>
-                    <p class="harga">Rp.{{ jasaApp }}</p>
+                    <p class="harga">Rp. {{ jasaAppString }}</p>
                 </div>
             </div>
             </div>
@@ -171,26 +178,34 @@
     </div>
   
   </div>
-   
-    
   
+    
+  <SelectPopup ref="selectPopup"/>
+
   </template>
   <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@500&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@500&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
   
-  body{
-    background-color: #FFFFFF;
+  .body{
     width: 1280px;
     height: 906px;
+    margin-top: 146px;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    background-color: #FFFFFF; 
+    z-index: 1000; 
   }
   .container{
     display: flex;
   }
   .group1{
     /* top: 146px; */
-    top: 42px;
+    margin-top: 42px;
     position: relative;
   }
   .group2{
@@ -245,6 +260,12 @@
     height: 62px;
   }
   .atas{
+    align-items: center; 
+    display: flex;
+    gap: 6px;
+  }
+  .pembayaran{
+    margin-top: 37px;
     align-items: center; 
     display: flex;
     gap: 6px;
@@ -325,32 +346,37 @@
     margin-top: 18px;
   }
   input[type="radio"]{
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     background-color: #DAA520;
   }
   .umum{
+    display: flex;
+    justify-content: center;
     width: 122px;
     height: 48px;
     top: 133px;
     padding: 12px,20px, 12px, 20px;
-    gap: 10px; 
+    margin-right: 27px;
   }
   .pelajar{
+    justify-content: center;
+    display: flex;
     width: 125px;
     height: 48px;
     top: 133px;
     left: 149px;
     padding: 12px, 20px, 12px, 20px;
-    gap: 10px;
+    margin-right: 27px;
   }
   .mancanegara{
+    justify-content: center;
+    display: flex;
     width: 175px;
     height: 48px;
     top: 133px;
     left: 301px;
     padding: 12px, 20px, 12px, 20px;
-    gap: 10px;
   }
   .umum, 
   .pelajar, 
@@ -372,23 +398,38 @@
     height: 256px;
     border-radius: 4px, 4px, 0px, 0px;
   }
+  .date{
+    color: #999999;
+    opacity: 0.5;
+  }
   fieldset{
+    outline-color: re;
     width: 312px;
     height: 66px;
     top: 266px;
+    border: 1.5px solid #999999;
+    opacity: 0.5;
     border-radius: 4px;
-    color: #DAA520;
-    border: 3px solid #DAA520;
+    /* color: #999999; */
     display: flex; 
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
+  legend{
+    display: flex;
+    height: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 12px;
+    margin-top: 12px;
+}
   .supporting-text{
     width: 312px;
     height: 20px;
     padding: 4px, 16px, 0px, 16px;
     gap: 10px;
+    color: #999999;
   }
   .supporting-txt{
     width: 280px;
@@ -401,7 +442,6 @@
     line-height: 16px;
     letter-spacing: 0em;
     text-align: left;
-    color: #49454F;
     margin-left: 16px;
   }
   .tiket-masuk{
@@ -410,7 +450,7 @@
     top: 370px;
   }
   .tiket-masuk h6{
-    margin-top: 28px;
+    margin-top: 10px;
     font-family: 'Raleway';
     font-size: 20px;
     font-weight: 400;
@@ -464,6 +504,7 @@
   .plus{
     width: 24px;
     height: 24px;
+    /* border: 1.5px solid #d5d5d5; */
     border: none;
     background-color: #000000;
     border-radius: 8px;
@@ -489,16 +530,18 @@
     letter-spacing: 0.5px;
     text-align: left;
     border: none;
+    background: transparent;
+    margin-left: 16px;
   }
   input[type="date"]:focus {
     outline: none;
   }
-  
   #ringkasanBooking{
     width: 542px;
     height: 348px;
     margin-right: 88px;
     top: 295px;
+    position: static; 
     margin-top: 64px;
     left: 650px;
     border-radius: 15px;
@@ -507,6 +550,11 @@
     padding: 20px;
     gap: 8px;
     background-color: #FFFFFF;
+  }
+  
+  .scroll-active #ringkasanBooking {
+      position: fixed;
+      top: 0;
   }
   .btn{
     width: 542px;
@@ -522,10 +570,13 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
   }
+  .btn:hover{
+    background-color: #ffc122;
+  }
   .containerbtn{
     display: flex;
-    flex-direction: column; /* Menyusun elemen secara vertikal */
-    align-items: center; /* Pusatkan elemen secara horizontal */
+    flex-direction: column; 
+    align-items: center; 
     margin-top: 22px; 
   }
   .btn-checkout{
@@ -600,32 +651,48 @@
   <script setup>
   import { ref, computed } from 'vue'
   import navbar from "../components/NavBar.vue";
-  
+  import payment from "../components/Pembayaran.vue";
+  import SelectPopup from '../components/SelectPopup.vue';
+
+  const selectPopup = ref(null)
+
   const count = ref(1)
   const layanan = 2500
   const jasaApp = 1000
   const harga = ref(10000)
   
-  const tanggalSekarang = new Date().toISOString().substr(0, 10); // Mendapatkan tanggal saat ini dalam format YYYY-MM-DD
-  
-  const totalPemesanan = computed(() => harga.value + layanan + jasaApp)
-  
+  const hargaTiket = harga.value.toLocaleString('id-ID', {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2 
+  });
+
+const hargaStringTiket = ref(hargaTiket); 
+
+  const hargaString = ref(harga.value.toLocaleString('id-ID'));
+  const layananString = layanan.toLocaleString('id-ID');
+  const jasaAppString = jasaApp.toLocaleString('id-ID');
+
+  const totalPemesanan = computed(() => (harga.value + layanan + jasaApp).toLocaleString('id-ID'));
+
+
   const tambah = () => {
     count.value++;
-    harga.value = 10000 * count.value;
+    harga.value = 10000 * count.value
+    hargaString.value = harga.value.toLocaleString('id-ID')
   }
   
   const kurang = () => {
     if (count.value > 1) {
         count.value--;
-        harga.value = 10000 * count.value;
+        harga.value = 10000 * count.value
+        hargaString.value = harga.value.toLocaleString('id-ID')
     }
   }
-  
+    const tanggalSekarang = new Date().toISOString().substr(0, 10); 
+
   const focusInput = () => {
     const input = document.getElementById('tanggalPemesanan').focus();
     input.focus();
     input.click();
   }
   </script>
-  
