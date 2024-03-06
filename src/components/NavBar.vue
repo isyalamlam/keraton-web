@@ -1,9 +1,5 @@
 <!-- navbar.vue -->
 <template>
-  <div class="navbar">
-    <div class="navbar-left">
-      <img alt="icon-aplikasi" src="../assets/svg/logo_keraton 3 (1).svg" class="app-icon" />
-      <span class="app-name">Keraton Kesepuhan Cirebon</span>
     <div class="navbar">
       <div class="navbar-left">
         <img alt="icon-aplikasi" src="../assets/images/logo_keraton.png" class="app-icon" />
@@ -27,10 +23,10 @@
         </nav>
       </div>
       </div>
-      </div>
+
 
       <li v-if="parentSelectedOption">{{ parentSelectedOption.name }}</li>
-    </div>
+
     <beranda>
       
     </beranda>
