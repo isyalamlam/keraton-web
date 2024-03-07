@@ -409,9 +409,7 @@
     align-items: center;
     margin-top: 157px;
     width:1064px;
-    margin-left: 30px;
-  
-    
+    margin-left: 130px;
   }
   
   .between {

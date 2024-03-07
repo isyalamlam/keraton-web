@@ -183,7 +183,7 @@
   </template>
   
   <script>
-    import navbar from "../components/navBar.vue";
+    import navbar from "../components/NavBar.vue";
   export default {
     data() {
       return {
