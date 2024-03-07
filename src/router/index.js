@@ -10,6 +10,7 @@ import Checkout from '../views/CheckOut.vue'
 import PilihanPaket from '../views/PilihanPaket.vue'
 import CheckOut from '../views/CheckOut.vue'
 import BeranDa from '../views/BeranDa.vue'
+import Checkoutlebihdari1 from '../views/CheckOutlebihdari1.vue'
 
 
 const router = createRouter({
@@ -63,6 +64,12 @@ const router = createRouter({
       component: HistoryTransaksi
 
     },
+    {
+      path: '/checkoutlebihdari1',
+      name: 'checkoutlebihdari1',
+      component: Checkoutlebihdari1
+
+    }
   ]
 })
 

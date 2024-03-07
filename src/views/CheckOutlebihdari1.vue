@@ -94,9 +94,9 @@
                   </div>
                 </legend>
                 <div class="test">
-                <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" disabled>
+                <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" >
                 <div class="icon-date">
-                    <img src="../assets/svg/Icondate.svg" alt="">
+                    <img src="../assets/svg/Icondate.svg" alt="" @click.stop="focusInput">
                 </div>
               </div>
               </fieldset>
@@ -106,12 +106,31 @@
                 </div>
               </div>
             </div>
+            <div class="btn-tambah-tiket">
+              <button class="btn-tambah" @click="tambahDetailTiketMasuk">
+                Tambah Tiket
+              </button>
+            </div>
+            <div class="btn-hapus">
+              <button class="btn-hapus" @click="hapusDetailTiketMasuk(index)">
+                Hapus
+              </button>
+            </div>
+
             <div class="detail-tiket-masuk">
               <div class="tiket-masuk">
-                <h6>Tadarus di Langgar Alit</h6>
+                <h6>Tadarus di Langgar Alit </h6>
               </div>
               <div class="txt-harga">
                 <h6>Rp. {{ hargaStringTiket }}</h6>
+              </div>
+            </div>
+            <div class="detail-tiket-masuk" v-for="(detail, index) in detailTiketMasuk" :key="index">
+              <div class="tiket-masuk">
+                <h6>{{ detail.nama }}</h6>
+              </div>
+              <div class="txt-harga">
+                <h6>Rp. {{ detail.hargaStringTiket }}</h6>
               </div>
             </div>
 
@@ -459,10 +478,6 @@ label {
   border-radius: 4px, 4px, 0px, 0px;
 }
 
-.date {
-  color: #999999;
-  opacity: 0.5;
-}
 .icon-date{
   width: 48px;
   height: 48px;
@@ -480,16 +495,18 @@ fieldset {
   width: 312px;
   height: 66px;
   top: 266px;
-  border: 1.5px solid #999999;
-  opacity: 0.5;
+  border: 3px solid goldenrod;
   border-radius: 4px;
-  /* color: #999999; */
+  color: goldenrod;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-size: 16px;
   font-family: 'Roboto';
+}
+fieldset:focus input[type="date"]::-webkit-calendar-picker-indicator{
+  display: block;
 }
 
 legend {
@@ -500,6 +517,10 @@ legend {
   margin-left: 16px;
   margin-top: 12px;
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 input[type="date"] {
   width: 248px;
   height: 48px;
@@ -521,13 +542,11 @@ input[type="date"] {
 input[type="date"]:focus {
   outline: none;
 }
-
 .supporting-text {
   width: 312px;
   height: 20px;
   padding: 4px, 16px, 0px, 16px;
   gap: 10px;
-  color: #999999;
 }
 
 .supporting-txt {
@@ -594,7 +613,7 @@ input[type="date"]:focus {
   font-weight: 600;
   line-height: 22px;
   letter-spacing: 0em;
-  text-align: center;
+  text-align: left;
   color: #000000;
 }
 
@@ -607,6 +626,8 @@ input[type="date"]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
+
 }
 
 .plus {
@@ -619,6 +640,8 @@ input[type="date"]:focus {
   align-items: center;
   justify-content: center;
   color:#d5d5d5;
+  transition: background-color 0.3s ease;
+
 }
 .min:hover ,.plus:hover{
   border: none;
@@ -626,12 +649,13 @@ input[type="date"]:focus {
 }
 .min:hover .path{
   fill: white;
+  border: none;
 }
 .plus:hover .path{
   fill: white;
+  border: none;
+
 }
-
-
 #ringkasanBooking {
   width: 542px;
   height: 348px;
@@ -667,6 +691,7 @@ input[type="date"]:focus {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -762,12 +787,11 @@ hr {
 </style>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted} from 'vue'
 import navbar from "../components/NavBar.vue";
 import payment from "../components/Pembayaran.vue";
 import SelectPopup from '../components/SelectPopup.vue';
 
-const selectPopup = ref(null)
 
 const count = ref(1)
 const layanan = 2500
@@ -803,9 +827,32 @@ const kurang = () => {
 }
 const tanggalSekarang = new Date().toISOString().substr(0, 10);
 
+const selectPopup = ref(null)
+
 const focusInput = () => {
   const input = document.getElementById('tanggalPemesanan').focus();
+  selectPopup.value.show()
   input.focus();
   input.click();
 }
+
+const detailTiketMasuk = ref([]);
+const tambahDetailTiketMasuk = () => {
+  // Buat objek baru untuk detail tiket
+  const detailBaru =
+  {
+    nama: "Nama Tiket Baru",
+    nama: "Sribaduga",
+    hargaStringTiket
+  }
+
+  // Tambahkan detail baru ke dalam array
+  detailTiketMasuk.value.push(detailBaru);
+};
+const hapusDetailTiketMasuk = (index) => {
+  // Hapus detail tiket berdasarkan indeks
+  detailTiketMasuk.value.splice(index, 1);
+};
+
+
 </script>
