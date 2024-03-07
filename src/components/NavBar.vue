@@ -1,4 +1,3 @@
-<!-- navbar.vue -->
 <template>
   <div class="navbar">
     <div class="navbar-left">
@@ -8,17 +7,11 @@
     <div class="navbar-right">
       <nav>
         <ul>
-          <li><a href="./components/Beranda.vue">Beranda</a></li>
-          <li><a href="#">Sejarah<div class="dropdown">
-            <DropDown :selectedOption="selectedHistory" :options="historyOptions" @update:selectedOption="selectedHistory = $event" />
-          </div></a></li>
-          <li><a href="#">Booking<div class="dropdown">
-            <DropDown :selectedOption="selectedBooking" :options="bookingOptions" @update:selectedOption="selectedBooking = $event" />
-          </div></a></li>
-          <li><a href="#">Objek Wisata<div class="dropdown">
-            <DropDown :selectedOption="selectedAttraction" :options="attractionOptions" @update:selectedOption="selectedAttraction = $event" />
-          </div></a></li>
-          <button @click="getTickets" style="border-radius: 5px; background-color: #123B32; color: white;">Dapatkan Tiket</button>
+          <li class="short"><a href="/beranda">Beranda</a></li>
+          <li class="short"><a href="/sejarahkeraton">Sejarah</a></li>
+          <li class="short"><a href="#">Booking</a></li>
+          <li class="short"><a href="#">Objek Wisata</a></li>
+          <button @click="getTickets" style="border-radius: 5px;border: none; background-color: #123B32; color: white;width:162px;height: 34px; font-family: 'Raleway'; font-weight: 700; cursor: pointer;">Dapatkan Tiket</button>
         </ul>
       </nav>
     </div>
@@ -73,26 +66,25 @@ export default {
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  padding: 10px 0px;
-  gap: 327px;
+  padding: 10px 10px 10px 0px;
   position: relative;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: 'Raleway', sans-serif;
   width: 100%;
-  height: auto;
+  height: 104px;
 }
-
+  
 .navbar-left {
   display: flex;
   align-items: center;
   flex: none;
   order: 0;
   flex-grow: 0;
-  width: 217px;
+  width: auto;
   height: 84px;
+  margin-left: 40em;
 }
 
 .app-icon {
@@ -108,21 +100,19 @@ export default {
   width: 139px;
   height: 84px;
   left: 166px;
-  top: 10px;
-  color: black;
+  top: 14px;
+  color: #212121;
   font-size: 20px;
 }
 
 nav ul {
-  list-style-type: none;
+  
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-nav ul li {
-  margin-right: 30px;
-}
+
 
 nav ul li a,
 nav ul li button {
@@ -130,9 +120,8 @@ nav ul li button {
   color: #000000;
   background-color: transparent;
   border: none;
-  flex-direction: row;
   align-items: flex-start;
-  padding: 5px 25px;
+  padding: 0px 25px;
   font-size: 16px;
   text-decoration: none;
   cursor: pointer;
@@ -145,34 +134,8 @@ nav ul li button:hover {
 }
 
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-button {
-  padding: 5px 10px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  gap: 9px;
-position: absolute;
-padding: 11px 40px 11px 14px;
-width: auto;
-height: auto;
-top: 78px;
-background: #FFFFFF;
-border: 1px solid #123B32;
-border-radius: 10px;
-
-}
-
+.short {
+  margin-top: 8px;
   
-
-.dropdown-menu li:hover {
-  background-color: #f2f2f2;
 }
 </style>
