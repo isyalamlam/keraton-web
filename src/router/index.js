@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import SignIn from '../views/SignIn.vue'
+import SignIn from '../views/signIn.vue'
 import SignUp from '../views/SignUp.vue'
 
 import SejarahKeraton from '../views/SejarahKeraton.vue'

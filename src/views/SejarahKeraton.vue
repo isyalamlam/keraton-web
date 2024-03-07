@@ -83,7 +83,7 @@
           <img src="../assets/images/timeline3.png" alt="" class="time2">
           <div class="">
             <p class="jarak4">Pada -+ 1679 M</p>
-           <p><br>
+           <p>
             Didirikan Keraton Kanoman oleh Sultan Anom I (Sultan Badridin). Maka semenjak itu, Keraton Pakungwati disebut
                Keraton Kasepuhan hingga sekarang dan sultannya bergelar Sultan Sepuh. Kasepuhan artinya tempat sepuh atau tua. 
                Jadi, antara Kasepuhan dan Kanoman itu awalnya yang tua dan yang muda (kakak beradik). Lokasi bangunan Keraton 
@@ -188,7 +188,7 @@
   
   </script>
   
-  <style>
+  <style scoped>
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -481,7 +481,8 @@
   
   }
   .jarak4 {
-    padding-top: 50px;
+    padding-top: 27px;
+    padding-bottom: 17px;
     margin-left: 29px;
   }
   .jarak3{
