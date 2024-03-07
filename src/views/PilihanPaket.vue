@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import navbar from '../components/NavBar.vue'
+import navbar from '../components/navBar.vue'
 
 const count = ref(35)
 const layanan = 2500
@@ -819,4 +819,4 @@ hr {
   margin-top: 8px;
   padding-top: 20px;
 }
-</style>../components/NavBar.vue../components/NavBar.vue
+</style>../components/NavBar.vue../components/NavBar.vue../components/NavBar.vue

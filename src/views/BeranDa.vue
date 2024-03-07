@@ -183,7 +183,7 @@
   </template>
   
   <script>
-    import navbar from "../components/NavBar.vue";
+    import navbar from "../components/navBar.vue";
   export default {
     data() {
       return {
@@ -874,4 +874,4 @@ border-radius: 50px;
   left: 1068px;
   top: 693px;
   }
-  </style>../components/navBar.vue
+  </style>../components/navBar.vue../components/NavBar.vue
