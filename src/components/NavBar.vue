@@ -1,5 +1,4 @@
 <!-- navbar.vue -->
-
 <template>
   <div class="navbar">
     <div class="navbar-left">
@@ -9,26 +8,29 @@
     <div class="navbar-right">
       <nav>
         <ul>
-          <li><a href="./components/Beranda.vue">Beranda</a></li>
-          <li><a href="#">Sejarah<div class="dropdown">
+          <li class="short"><a href="./components/Beranda.vue">Beranda</a></li>
+          <li class="short"><a href="#">Sejarah<div class="dropdown">
             <DropDown :selectedOption="selectedHistory" :options="historyOptions" @update:selectedOption="selectedHistory = $event" />
           </div></a></li>
-          <li><a href="#">Booking<div class="dropdown">
+          <li class="short"><a href="#">Booking<div class="dropdown">
             <DropDown :selectedOption="selectedBooking" :options="bookingOptions" @update:selectedOption="selectedBooking = $event" />
           </div></a></li>
-          <li><a href="#">Objek Wisata<div class="dropdown">
+          <li class="short"><a href="#">Objek Wisata<div class="dropdown">
             <DropDown :selectedOption="selectedAttraction" :options="attractionOptions" @update:selectedOption="selectedAttraction = $event" />
           </div></a></li>
-          <li>
-            <button class="btnAcc" @click="getTickets"><img src="../assets/images/avatar.png" alt="Avatar" class="imgAcc" /></button>
-          </li>
+          <button @click="getTickets" style=" margin-top: 10px ;border-radius: 5px;border: none; background-color: #123B32; color: white;width:162px;height: 34px; font-family: 'Raleway'; font-weight: 700;">Dapatkan Tiket</button>
         </ul>
       </nav>
     </div>
+    <li v-if="parentSelectedOption">{{ parentSelectedOption.name }}</li>
   </div>
+  <beranda>
+    
+  </beranda>
 </template>
 
 <script>
+
 import DropDown from '../components/DropDown.vue'
 
 export default {
@@ -50,12 +52,15 @@ export default {
         { name: 'Dalem Agung Pakungwati', value: 3 },
         { name: 'Lotus', value: 4 }
       ],
-      isLoggedIn: false 
+      bookingOptions: [
+      { name: 'Paket Keraton', value: 1 },
+        { name: 'Tiket Event', value: 2 },
+      ]
     }
   },
   methods: {
     getTickets() {
-      console.log('Dapatkan Tiket', this.selectedBooking)
+      console.log('Dapatkan Tiket', this.parentSelectedOption)
     }
   }
 }
@@ -68,45 +73,24 @@ export default {
 .navbar {
   display: flex;
   flex-direction: row;
+  
   align-items: center;
   padding: 10px 10px 10px 0px;
   position: relative;
   background-color: white;
-  box-shadow: 0 8px 12px rgba(17, 17, 17, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: 'Raleway', sans-serif;
   width: 100%;
   height: 104px;
 }
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-nav ul li {
-  margin-right: 30px;
-  display: flex; 
-}
-
-nav ul li:last-child {
-  margin-right: 0; 
-}
-
-.btnAcc {
-  position: relative;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.imgAcc {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-
+.navbar-right {
+  
+  margin-left: 21.5em;
+  width: 50%;
+  margin-top : 28px;
+  
+  
+ }
 .navbar-left {
   display: flex;
   align-items: center;
@@ -115,7 +99,7 @@ nav ul li:last-child {
   flex-grow: 0;
   width: auto;
   height: 84px;
-  margin-left: 40em;
+  margin-left: 17em;
 }
 
 .app-icon {
@@ -131,13 +115,13 @@ nav ul li:last-child {
   width: 139px;
   height: 84px;
   left: 166px;
-  top: 14px;
-  color: #212121;
+  top: 10px;
+  color: black;
   font-size: 20px;
 }
 
 nav ul {
-  
+  list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
@@ -151,8 +135,9 @@ nav ul li button {
   color: #000000;
   background-color: transparent;
   border: none;
+  flex-direction: row;
   align-items: flex-start;
-  padding: 0px 25px;
+  padding: 5px 25px;
   font-size: 16px;
   text-decoration: none;
   cursor: pointer;
@@ -163,22 +148,30 @@ nav ul li a:hover,
 nav ul li button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-
+li :first-child {
+  padding-right: 0.1vw;
+}
+.navbar-right button {
+  margin-bottom: 35px;
+}
+.short {
+  margin-right: 33px;
+  margin-top: 12px;
+}
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-button {
+.dropdown button {
   padding: 5px 10px;
   background-color: #f2f2f2;
   border: 1px solid #ccc;
   cursor: pointer;
 }
 
-.dropdown-menu {
-  gap: 9px;
+.dropdown menu {
+gap: 9px;
 position: absolute;
 padding: 11px 40px 11px 14px;
 width: auto;
@@ -190,7 +183,9 @@ border-radius: 10px;
 
 }
 
-.dropdown-menu li:hover {
+  
+
+.dropdown menu li:hover {
   background-color: #f2f2f2;
 }
 </style>
