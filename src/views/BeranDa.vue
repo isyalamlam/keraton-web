@@ -874,4 +874,4 @@ border-radius: 50px;
   left: 1068px;
   top: 693px;
   }
-  </style>
+  </style>../components/navBar.vue

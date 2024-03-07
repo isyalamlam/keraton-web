@@ -42,10 +42,14 @@ const router = createRouter({
       component: Museum
     },
     {
- 
       path: '/checkoutkeraton',
       name: 'checkoutkeraton',
       component: CheckoutKeraton
+    },
+    {
+      path: '/pilihanpaket',
+      name: 'pilihanpaket',
+      component: PilihanPaket
     },
     {
       path: '/checkout',
