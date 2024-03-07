@@ -4,6 +4,7 @@ import { ref } from 'vue';
 
 
 const detail = ref(false)
+const cara = ref(false)
 
 const openDetailTransaksi = () =>{
     detail.value = !detail.value
@@ -11,14 +12,19 @@ const openDetailTransaksi = () =>{
 const closeDetailTransaksi = () => {
     detail.value = false;
 }
-
-
+const openMenungguPembayaran = () => {
+    cara.value = !cara.value;
+}
+const closeMenungguPembayaran = () => {
+    cara.value = false;
+}
 </script>
 
 <template>
+  <div class="projekk">
     <div class="navbar">
             <div class="navbar-left">
-              <img  alt="icon-aplikasi" src="../assets/images/logo_keraton.png" class="app-icon" />
+              <img  alt="icon-aplikasi" src="../assets/svg/logo_keraton 3 (1).svg" class="app-icon" />
               <span class="app-name">Keraton Kesepuhan Cirebon</span>
             </div>
             <div class="navbar-right">
@@ -36,18 +42,27 @@ const closeDetailTransaksi = () => {
         <div><h1 class="title">History transaksi</h1></div>
         <div class="container">
             <div class="form-input">
-                <input type="search" v-model="searchQuery"  id="search" name="search" placeholder="Cari transaksi" class="Pencarian">
+              <div class="search">
+                <label for="search" class="search-label">
+                  <img src="../assets/svg/search.svg" class="search-icon">
+                  <input type="search" v-model="searchQuery" id="search" name="search" placeholder="Cari transaksi" class="Pencarian">
+                </label>
+              </div>
+              <div class="date">
                 <input value="Pilih tanggal" type="date" class="tanggal" placeholder="Pilih tanggal">
+              </div>
+              <div class="status">
                 <select name="Status" placeholder="status" value="Status">
-                    <!-- <option value="" disabled selected>Status</option> -->
                     <option value="sudahDigunakan">Sudah digunakan</option>
                     <option value="dapatDigunakan">Dapat digunakan</option>
                     <option value="expired">Expired</option>
                     <option value="menungguPembayaran">Menunggu pembayaran</option>
                 </select>
+              </div>
             </div>
         </div>
         <div class="tabel">
+          <div class="card-1">
             <div class="tiket">
               <div class="tiket__header-container">
                 <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -55,7 +70,7 @@ const closeDetailTransaksi = () => {
                 <label>17 Agu 2023</label>
                 <p class="sudah__digunakan">Sudah digunakan</p>
               </div>
-              <div class="tiket__content">
+              <div  class="tiket__content">
                 <img src="../assets/images/img-1.jpg" alt="">
                 <div class="tiket__content-details">
                   <h6>Tiket Masuk Keraton Kasepuhan Cirebon+Museum+...</h6>
@@ -72,13 +87,15 @@ const closeDetailTransaksi = () => {
                     <a @click="openDetailTransaksi" class="detail"><p>Lihat detail transaksi</p></a>
                     |
                     <a href="" class="bantuan"><p>Bantuan</p></a>
-                </div>
-            </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
         <div class="tabel">
+          <div class="card-2">
             <div class="tiket">
               <div class="tiket__header-container">
                 <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -103,13 +120,15 @@ const closeDetailTransaksi = () => {
                     <a @click="openDetailTransaksi" class="detail"><p>Lihat detail transaksi</p></a>
                     |
                     <a href="" class="bantuan"><p>Bantuan</p></a>
-                </div>
-            </div>
+                  </div>
+                 </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
         <div class="tabel">
+          <div class="card-3">
             <div class="tiket">
               <div class="tiket__header-container">
                 <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -134,13 +153,15 @@ const closeDetailTransaksi = () => {
                     <a @click="openDetailTransaksi" class="detail"><p>Lihat detail transaksi</p></a>
                     |
                     <a href="" class="bantuan"><p>Bantuan</p></a>
-                </div>
-            </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
         <div class="tabel">
+          <div class="card-4">
             <div class="tiket">
               <div class="tiket__header-container">
                 <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -164,24 +185,25 @@ const closeDetailTransaksi = () => {
                 <div class="actions">
                     <a @click="openDetailTransaksi" class="detail"><p>Lihat detail</p></a>
                     |
-                    <a href="" class="bantuan"><p>Cara Pembayaran</p></a>
-                </div>
-            </div>
+                    <a @click="openMenungguPembayaran" class="cara"><p>Cara Pembayaran</p></a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
         
-
+        <!-- popup -->
         <section class="detail-transaksi" v-if="detail">
         <div class="popup">
             <div class="popup-content">
+              <div class="header">
+                <h1 class="p">Detail Transaksi</h1>
                 <span class="close" @click="closeDetailTransaksi"><img src="../assets/images/close.png" class="Icon"></span>
-                <div class="header">
-                    <h1 class="p">Detail Transaksi</h1>
                 </div>
                 <div class="isi">
-                <label>Sudah digunakan</label>
+                <small class="label-card1">Sudah digunakan</small>
                 <div class="info__details">
                   <div class="flex-container">
                     <div>
@@ -193,11 +215,77 @@ const closeDetailTransaksi = () => {
                       <p>15 Agustus 2023, 10:00 WIB</p>
                     </div>
                   </div>
+                  <h6 class="detailtiket">Detail tiket</h6>
+                  <div class="detail-tiket">
+                  <img src="../assets/svg/gambarKraton.svg" alt="">
+                  <div class="info-detail-tiket">
+                    <p>Tiket Masuk Keraton Kasepuhan (UMUM)</p>
+                    <label class="harga">17 Agu 2023; 10:00</label>
+                    <label class="harga">1 x Rp. 10.000</label>
                 </div>
               </div>
+              <div class="all-tiket">
+              <small>Lihat semua tiket  <img src="../assets/svg/panahBawah.svg" alt=""></small>
+              </div>
+              <h6 class="info-pembayaran">Info pembayaran</h6>
+              <div class="status-pembayaran">
+                <h6>Status pembayaran</h6>
+                <small>Berhasil</small>
+              </div>
+              <div class="pemesan">
+                <h6>Pemesan</h6>
+                <p>John Doe<label>/johndoe@keraton.com</label></p>
+              </div>
+              <div class="metode-pmbayaran">
+                <h6>Metode Pembayaran</h6>
+                <p>BJB Virtual Account</p>
+              </div>
+              <div class="total-harga-3-Tiket">
+                <h6>Total Harga(3 Tiket)</h6>
+                <p>Rp. 30.000</p>
+              </div>
+              <div class="biaya-layanan">
+                <h6>Biaya Layanan</h6>
+                <p>Rp. 3.500</p>
+              </div>
+              <div class="line">
+                
+              </div>
+              <div class="total-biaya">
+                <h6>Total Biaya</h6>
+                <p>Rp. 33.500</p>
+              </div>
+              </div>
+            </div>
             </div>
         </div>
     </section>
+    <section class="detail-transaksi" v-if="cara">
+      <div class="popup">
+            <div class="popup-content">
+              <div class="header">
+                <h1 class="p">Cara Pembayaran</h1>
+                <span class="close" @click="closeMenungguPembayaran"><img src="../assets/images/close.png" class="Icon"></span>
+                </div>
+                <div class="isi">
+                  <div class="bjb">
+                    <h4>BJB Virtual Account</h4>
+                    <img src="../assets/svg/GKL7_Bank BJB Logo.svg" alt="">
+                  </div>
+                  <div class="nomor-virtual-account">
+                    <div class="nva">
+                    <h6>Nomor Virtual Account</h6>
+                    <h5>8883xxxxxxxxxx</h5>
+                  </div>
+                  <div class="clipboard">
+                    <p>Salin <img src="../assets/svg/ClipboardText.svg" alt=""></p>
+                  </div>
+                  </div>
+            </div>
+            </div>
+        </div>
+    </section>
+  </div>
     </template>
     
     
@@ -211,6 +299,10 @@ const closeDetailTransaksi = () => {
         background-color: #f8f8f8;
     }
     
+    .projekk{
+      font-family: raleway;
+    }
+
     h1.title {
         text-align: center;
         margin-top: 50px;
@@ -365,6 +457,12 @@ const closeDetailTransaksi = () => {
         width: 18px;
         height: 13px;
     }
+
+    .form-input{
+      display: flex;
+      justify-content: center;
+      gap:20px;
+    }
     
     .container{
       text-align: center;
@@ -488,12 +586,32 @@ const closeDetailTransaksi = () => {
         text-decoration: none;
         cursor: pointer;
     }
-    a.bantuan{
-        color: black;
-        text-decoration: none;
-        size: 16;
-        font-weight: 400;
 
+    .cara{
+      cursor: pointer;
+    }
+    .search-label {
+      position: relative;
+    }
+
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 15px; /* Sesuaikan posisi gambar */
+        transform: translateY(-50%);
+        width: 15px; /* Sesuaikan lebar gambar */
+        height: auto; /* Sesuaikan tinggi gambar jika diperlukan */
+    }
+
+    .Pencarian {
+        padding-left: 30px; /* Sesuaikan padding kiri agar input tidak tumpang tindih dengan gambar */
+    }
+
+    .bantuan {
+          color: black;
+          text-decoration: none;
+          size: 16;
+          font-weight: 400;
     }
 
     p.total__belanja {
@@ -507,12 +625,7 @@ const closeDetailTransaksi = () => {
         font-size: 16px;
     }
 
-    .detail-transaksi h1{
-        width: 671px;
-        height: 512px;
-        margin-top: 318px;
-        margin-bottom: 304px;
-    }
+    /* popup1 */
 
     .popup {
         display: flex;
@@ -528,10 +641,6 @@ const closeDetailTransaksi = () => {
         z-index: 999; 
     }
 
-    .popup-content h1 {
-        margin-top: 0;
-    }
-
     .popup-content {
         background-color: #fefefe;
         border-radius: 10px;
@@ -540,32 +649,37 @@ const closeDetailTransaksi = () => {
         height: 512px;
         overflow-x: auto; 
         position: relative; 
-        overflow-x: hidden;
+        overflow-y: hidden;
+        max-height: calc(100vh - 100px);
+    }
+
+    .popup-content .isi {
+      overflow-y: auto; 
+      max-height: calc(100vh - 340px);
     }
 
     .close {
         color: #aaa;
-        position: absolute; 
-        right: 10px; 
-        
         font-size: 28px;
         font-weight: bold;
         cursor: pointer;
-    }   
+    }
+    
 
     .close:hover,
     .close:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
+
     }
 
     .isi{
-      padding: 20px;
-      margin-left: 20px;
+      padding: 30px;
+      margin-left: 15px;
     }
 
-    .isi label{
+    small.label-card1{
       padding-left: 8px;
       padding-right: 8px;
       padding-top: 4px;
@@ -582,21 +696,23 @@ const closeDetailTransaksi = () => {
       grid-template-columns: 2 200px;
     }
     .header {
-        width: 671px;
-        height: 70px;
         box-shadow: 0  1px rgba(0, 0, 0, 0.2);
+        background: white;
+        position: sticky;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 3.2rem;
     }
     .header h1{
-      padding: 20px;
-      margin-left: 25px;
       font-weight: 700;
+      z-index: 1000;
     }
 
     .Icon{
       width: 20px;
       height: 20px;
-      margin-top: 25px;
-      margin-right: 50px;
     }
 
     .info__details {
@@ -604,14 +720,262 @@ const closeDetailTransaksi = () => {
         flex-direction: column;
     }
 
+    .flex-container{
+      padding-top: 15px;
+    }
+
     .flex-container > div {
       display: flex;
       justify-content: space-between;
+      padding-bottom: 10px;
     }
 
     .flex-container h6{
       font-weight: 400;
-      size: 20px;
+      font-size: 20px;
     }
+
+    .flex-container p{
+      font-weight: 700;
+      font-size: 16px;
+
+    }
+
+    .detail-tiket{
+      align-items: center;
+    }
+    .detail-tiket h6{
+      font-size: 20px;
+      font-weight: 700;
+      padding-top: 25px;
+    }
+
+    .detail-tiket img{
+      width: 158px;
+      height: 71.72px;
+      margin: 18px;
+    }
+
+    .info-detail-tiket p,
+    .info-detail-tiket label {
+      display: flex;
+      flex-direction: column ;
+    }
+
+    .info-detail-tiket {
+      display: flex;
+      flex-direction: column; /* Menyusun elemen dalam satu kolom */
+    }
+
+    .info-detail-tiket p,
+    .info-detail-tiket label {
+      margin-right: auto; /* Memindahkan teks ke pinggir kanan */
+    }
+
+    .info-detail-tiket label{
+      background-color: white;
+      color: hsl(0, 0%, 0%);
+      line-height: 22px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .info-detail-tiket p{
+      line-height: 24px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .detail-tiket{
+      display: flex;
+    }
+
+    h6.detailtiket{
+      font-size: 20px;
+      font-weight: 700;
+      padding-top: 30px;
+    }
+
+    .all-tiket img{
+      width: 13.75px;
+      height: 7.5px;
+    }
+
+    .all-tiket small{
+      color: #DAA520;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .info-pembayaran {
+      font-size: 20px;
+      font-weight: 700;
+      padding-top: 35px;
+      padding-bottom: 20px;
+    }
+
+    .status-pembayaran{
+      display: flex;
+      gap: 20rem;
+      padding-bottom: 8px;
+    }
+
+    .status-pembayaran h6{
+      font-size: 20px;
+      font-weight: 400;
+      padding-right: 20px;
+    }
+
+    .status-pembayaran small{
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      background-color: #A9FFD6;
+      color: #149B5A;
+      border-radius: 5px;
+      font-size: 12px; 
+      font-weight: 400;
+    }
+
+    .pemesan {
+      display: flex;
+      gap: 15.8rem;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .pemesan h6{
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .pemesan label{
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .pemesan p{
+      font-size: 16px;
+      font-weight: 700;
+
+    }
+
+    .metode-pmbayaran{
+      display: flex;
+      gap: 14.5rem;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .metode-pmbayaran h6{
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .metode-pmbayaran p {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .total-harga-3-Tiket{
+      display: flex;
+      gap: 20rem;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .total-harga-3-Tiket h6{
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .total-harga-3-Tiket p{
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .biaya-layanan{
+      display: flex;
+      gap: 23.5rem;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .biaya-layanan h6{
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .biaya-layanan p {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .line {
+      height: 2px;
+      width: 100%; 
+      margin: 20px auto;
+      background-image: repeating-linear-gradient(to right, #D9D9D9, #D9D9D9 7px, transparent 5px, transparent 10px); 
+    }
+
+    .total-biaya{
+      display: flex;
+      gap: 24.5rem;
+    }
+    .total-biaya h6{
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    .total-biaya p{
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    /* popup2 */
+
+    .bjb {
+      display: flex;
+      gap: 14.5rem;
+      font-size: 30px;
+    }
+
+    .bjb img{
+      width: 57.24px;
+      height: 28.05px;
+    }
+
+    .nomor-virtual-account{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .nva h6{
+      font-size: 24px;
+      font-weight: 400;
+      color: #5E5E5E;
+    }
+
+    .nva h5{
+      font-size: 24px;
+    }
+
+    .clipboard img{
+      width: 32px;
+      height: 32px;
+    }
+
+    .clipboard p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.clipboard img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
     </style>
     
