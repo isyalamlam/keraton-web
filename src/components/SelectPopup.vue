@@ -32,7 +32,7 @@ defineExpose({
 			<h5> Pilih Pembayaran </h5>
 		</div>
 		<div class="icon-close">
-			<span @click="closePopup"><img src="../assets/Frameclose.svg"></span>
+			<span @click="closePopup"><img src="../assets/svg/Frameclose.svg"></span>
 		</div>
 	</div>
 	<div class="kredit">
@@ -40,7 +40,7 @@ defineExpose({
 			<h6> Kartu Kredit/Debit </h6>
 		</div>
 		<div class="icon-kredit">
-			<span @click="showkreditPopup"><img src="../assets/FrameVector-Right.svg"></span>
+			<span @click="showkreditPopup"><img src="../assets/svg/FrameVector-Right.svg"></span>
 		</div>
 	</div>
 	<div class="transfer">
@@ -49,10 +49,10 @@ defineExpose({
 	</div>
 	<div class="bank">
 		<div class="logo-bank">
-			<img src="../assets/logobank.svg" alt="" class="logo-bjb">
+			<img src="../assets/svg/logobank.svg" alt="" class="logo-bjb">
 			<p>Bank BJB</p>
 		</div>
-		<span @click="toTransfer"><img src="../assets/FrameVector-Right.svg"></span>
+		<span @click="toTransfer"><img src="../assets/svg/FrameVector-Right.svg"></span>
 	</div>
 	</div>
   </div>
