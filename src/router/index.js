@@ -7,10 +7,14 @@ import AreaKeraton from '../views/AreaKeraton.vue'
 import Museum from '../views/Museum.vue'
 import CheckoutKeraton from '../views/CheckoutKeraton.vue'
 import Checkout from '../views/CheckOut.vue'
+<<<<<<< Updated upstream
 import PilihanPaket from '../views/PilihanPaket.vue'
 import CheckOut from '../views/CheckOut.vue'
 import BeranDa from '../views/BeranDa.vue'
 
+=======
+import EventGratis from '../views/EventGratis.vue'
+>>>>>>> Stashed changes
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,6 +58,7 @@ const router = createRouter({
     {
       path: '/checkout',
       name: 'checkout',
+<<<<<<< Updated upstream
       component: CheckOut
     },
     {
@@ -67,6 +72,15 @@ const router = createRouter({
       component: HistoryTransaksi
 
     },
+=======
+      component: Checkout
+    },
+    {
+      path: '/eventgratis',
+      name: 'eventgratis',
+      component: EventGratis
+    }
+>>>>>>> Stashed changes
   ]
 })
 
