@@ -1,3 +1,5 @@
+<!-- navbar.vue -->
+
 <template>
   <div class="navbar">
     <div class="navbar-left">
@@ -7,23 +9,26 @@
     <div class="navbar-right">
       <nav>
         <ul>
-          <li class="short"><a href="/beranda">Beranda</a></li>
-          <li class="short"><a href="/sejarahkeraton">Sejarah</a></li>
-          <li class="short"><a href="#">Booking</a></li>
-          <li class="short"><a href="#">Objek Wisata</a></li>
-          <button @click="getTickets" style="border-radius: 5px;border: none; background-color: #123B32; color: white;width:162px;height: 34px; font-family: 'Raleway'; font-weight: 700; cursor: pointer;">Dapatkan Tiket</button>
+          <li><a href="./components/Beranda.vue">Beranda</a></li>
+          <li><a href="#">Sejarah<div class="dropdown">
+            <DropDown :selectedOption="selectedHistory" :options="historyOptions" @update:selectedOption="selectedHistory = $event" />
+          </div></a></li>
+          <li><a href="#">Booking<div class="dropdown">
+            <DropDown :selectedOption="selectedBooking" :options="bookingOptions" @update:selectedOption="selectedBooking = $event" />
+          </div></a></li>
+          <li><a href="#">Objek Wisata<div class="dropdown">
+            <DropDown :selectedOption="selectedAttraction" :options="attractionOptions" @update:selectedOption="selectedAttraction = $event" />
+          </div></a></li>
+          <li>
+            <button class="btnAcc" @click="getTickets"><img src="../assets/images/avatar.png" alt="Avatar" class="imgAcc" /></button>
+          </li>
         </ul>
       </nav>
     </div>
-    <li v-if="parentSelectedOption">{{ parentSelectedOption.name }}</li>
   </div>
-  <beranda>
-    
-  </beranda>
 </template>
 
 <script>
-
 import DropDown from '../components/DropDown.vue'
 
 export default {
@@ -45,15 +50,12 @@ export default {
         { name: 'Dalem Agung Pakungwati', value: 3 },
         { name: 'Lotus', value: 4 }
       ],
-      bookingOptions: [
-      { name: 'Paket Keraton', value: 1 },
-        { name: 'Tiket Event', value: 2 },
-      ]
+      isLoggedIn: false 
     }
   },
   methods: {
     getTickets() {
-      console.log('Dapatkan Tiket', this.parentSelectedOption)
+      console.log('Dapatkan Tiket', this.selectedBooking)
     }
   }
 }
@@ -70,12 +72,41 @@ export default {
   padding: 10px 10px 10px 0px;
   position: relative;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 12px rgba(17, 17, 17, 0.1);
   font-family: 'Raleway', sans-serif;
   width: 100%;
   height: 104px;
 }
-  
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 30px;
+  display: flex; 
+}
+
+nav ul li:last-child {
+  margin-right: 0; 
+}
+
+.btnAcc {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.imgAcc {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
 .navbar-left {
   display: flex;
   align-items: center;
@@ -134,8 +165,32 @@ nav ul li button:hover {
 }
 
 
-.short {
-  margin-top: 8px;
-  
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  padding: 5px 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  gap: 9px;
+position: absolute;
+padding: 11px 40px 11px 14px;
+width: auto;
+height: auto;
+top: 78px;
+background: #FFFFFF;
+border: 1px solid #123B32;
+border-radius: 10px;
+
+}
+
+.dropdown-menu li:hover {
+  background-color: #f2f2f2;
 }
 </style>
