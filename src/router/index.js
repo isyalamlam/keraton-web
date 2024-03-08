@@ -6,12 +6,13 @@ import HistoryTransaksi from '../views/HistoryTransaksi.vue'
 import AreaKeraton from '../views/AreaKeraton.vue'
 import Museum from '../views/Museum.vue'
 import CheckoutKeraton from '../views/CheckoutKeraton.vue'
+import Checkoutlebihdari1 from '../views/CheckOutlebihdari1.vue'
 import Checkout from '../views/CheckOut.vue'
 import PilihanPaket from '../views/PilihanPaket.vue'
-import CheckOut from '../views/CheckOut.vue'
 import BeranDa from '../views/BeranDa.vue'
 import Checkoutlebihdari1 from '../views/CheckOutlebihdari1.vue'
 
+import EventGratis from '../views/EventGratis.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,15 +44,24 @@ const router = createRouter({
       component: Museum
     },
     {
- 
       path: '/checkoutkeraton',
       name: 'checkoutkeraton',
       component: CheckoutKeraton
     },
     {
+      path: '/pilihanpaket',
+      name: 'pilihanpaket',
+      component: PilihanPaket
+    },
+    {
       path: '/checkout',
       name: 'checkout',
-      component: CheckOut
+      component: Checkout
+    },
+    {
+      path: '/checkoutlebihdari1',
+      name: 'checkoutlebihdari1',
+      component: Checkoutlebihdari1
     },
     {
       path: '/beranda',
@@ -62,13 +72,11 @@ const router = createRouter({
       path: '/historytransaksi',
       name: 'historytransaksi',
       component: HistoryTransaksi
-
     },
     {
-      path: '/checkoutlebihdari1',
-      name: 'checkoutlebihdari1',
-      component: Checkoutlebihdari1
-
+      path: '/eventgratis',
+      name: 'eventgratis',
+      component: EventGratis
     }
   ]
 })

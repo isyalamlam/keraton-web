@@ -1,7 +1,8 @@
 <template>
     <body>
-      
-    <header>
+      <nav>
+  <navbar :background-color="'transparent'" :text-color="'white'" :button-color="'#123B32'" />
+</nav>
   
   
       <div class="image-container">
@@ -18,13 +19,15 @@
       </div>
       <p class="bawah-destinasi">Menawarkan berbagai hal menarik untuk dilihat dan dipelajari, mulai dari sejarah, arsitektur, hingga budaya.</p>
   
-    <!-- <div class="image-slider">
-    <img alt="" class="imageSlider" src="./assets/image 22.png" />
-    <img alt="" class="imageSlider" src="./assets/image 23.png" />
-    <img alt="" class="imageSlider" src="./assets/image 24.png" />
-    <img alt="" class="imageSlider" src="./assets/image 25.png" />
-    </div> -->
-    
+      <div class="slider">
+    <div v-for="(card, index) in cards" :key="index" :id="'card-' + index" :class="{ cardd: true, active: index === currentIndex }">{{ card.content }}</div>
+  </div>
+
+    <div class="button-container">
+      <button class="button-slider" @click="prevCard">&lt;</button>
+      <div class="bulet" v-for="(bullet, index) in bullets" :key="index" :class="{ active: index === currentIndex }"></div>
+      <button class="button-slider" @click="nextCard">&gt;</button>
+    </div>    
   
   <div class="Fasilitas">
     <p>Fasilitas</p>
@@ -122,20 +125,61 @@
       </div>
 
   
-  </header>
+  <!-- </header> -->
   </body>
   </template>
+
+<script setup>
+import navbar from "../components/NavBar.vue";
+</script>
   
-  <script setup>
+  <script >
+
     const scrollToContent = () => {
       document.querySelector('.Destinasi').scrollIntoView({ 
         behavior: 'smooth' 
       });    };
   
-      const scrollToContent2 = () => {
-      document.querySelector('.Tourist').scrollIntoView({ 
-        behavior: 'smooth' 
-    });}
+     
+
+    export default {
+  data() {
+    return {
+      cards: [
+      { id: 'card-0' },
+      { id: 'card-1' },
+      { id: 'card-2' },
+      { id: 'card-3' },
+      { id: 'card-4' }
+    ],
+   
+      
+      currentIndex: 3
+    };
+  },
+  computed: {
+    bullets() {
+      return Array(this.cards.length).fill('');
+    }
+  },
+  methods: {
+    prevCard() {
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.cards.length - 1;
+      } else {
+        this.currentIndex--;
+      }
+    },
+    nextCard() {
+      if (this.currentIndex === this.cards.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    }
+  }
+};
+   
   </script>
   
   <style>
@@ -226,11 +270,13 @@ gap: 109px;
   height: 649px;
   top: 5773px;
   left: 55px;
-  margin-top: 4680px;
+  margin-left: 60px;
+  border-radius: 30px;
+  margin-top: 328px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
-  background-image: url(../assets/images/Rectangle63.png);
+  background-image: url(../assets/images/image33.png);
   
 
   }
@@ -244,7 +290,7 @@ gap: 109px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
-  background-image: url(../assets/images/Rectangle58.png);
+  background-image: url(../assets/images/card2.png);
   position: absolute;
   }
   .card3{
@@ -259,7 +305,7 @@ gap: 109px;
   position: absolute;
   }
   .card3{
-    background-image: url(../assets/images/Rectangle61.png);
+    background-image: url(../assets/images/card3.png);
 
   }
 
@@ -271,7 +317,7 @@ gap: 109px;
   margin-top: 1600px;
   border-radius: 30px;
   filter: opacity(70%);
-  background-image: url(../assets/images/Rectangle62.png);
+  background-image: url(../assets/images/card4.png);
   background-size: cover;
   position: absolute;
   }
@@ -391,8 +437,8 @@ gap: 109px;
       position: absolute;
       width: 360px;
       height: 48px;
-      top: 690px;
-      left: 489px;
+      top: 490px;
+      left: 499px;
       font-size: 16px;
       line-height: 24px;
       color: white;
@@ -402,8 +448,8 @@ gap: 109px;
       position: absolute;
       width: 362px;
       height: 48px;
-      top: 690px;
-      left: 849px;
+      top: 490px;
+      left: 889px;
       font-size: 16px;
       line-height: 24px;
       color: white;
@@ -579,6 +625,7 @@ gap: 109px;
    width:431px;
    height: 58px;
    border-radius: 10px;
+   border: none;
    background-color: #123B32;
    color: #FFFFFF;
    text-align: left;
@@ -593,6 +640,7 @@ gap: 109px;
    width:431px;
    height: 58px;
    border-radius: 10px;
+   border: none;
    background-color: #123B32;
    color: #FFFFFF;
    text-align: left;
@@ -607,4 +655,4 @@ gap: 109px;
   }
   
   </style>
-  
+  ../components/NavBar.vue

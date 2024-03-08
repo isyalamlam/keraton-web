@@ -280,4 +280,10 @@ b {
   height: 69px;
   gap: 16px;
 }
+
+@media screen and (max-width: 600px) {
+  .image {
+    display: none
+  }
+}
 </style>

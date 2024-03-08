@@ -803,9 +803,9 @@ const kurang = () => {
 }
 const tanggalSekarang = new Date().toISOString().substr(0, 10);
 
-const focusInput = () => {
-  const input = document.getElementById('tanggalPemesanan').focus();
-  input.focus();
-  input.click();
-}
-</script>
+  const focusInput = () => {
+    const input = document.getElementById('tanggalPemesanan').focus();
+    input.focus();
+    input.click();
+  }
+  </script>../components/NavBar.vue

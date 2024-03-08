@@ -59,7 +59,16 @@ const submitForm = () => {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-.highlight{
+@media screen and (min-width: 601px) {
+
+.desktop {
+  display: block;
+}
+
+.handphone {
+  display: none;
+}
+    .highlight{
   text-decoration: none;
 }
 
@@ -232,4 +241,164 @@ h1{
   width: 98px;
   height: 59px;
 }
+}
+/*-------------------------------hp------------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+
+  .handphone {
+    display: block;
+  }
+  .highlight{
+  text-decoration: none;
+}
+
+h1{
+  margin-bottom: 73px;
+}
+
+b{
+  font-weight: 1000;
+}
+.error {
+  color: #FF5656;
+  font-size: 12px; 
+  margin-top: 5px; 
+}
+
+.error-border {
+  border: 2px solid #FF5656;
+}
+
+.error-message {
+  color: #FF5656;
+  font-size: 12px;
+  margin-top: 8px; 
+  font-weight: 700;
+}
+
+
+body {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway';
+  width: fit-content;
+  height: fit-content;
+  top: 622px;
+  left: 970px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Raleway';
+}
+
+.form {
+  height: 354px;
+  width: 418px;
+  margin: auto;
+  margin-top: 169px;
+  justify-content: center;
+}
+
+.text{
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  font-family: 'Raleway';
+  margin-bottom: 4px;
+}
+
+.box {
+  background-color: #f0f0f0; 
+  border-radius: 8px;
+  width: 328px;
+  height: 40px;
+  margin-bottom: 38px;
+}
+
+.box input {
+  border: none; 
+  outline: none; 
+  background: none; 
+  width: 416px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.box input::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  justify-content: center ;
+  top:36px;
+}
+
+.button {
+  background-color: #123B32;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 416px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Raleway';
+}
+
+.signup{
+  font-weight: 400;
+  width: 418px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 38px;
+  font-family: 'Raleway';
+  text-decoration: none;
+}
+
+.highlight{
+  color: #4F3CC9;
+  cursor: pointer;
+}
+
+.terms{
+  font-family: 'Inter';
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #AFAFAF;
+}
+
+.image{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.image h1{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.decor{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.logo{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.logo h5{
+  display: none; /* This will hide the image on screens below 600px */
+}
+}
+
 </style>
