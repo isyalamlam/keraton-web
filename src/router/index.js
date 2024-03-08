@@ -6,7 +6,6 @@ import HistoryTransaksi from '../views/HistoryTransaksi.vue'
 import AreaKeraton from '../views/AreaKeraton.vue'
 import Museum from '../views/Museum.vue'
 import CheckoutKeraton from '../views/CheckoutKeraton.vue'
-import Checkoutlebihdari1 from '../views/CheckOutlebihdari1.vue'
 import Checkout from '../views/CheckOut.vue'
 import PilihanPaket from '../views/PilihanPaket.vue'
 import BeranDa from '../views/BeranDa.vue'
@@ -53,7 +52,7 @@ const router = createRouter({
       name: 'pilihanpaket',
       component: PilihanPaket
     },
-    {
+    { 
       path: '/checkout',
       name: 'checkout',
       component: Checkout
@@ -64,7 +63,7 @@ const router = createRouter({
       component: Checkoutlebihdari1
     },
     {
-      path: '/beranda',
+      path: '/',
       name: 'beranda',
       component: BeranDa
     },
