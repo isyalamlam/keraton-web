@@ -1,29 +1,13 @@
 <template>
+    <nav>
+      <navbar/>
+    </nav>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <div id="app">
     <div class="textAll">
-      <div class="navbar">
-      <div class="navbar-left">
-        <img  alt="icon-aplikasi" src="../assets/images/logo_keraton.png" class="app-icon" />
-        <span class="app-name">Keraton Kesepuhan Cirebon</span>
-      </div>
-      <div class="navbar-right">
-        <nav>
-              <ul>
-                  <li><a href="#">Beranda</a></li>
-                  <li><a href="#">Sejarah</a></li>
-                  <li><a href="#">Booking</a></li>
-                  <li><a href="#">Objek Wisata</a></li>
-                  <button @click="getTickets" class="button1">Dapatkan Tiket</button>
-              </ul>
-          </nav>
-        
-        
-      </div>
-    </div>
       <div class="container">
        <img src="../assets/images/sejarah.jpg" alt="sejarah" class="fotobkg"> 
         <div class="upper">
@@ -157,23 +141,12 @@
         </div>
       </div>
     </div>
-  
-
-   
-  
-        
-          
-        
-  
-  
-    
-  
-  
-  
-  
-  
   </template>
   
+  <script setup>
+import navbar from "../components/NavBar.vue";
+</script>
+
   <script>
   export default {
     data() {
@@ -197,9 +170,6 @@
    
   }
   @media screen and (max-width: 1000px){ 
-     .navbar-right {
-      flex-direction: row;
-     }
      .info1 {
       flex-direction: column;
       text-align: center;

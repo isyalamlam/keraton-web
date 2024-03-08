@@ -1,6 +1,6 @@
 <template>
   <nav>
-      <navbar />
+      <navbar  :background-color="'transparent'" :text-color="'white'" :button-color="'#123B32'" />
     </nav>
       <section class="sec-home" id="section1">
         <div class="container">
@@ -182,8 +182,11 @@
     </section>
   </template>
   
+<script setup>
+import navbar from "../components/NavBar.vue";
+</script>
+
   <script>
-    import navbar from "../components/NavBar.vue";
   export default {
     data() {
       return {
