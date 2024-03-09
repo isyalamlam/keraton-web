@@ -1,6 +1,6 @@
 <script setup>
 import { ref, defineExpose } from 'vue'
-// import KreditPopup from './kreditPopup.vue'
+import KreditPopup from './kreditPopup.vue'
 
 const kreditPopup = ref(null)
 const showPopup = ref(false)
@@ -14,9 +14,9 @@ const closePopup = () => {
   showPopup.value = false
 }
 
-// const showkreditPopup = () => {
-//   kreditPopup.value.showKreditPopup()
-// }
+const showkreditPopup = () => {
+  kreditPopup.value.showKreditPopup()
+}
 
 defineExpose({
   showSelectPopup

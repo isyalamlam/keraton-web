@@ -998,4 +998,3 @@ background-size:cover;
 
 
   </style>
-  ../components/NavBar.vue

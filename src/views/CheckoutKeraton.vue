@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import navbar from '../components/NavBar.vue'
+import Payment from '../components/Pembayaran.vue'
 const count = ref(1)
 const layanan = 2500
 const jasaApp = 1000
@@ -125,11 +126,12 @@ const kurang = () => {
             </div>
           </div>
           <div class="content-5">
-            <div class="met-pembayaran">
+            <payment />
+            <!-- <div class="met-pembayaran">
               <img src="../assets/svg/pil-pembayaran.svg">
               <p class="plh-pembayaran">Pilih Pembayaran</p>
-            </div>
-            <div>
+            </div> -->
+            <!-- <div>
               <button>
                 pop up <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -137,7 +139,7 @@ const kurang = () => {
                     fill="black" />
                 </svg>
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

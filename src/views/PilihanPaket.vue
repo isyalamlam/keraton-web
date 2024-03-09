@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import navbar from '../components/NavBar.vue'
-
+import Payment from '../components/Pembayaran.vue'
 const count = ref(35)
 const layanan = 2500
 const jasaApp = 1000
@@ -163,7 +163,8 @@ onMounted(() => {
             </div>
           </div>
           <div class="content-5">
-            <div class="met-pembayaran">
+            <Payment />
+            <!-- <div class="met-pembayaran">
               <img src="../assets/svg/pil-pembayaran.svg">
               <p class="plh-pembayaran">Pilih Pembayaran</p>
             </div>
@@ -175,7 +176,7 @@ onMounted(() => {
                     fill="black" />
                 </svg>
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -226,6 +227,11 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .trigger{
   width: 24px;
   height: 24px;
