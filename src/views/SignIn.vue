@@ -308,6 +308,7 @@ h1{
   width: 418px;
   margin: auto;
   margin-top: 169px;
+  justify-content: center;
 }
 
 .text{
@@ -321,7 +322,7 @@ h1{
 .box {
   background-color: #f0f0f0; 
   border-radius: 8px;
-  width: 416px;
+  width: 328px;
   height: 40px;
   margin-bottom: 38px;
 }

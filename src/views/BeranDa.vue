@@ -182,8 +182,11 @@
     </section>
   </template>
   
+<script setup>
+   import navbar from "../components/NavBar.vue";
+</script>
+
   <script>
-    import navbar from "../components/NavBar.vue";
   export default {
     data() {
       return {
@@ -280,56 +283,55 @@
     font-size: 24px; 
     color:#FFFD8C;
     position: absolute;
-    left: 530px;
-    top: 280px;
+    left: 41vw;
+    top: 22vw;
   }
   .wlcText2 {
     position: relative;
     font-size: 64px;
-    top: 30px;
+    top: 2vw;
   }
   .btn1 {
-    top: 250px;
-    left: 320px;
+    top: 65%;
+    left: 49,5%;
     position: absolute; 
   }
   .btn1:hover {
     filter: brightness(70%);
   }
   .aboutText {
+    position: absolute;
     text-align: center;
     font-size: 25px; 
     font-family: 'Inria Serif'; 
     color: #DAA520;
-    top: -120px;
-    position: relative;
+    top: 25%;
+    left: 46%;
   }
   
   .ksc2Text {
     text-align: center;
-    top: -110px;
-    position: relative;
+    position: absolute;
+    top: 29%;
     color: #212121;
     font-family: 'Inria Serif', Bold; 
     font-size: 40px;
-    width: 485px;
-    line-height: 40px;
+    width: 31%;
+    left: 34%;
     font-weight: 700;
   }
   
   .sej1Text {
     text-align: center;
     position: absolute;
-    top: 350px;
+    top: 43%;
     font-family: 'Raleway';
-    width: 457px;
+    width: 33%;
+    left: 34%;
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
     color: #212121;
-  
-  
-  
   }
   .sej2Text {
   position: absolute;
@@ -365,33 +367,31 @@ color: #212121;
     font-family: 'Inria Serif'; 
     color: #DAA520;
   position: absolute;
-  width: 153px;
-  height: 30px;
-  left: 600px;
-  top: 60px;
+  width: 35%;
+  left: 32%;
+  top: 6%;
   line-height: 30px;
   }
-  .ksc6Text {
-  position: absolute;
-  width: 485px;
-  height: 96px;
-  left: 440px;
-  top: 90px;
-  font-family: 'Inria Serif';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
-  color: #212121;
-  }
-  .sej3Text {
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  color: #000000;
-  text-align: left;
-  }
+    .ksc6Text {
+    position: absolute;
+    width: 33%;
+    left: 33%;
+    top: 10%;
+    font-family: 'Inria Serif';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    color: #212121;
+    }
+    .sej3Text {
+    position: absolute;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+    text-align: left;
+    }
    .btn2 {
     display: flex;
     flex-direction: row;
@@ -403,34 +403,37 @@ color: #212121;
     left: -5px;
    }
 
-.card1:hover img, .card2:hover img, .card3:hover img {
-  filter: brightness(70%); 
-}
+   .btn2:hover{
+    filter: brightness(70%);
+   }
+  .card1:hover img, .card2:hover img, .card3:hover img {
+    filter: brightness(70%); 
+  }
 
- .card1 img {
-  position: absolute;
-  width: 25%;
-  height: 45%;
-  left: 5%;
-  top: 250px;
-  border-radius: 50px;
- }
+  .card1 img {
+    position: absolute;
+    width: 25%;
+    height: 45%;
+    left: 5%;
+    top: 35%;
+    border-radius: 50px;
+  }
   .card2 img {
   position: absolute;
   width: 31%;
   height: 51%;
   left: 35%;
-  top: 235px;
+  top: 32%;
   border-radius: 50px;
   }
   .card3 img {
-position: absolute;
-width: 25%;
-height: 45%;
-left: 71%;
-top: 250px;
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-border-radius: 50px;
+  position: absolute;
+  width: 25%;
+  height: 45%;
+  left: 71%;
+  top: 35%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  border-radius: 50px;
 
   }
   .title3 {
@@ -482,98 +485,6 @@ border-radius: 50px;
     line-height: 28px;
     color: #000000;
   }
-  
-  .card4 img{
-    position: absolute;
-    width: 342px; 
-    height: 313px; 
-    left: 190px;
-    top: 224px;
-    filter: brightness(70%);
-    border-radius: 10px;
-  }
-  
-  .card5 img {
-    position: absolute;
-    width: 236px; 
-    height: 313px; 
-    left: 589px;
-    top: 224px;
-    border-radius: 10px;
-  }
-  .card6 img {
-    position: absolute;
-    width: 236px; 
-    height: 313px; 
-    left: 880px;
-    top: 224px;
-    border-radius:10px;
-  }
-  .title4 {
-  position: absolute;
-  width: 399.97px;
-  height: 16px;
-  left: 140px;
-  top: 435px;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 32px;
-  color: #FFFFFF;
-  }
-  .subtitle4{
-  position: absolute;
-  text-align: left;
-  width: 340px;
-  height: 48px;
-  left: 205px;
-  top: 465px;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  color: #FFFFFF;
-  }
-  .title5{
-  position: absolute;
-  width: 207px;
-  height: 80px;
-  left: 600px;
-  top: 435px;
-  text-align: left;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 40px;
-  color: #FFFFFF;
-  }
-  .title6 {
-    text-align: left;
-  position: absolute;
-  width: 227px;
-  height: 80px;
-  left: 900px;
-  top: 435px;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 40px;
-  color: #FFFFFF;
-  }
-  .sec5Text {
-  position: absolute;
-  text-align: center;
-  width: 670px;
-  height: 84px;
-  top: 565px;
-  font-family: 'Raleway';
-  font-size: 20px;
-  color: #FFFFFF;
-  }
   .eventText {
     position: absolute;
     text-align: center;
@@ -594,6 +505,97 @@ border-radius: 50px;
     line-height: 48px;
     color: #FFFFFF;
   }
+
+  .card4 img{
+    position: absolute;
+    width: 26%; 
+    height: 41%; 
+    left: 14%;
+    top: 29%;
+    filter: brightness(70%);
+    border-radius: 10px;
+  }
+  
+  .card5 img {
+    position: absolute;
+    width: 18%; 
+    height: 41%; 
+    left: 43%;
+    top: 29%;
+    border-radius: 10px;
+  }
+  .card6 img {
+    position: absolute;
+    width: 18%; 
+    height: 41%; 
+    left: 65%;
+    top: 29%;
+    border-radius: 10px;
+  }
+  .title4 {
+  position: absolute;
+  width:40%;
+  left: 6%;
+  top: 56%;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+  color: #FFFFFF;
+  }
+  .subtitle4{
+  position: absolute;
+  text-align: left;
+  width: 25%;
+  left: 16%;
+  top: 61%;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  }
+  .title5{
+  position: absolute;
+  width: 15%;
+  height:10%;
+  left: 44%;
+  top: 57%;
+  text-align: left;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  }
+  .title6 {
+  text-align: left;
+  position: absolute;
+  width: 15%;
+  height:10%;
+  left: 66%;
+  top: 57%;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  }
+  
+  .sec5Text {
+  position: absolute;
+  text-align: center;
+  width: 50%;
+  height: 10%;
+  top: 73%;
+  font-family: 'Raleway';
+  font-size: 20px;
+  color: #FFFFFF;
+  }
   .btnViewMore {
   display: flex;
   flex-direction: row;
@@ -601,37 +603,37 @@ border-radius: 50px;
   padding: 5px;
   gap: 10px;
   position: absolute;
-  width: 200px;
-  height: 50px;
-  left: 578px;
-  top: 655px;
+  width: 15%;
+  height: 7%;
+  left: 43%;
+  top: 85%;
   }
   .btnViewMore:hover {
     filter:brightness(70%);
   }
   .faqText {
-    position: relative;
+    position: absolute;
     font-family: 'Inria Serif';
     font-size: 25px;
-    top: -170px;
+    top: 2vw;
     text-align: center;
     color:#D9A520;
   }
   .tanyaText{
     position: absolute;
-    width: 300px;
+    width: 21%;
     font-family: 'Inria Serif';
     font-style: normal;
     font-size: 25px;
     text-align: center;
     font-weight: 700;
     color:#212121;
-    top: 50px;
-    left: 525px;
+    top:5vw;
+    left: 41vw;
   }
   .faq {
     position: relative;
-    top: -10px;
+    top: 1vw;
   }
   .accordion {
     display: block;
@@ -874,4 +876,4 @@ border-radius: 50px;
   left: 1068px;
   top: 693px;
   }
-  </style>../components/navBar.vue
+  </style>

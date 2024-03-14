@@ -8,9 +8,9 @@ import Museum from '../views/Museum.vue'
 import CheckoutKeraton from '../views/CheckoutKeraton.vue'
 import Checkout from '../views/CheckOut.vue'
 import PilihanPaket from '../views/PilihanPaket.vue'
-import CheckOut from '../views/CheckOut.vue'
 import BeranDa from '../views/BeranDa.vue'
-
+import Checkoutlebihdari1 from '../views/CheckOutlebihdari1.vue'
+import EventGratis from '../views/EventGratis.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,13 +51,13 @@ const router = createRouter({
       name: 'pilihanpaket',
       component: PilihanPaket
     },
-    {
+    { 
       path: '/checkout',
       name: 'checkout',
-      component: CheckOut
+      component: Checkout
     },
     {
-      path: '/beranda',
+      path: '/',
       name: 'beranda',
       component: BeranDa
     },
@@ -65,8 +65,17 @@ const router = createRouter({
       path: '/historytransaksi',
       name: 'historytransaksi',
       component: HistoryTransaksi
-
     },
+    {
+      path: '/eventgratis',
+      name: 'eventgratis',
+      component: EventGratis
+    },
+    {
+      path: '/checkoutlebihdari1',
+      name: 'checkoutlebihdari1',
+      component: Checkoutlebihdari1
+    }
   ]
 })
 

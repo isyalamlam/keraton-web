@@ -1,30 +1,17 @@
 <template>
+    <!-- <nav>
+      <navbar/>
+    </nav> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <div id="app">
     <div class="textAll">
-      <div class="navbar">
-      <div class="navbar-left">
-        <img  alt="icon-aplikasi" src="../assets/images/logo_keraton.png" class="app-icon" />
-        <span class="app-name">Keraton Kesepuhan Cirebon</span>
-      </div>
-      <div class="navbar-right">
-        <nav>
-              <ul>
-                  <li><a href="#">Beranda</a></li>
-                  <li><a href="#">Sejarah</a></li>
-                  <li><a href="#">Booking</a></li>
-                  <li><a href="#">Objek Wisata</a></li>
-                  <button @click="getTickets" class="button1">Dapatkan Tiket</button>
-              </ul>
-          </nav>
-        
-        
-      </div>
-    </div>
-      <div class="container">
+    <nav>
+      <navbar />
+    </nav>
+      <div class="800ner">
        <img src="../assets/images/sejarah.jpg" alt="sejarah" class="fotobkg"> 
         <div class="upper">
          {{ uppertext }}
@@ -157,147 +144,47 @@
         </div>
       </div>
     </div>
-  
-
-   
-  
-        
-          
-        
-  
-  
-    
-  
-  
-  
-  
-  
   </template>
   
+  <script setup>
+import navbar from "../components/NavBar.vue";
+</script>
+
   <script>
+  import navbar from '../components/NavBar.vue';
   export default {
     data() {
       return {
         uppertext: 'Warisan Leluhur Cirebon',
         uppertext2: 'Mengenal Lebih Dekat dengan Sejarah Keraton',
-      
+        
     
       };
+      
+    },
+    components: {
+      navbar
     }
   };
   
   </script>
   
   <style scoped>
+  
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  
-   
-  }
-  @media screen and (max-width: 1000px){ 
-     .navbar-right {
-      flex-direction: row;
-     }
-     .info1 {
-      flex-direction: column;
-      text-align: center;
-      gap:5rem;
-     }
-     .upper {
-      font-size: 100px;
-     }
-     .footer-col {
-      flex-direction: column;
-     }
-     .footer-col-2 , .footer-col-3 {
-      padding-left: 28px;
-     }
-     .footer-col-4 {
-     padding: 0 0 0 0px;
-     text-align: center;
-     width: auto;
-     }
-   
-  }
-  .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0px 10px 0px;
-  box-shadow: 0 20px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  background-color: white;
-  width: 100%;
-  font-family: 'Raleway', sans-serif;
-  
-   
-  }
-  .navbar-right {
-  
-   margin-left: 21.5em;
-   width: 100%;
-  }
-  .navbar-left {
-    display: flex;
-    align-items: center;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    width: 217px;
-    height: 84px;
-  
   }
   
-  .app-icon {
-  position: absolute;
-  width: 68px;
-  height: 70.62px;
-  left: 88px;
-  top: 16.69px;
-  
-  }
-  
-  .app-name {
-   
-  position: absolute;
-  width: 139px;
-  height: 84px;
-  left: 166px;
-  top: 10px;
-  color: black;
-  font-size: 20px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  nav ul li {
-    margin-right: 30px;
-  }
-  nav ul li a,
-  nav ul li button {
-    display: block;
-    color: #000000;
-    background-color: transparent;
-    border: none;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 5px 25px;
-    font-size: 16px;
-    text-decoration: none; 
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  nav ul li a:hover,
-  nav ul li button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+  @media only screen and (max-width: 768px) {
+
+  .fotobkg {
+      width: 40%;
+    }
+}
+  @media screen and (max-width: 400px) {
+    
   }
   .button {
    width:431px;
@@ -315,43 +202,22 @@
    border: none;
 
   }
-  .button1 {
-   font-family:'Raleway';
-   font-weight: 700; 
-   border-radius: 5px; 
-   width: 162px; 
-   height: 34px;
-   background-color: #123B32; 
-   color: #ffffff;
-   border: none;
-   
-  }
   .textAll {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    color: #212121;
-  
-  
-  
-    
+    color: #212121;  
   }
 
   body  {
     margin: 0;
     padding: 0;
-    width:100%;
-    overflow-x: hidden;
-
-   
-  }
-  .fotoinfo1 {
-    width:483px;
-    height: 445px;
+    overflow-x: hidden; 
   }
   .fotobkg {
     width:100%;
+    height: auto;
   }
   .upper{
     position: absolute;
@@ -359,7 +225,7 @@
     margin-left:50%;
     transform: translate(-50%, -50%);
     color: #FAE084;
-    font-size: 24px;
+    font-size: 2.4vw;
   
   }
   .upper-2 {
@@ -368,7 +234,7 @@
       margin-left:50%;
       transform: translate(-50%, -50%);
       color: #FFF6E0;
-      font-size: 64px;
+      font-size: 5vw;
       font-weight:400;
       width: 60%;
       text-align: center;
@@ -408,8 +274,8 @@
     display: flex;
     align-items: center;
     margin-top: 157px;
-    width:1064px;
-    margin-left: 30px;
+    width:auto;
+    margin-left: vw;
   
     
   }
@@ -577,8 +443,11 @@
    list-style-type: none;
  }
  .footer-col {
-   display: flex;
- }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
  .footer-col h3 {
    font-size: 30px;
    font-weight: 40px;
@@ -589,6 +458,7 @@
 .footer-col-1 {
    
    margin-left: 88px;
+   width: 20vw;
    
 }
 

@@ -1,8 +1,10 @@
 <template>
     <body>
-      
-    <header>
-  
+      <nav>
+  <navbar :background-color="'transparent'" :text-color="'white'" :button-color="'#123B32'" />
+</nav>
+
+     
   
       <div class="image-container">
         <img alt="Area Keraton Image" class="image" src="../assets/images/image20.png" />
@@ -17,14 +19,18 @@
        <p> Destinasi wisata yang <span class="bold">wajib</span> dikunjungi</p> 
       </div>
       <p class="bawah-destinasi">Menawarkan berbagai hal menarik untuk dilihat dan dipelajari, mulai dari sejarah, arsitektur, hingga budaya.</p>
-  
-    <!-- <div class="image-slider">
-    <img alt="" class="imageSlider" src="./assets/image 22.png" />
-    <img alt="" class="imageSlider" src="./assets/image 23.png" />
-    <img alt="" class="imageSlider" src="./assets/image 24.png" />
-    <img alt="" class="imageSlider" src="./assets/image 25.png" />
-    </div> -->
+      
     
+      <div class="slider">
+    <div v-for="(card, index) in cards" :key="index" :id="'card-' + index" :class="{ cardd: true, active: index === currentIndex }">{{ card.content }}</div>
+  </div>
+
+    <div class="button-container">
+      <button class="button-slider" @click="prevCard">&lt;</button>
+      <div class="bulet" v-for="(bullet, index) in bullets" :key="index" :class="{ active: index === currentIndex }"></div>
+      <button class="button-slider" @click="nextCard">&gt;</button>
+    </div>
+ 
     <div class="Tourist">
        <p> Top <span class="bold">Tourist</span> attraction</p> 
        <a class="arrow-down2" @click="scrollToContent2"><img src="../assets/images/Frame.svg"></a>
@@ -174,12 +180,18 @@
       </div>
 
   
-  </header>
+
   </body>
   </template>
   
   <script setup>
-    const scrollToContent = () => {
+import navbar from "../components/NavBar.vue";
+</script>
+
+
+  <script >
+
+const scrollToContent = () => {
       document.querySelector('.Destinasi').scrollIntoView({ 
         behavior: 'smooth' 
       });    };
@@ -188,6 +200,49 @@
       document.querySelector('.Tourist').scrollIntoView({ 
         behavior: 'smooth' 
     });}
+
+export default {
+  data() {
+    return {
+      cards: [
+        { id: 'card-0' },
+        { id: 'card-1' },
+        { id: 'card-2' },
+        { id: 'card-3' },
+        { id: 'card-4' }
+      ],
+      currentIndex: 2 // Set currentIndex untuk menunjuk ke tengah awalnya
+    };
+  },
+  computed: {
+    bullets() {
+      return Array(this.cards.length).fill('');
+    }
+  },
+  methods: {
+    prevCard() {
+      // Cek apakah currentIndex adalah 0, jika ya, geser ke kartu terakhir
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.cards.length - 1;
+      } else {
+        this.currentIndex--;
+      }
+    },
+    nextCard() {
+      // Cek apakah currentIndex adalah kartu terakhir, jika ya, geser ke kartu pertama
+      if (this.currentIndex === this.cards.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    }
+  }
+};
+
+
+
+	
+
   </script>
   
   <style>
@@ -304,6 +359,19 @@ position: absolute;
   top: 4454px;
   left: 54px;
   border-radius: 9.2px;
+  margin-top: 200px;
+  margin-left: 10px;
+  }
+
+  iframe{
+    width: 639.7px;
+  height: 781.85px;
+  top: 4454px;
+  left: 54px;
+  border-radius: 9.2px;
+  margin-top: -135px;
+  margin-left: 600px;
+  position: absolute;
   }
   
   .Fasilitas{
@@ -349,7 +417,7 @@ position: absolute;
   height: 649px;
   top: 5773px;
   left: 55px;
-  margin-top: 1560px;
+  margin-top: 335px;
   margin-left: 60px;
   border-radius: 30px;
   filter: opacity(70%);
@@ -527,7 +595,7 @@ position: absolute;
       width: 362px;
       height: 48px;
       top: 490px;
-      left: 849px;
+      left: 889px;
       font-size: 16px;
       line-height: 24px;
       color: #ffffff;
@@ -647,7 +715,7 @@ position: absolute;
   }
   .Isi-Dalem{
       width: 421.33px;
-      height: 100px;
+      height: 120px;
       top: 2393px;
       left: 158px;
       margin-left: 20px;
@@ -807,6 +875,7 @@ position: absolute;
    width:431px;
    height: 58px;
    border-radius: 10px;
+   border: none;
    background-color: #123B32;
    color: #FFFFFF;
    text-align: left;
@@ -817,6 +886,115 @@ position: absolute;
    line-height: 28px;
    font-family: "Raleway";
   }
+  .button-Kunjungan {
+   width:300px;
+   height: 40px;
+   border-radius: 10px;
+   background-color: #123B32;
+   color: #FFFFFF;
+   text-align: left;
+   padding-left: 22px;
+   font-size: 20px;
+   font-weight: 800;
+   margin-top: 250px;
+   margin-left: 800px;
+   line-height: 28px;
+   font-family: Raleway;
+   position: absolute;
+   border: none;
+   cursor: pointer;
+  }
   
+  .slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardd{
+    width: 255.72px;
+    position: relative;
+    height: 414px;
+    backdrop-filter: blur(20px);
+    background-color: #ccc;
+    margin: 0 10px;
+    margin-top: 50px;
+    border: none;   
+    justify-content: center;
+    padding-top: 90px;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    background-size: cover;
+}
+
+#card-0{
+  background: url(../assets/images/image 23.png);
+  background-size:cover;
+
+}
+
+#card-1{
+  background: url(../assets/images/image 24.png);
+background-size:cover;
+}#card-2{
+  background: url(../assets/images/image 25.png);
+  background-size:cover;
+
+}#card-3{
+  background: url(../assets/images/image 22.png);
+  background-size:cover;
+
+}#card-4{
+  background: url(../assets/images/image 33.png);
+  background-size:cover;
+
+}
+
+.cardd.active{
+    transform: translate(0px ,-20px);
+    z-index: 9999;
+    box-shadow: 0 0 10px #212121;
+}
+
+.button-container{
+    left: 0;
+    margin-top: 30px;
+    left: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button-slider{
+    width: 32px;
+    height: 35px;
+    background:transparent;
+    color: #212121;
+    font-weight: bold;
+    border: 3px solid #212121;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.bulet{
+    width: 6px;
+    height: 2px;
+    border-radius: 20%;
+    background-color: #ccc;
+}
+.bulet.active{
+    background-color: rgb(0, 0, 0);
+}
+.button-slider.active{
+    background-color: rgb(0, 0, 0);
+    color: blue;
+}
+
+
   </style>
-  

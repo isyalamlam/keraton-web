@@ -8,17 +8,17 @@
     <div class="navbar-right">
       <nav>
         <ul>
-          <li class="short"><a href="./components/Beranda.vue">Beranda</a></li>
-          <li class="short"><a href="#">Sejarah<div class="dropdown">
+          <li @click="keBeranda" class="short"><a href="/">Beranda</a></li>
+          <li @click="keSejarah" class="short"><a href="#">Sejarah<div class="dropdown">
             <DropDown :selectedOption="selectedHistory" :options="historyOptions" @update:selectedOption="selectedHistory = $event" />
           </div></a></li>
-          <li class="short"><a href="#">Booking<div class="dropdown">
+          <li @click="keBooking" class="short"><a href="#">Booking<div class="dropdown">
             <DropDown :selectedOption="selectedBooking" :options="bookingOptions" @update:selectedOption="selectedBooking = $event" />
           </div></a></li>
           <li class="short"><a href="#">Objek Wisata<div class="dropdown">
             <DropDown :selectedOption="selectedAttraction" :options="attractionOptions" @update:selectedOption="selectedAttraction = $event" />
           </div></a></li>
-          <button @click="getTickets" style=" margin-top: 10px ;border-radius: 5px;border: none; background-color: #123B32; color: white;width:162px;height: 34px; font-family: 'Raleway'; font-weight: 700;">Dapatkan Tiket</button>
+          <button @click="keSignIn" style=" margin-top: 10px ;border-radius: 5px;border: none; background-color: #123B32; color: white;width:162px;height: 34px; font-family: 'Raleway'; font-weight: 700; cursor: pointer;">Dapatkan Tiket</button>
         </ul>
       </nav>
     </div>
@@ -59,21 +59,27 @@ export default {
     }
   },
   methods: {
-    getTickets() {
+    keSignIn() {
       console.log('Dapatkan Tiket', this.parentSelectedOption)
-    }
+      this.$router.push('/signin');
+    },
+    keBeranda() {
+      this.$router.push('/');
+    },
+    keSejarah() {
+      this.$router.push('/sejarahkeraton');
+    },
+
   }
 }
 </script>
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 .navbar {
   display: flex;
   flex-direction: row;
-  
   align-items: center;
   padding: 10px 10px 10px 0px;
   position: relative;
@@ -84,12 +90,9 @@ export default {
   height: 104px;
 }
 .navbar-right {
-  
-  margin-left: 21.5em;
+  margin-left: 24em;
   width: 50%;
   margin-top : 28px;
-  
-  
  }
 .navbar-left {
   display: flex;
@@ -126,8 +129,6 @@ nav ul {
   padding: 0;
   display: flex;
 }
-
-
 
 nav ul li a,
 nav ul li button {
@@ -182,8 +183,6 @@ border: 1px solid #123B32;
 border-radius: 10px;
 
 }
-
-  
 
 .dropdown menu li:hover {
   background-color: #f2f2f2;
