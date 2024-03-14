@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import navbar from '../components/navBar.vue'
+import navbar from '../components/NavBar.vue'
 
 const count = ref(35)
 const layanan = 2500

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-
+import navbar from '../components/NavBar.vue'
 
 
 const detail = ref(false)
@@ -21,24 +21,11 @@ const closeMenungguPembayaran = () => {
 </script>
 
 <template>
+  <nav class="navbar">
+    <navbar />
+  </nav>
   <div class="projekk">
-    <div class="navbar">
-            <div class="navbar-left">
-              <img  alt="icon-aplikasi" src="../assets/svg/logo_keraton 3 (1).svg" class="app-icon" />
-              <span class="app-name">Keraton Kesepuhan Cirebon</span>
-            </div>
-            <div class="navbar-right">
-              <nav>
-                    <ul>
-                        <li><a href="#">Beranda</a></li>
-                        <li><a href="#">Sejarah</a></li>
-                        <li><a href="#">Booking</a></li>
-                        <li><a href="#">Objek Wisata</a></li>
-                        <button @click="getTickets" style="border-radius: 5px; background-color: #123B32; color: white;">Dapatkan Tiket</button>
-                    </ul>
-                </nav>
-            </div>
-          </div>
+    
         <div><h1 class="title">History transaksi</h1></div>
         <div class="container">
             <div class="form-input">
@@ -260,6 +247,8 @@ const closeMenungguPembayaran = () => {
             </div>
         </div>
     </section>
+
+
     <section class="detail-transaksi" v-if="cara">
       <div class="popup">
             <div class="popup-content">
@@ -281,10 +270,35 @@ const closeMenungguPembayaran = () => {
                     <p>Salin <img src="../assets/svg/ClipboardText.svg" alt=""></p>
                   </div>
                   </div>
+                  <div class="nomor-virtual-account">
+                    <div class="nva">
+                    <h6>Total Pembayaran</h6>
+                    <h5>Rp. 33.500</h5>
+                  </div>
+                  <div class="clipboard">
+                    <p>Salin <img src="../assets/svg/ClipboardText.svg" alt=""></p>
+                  </div>
+                  </div>
+                  <div class="steps">
+                  <div class="atm-bjb">
+                    <h5>ATM BJB</h5>
+                    <img src="../assets/svg/CaretDown.svg" alt="">
+                  </div>
+                  <div class="mobile-banking-bjb">
+                    <h5>Mobile Banking BJB</h5>
+                    <img src="../assets/svg/CaretDown.svg" alt="">
+                  </div>
+                  <div class="internet-banking-bjb">
+                    <h5>Internet Banking BJB</h5>
+                    <img src="../assets/svg/CaretDown.svg" alt="">
+                  </div>
+                </div>
             </div>
             </div>
         </div>
     </section>
+
+
   </div>
     </template>
     
@@ -301,6 +315,9 @@ const closeMenungguPembayaran = () => {
     
     .projekk{
       font-family: raleway;
+      padding-top: 100px;
+      margin-bottom: 50px;
+      position: relative;
     }
 
     h1.title {
@@ -309,82 +326,13 @@ const closeMenungguPembayaran = () => {
         color: #333;
     }
     
-    .navbar {
-        display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 0px;
-      gap: 327px;
-      position: relative;
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      font-family: 'Raleway', sans-serif;
-       
-      }
-      
-      .navbar-left {
-        display: flex;
-        align-items: center;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        width: 217px;
-        height: 84px;
-      
-      }
-      
-      .app-icon {
-        position: absolute;
-      width: 68px;
-      height: 70.62px;
-      left: 88px;
-      top: 16.69px;
-      
-      }
-      
-      .app-name {
-       
-      position: absolute;
-      width: 139px;
-      height: 84px;
-      left: 166px;
-      top: 10px;
-        color: black;
-        font-size: 20px;
-      }
-      
-      nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
-      
-      nav ul li {
-        margin-right: 30px;
-      }
-      
-      nav ul li a,
-      nav ul li button {
-        display: block;
-        color: #000000;
-        background-color: transparent;
-        border: none;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 5px 25px;
-        font-size: 16px;
-        text-decoration: none; 
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-       
-      }
-      
-      nav ul li a:hover,
-      nav ul li button:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
+    nav {
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    background-color: #FFFFFF; 
+    z-index: 1000; 
+  }
     
     .Pencarian {
         width: 246px;
@@ -952,6 +900,9 @@ const closeMenungguPembayaran = () => {
       justify-content: space-between;
     }
 
+    .nva {
+      padding-top: 15px;
+    }
     .nva h6{
       font-size: 24px;
       font-weight: 400;
@@ -960,6 +911,12 @@ const closeMenungguPembayaran = () => {
 
     .nva h5{
       font-size: 24px;
+      padding-top: 5px ;
+    }
+
+    .clipboard{
+      padding-top: 30px;
+      padding-right: 35px;
     }
 
     .clipboard img{
@@ -967,15 +924,48 @@ const closeMenungguPembayaran = () => {
       height: 32px;
     }
 
-    .clipboard p {
-  display: inline-block;
-  vertical-align: middle;
-}
+        .clipboard p {
+      font-weight: 700;
+      display: inline-block;
+      vertical-align: middle;
+      color: #DAA520;
+    }
 
-.clipboard img {
-  display: inline-block;
-  vertical-align: middle;
-}
+    .clipboard img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .steps img{
+      width: 32px;
+      height: 32px;
+    }
+
+    .steps h5{
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .atm-bjb{
+      padding-top: 40px;
+      padding-bottom: 10px;
+      display: flex;
+      gap: 27rem;
+      border-bottom: 1px solid #D0D5DD;
+    }
+
+    .mobile-banking-bjb{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      gap: 19.4rem;
+      border-bottom: 1px solid #D0D5DD;
+    }
+
+    .internet-banking-bjb{
+      padding-top: 10px;
+      display: flex;
+      gap: 18.8rem;
+      border-bottom: 1px solid #D0D5DD;
+    }
 
     </style>
-    
