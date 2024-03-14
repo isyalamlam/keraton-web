@@ -94,11 +94,11 @@
                   </div>
                 </legend>
                 <div class="test">
-                <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" disabled>
-                <div class="icon-date">
+                  <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" disabled>
+                  <div class="icon-date">
                     <img src="../assets/svg/Icondate.svg" alt="">
+                  </div>
                 </div>
-              </div>
               </fieldset>
               <div class="supporting-text">
                 <div class="supporting-txt">
@@ -223,8 +223,8 @@ nav {
 }
 
 .custom-radio-btn {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border: 2px solid goldenrod;
   border-radius: 50%;
   display: flex;
@@ -233,8 +233,8 @@ nav {
 }
 
 .custom-radio-btn .checkmark {
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
   background-color: goldenrod;
   border-radius: 50%;
   display: inline-block;
@@ -414,6 +414,7 @@ input[type="radio"] {
   top: 133px;
   padding: 12px, 20px, 12px, 20px;
   margin-right: 27px;
+  cursor: pointer;
 }
 
 .pelajar {
@@ -425,6 +426,7 @@ input[type="radio"] {
   left: 149px;
   padding: 12px, 20px, 12px, 20px;
   margin-right: 27px;
+  cursor: pointer;
 }
 
 .mancanegara {
@@ -435,6 +437,7 @@ input[type="radio"] {
   top: 133px;
   left: 301px;
   padding: 12px, 20px, 12px, 20px;
+  cursor: pointer;
 }
 
 .umum,
@@ -449,7 +452,7 @@ label {
   text-align: left;
   margin-left: 10px;
   color: #212121;
-
+  cursor: pointer;
 }
 
 .detail-tiket {
@@ -463,19 +466,22 @@ label {
   color: #999999;
   opacity: 0.5;
 }
-.icon-date{
+
+.icon-date {
   width: 48px;
   height: 48px;
   align-items: center;
   justify-content: center;
   padding: 8px;
 }
-.test{
+
+.test {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100% ;
+  width: 100%;
 }
+
 fieldset {
   width: 312px;
   height: 66px;
@@ -500,6 +506,7 @@ legend {
   margin-left: 16px;
   margin-top: 12px;
 }
+
 input[type="date"] {
   width: 248px;
   height: 48px;
@@ -515,152 +522,8 @@ input[type="date"] {
   margin-left: 16px;
   margin-top: 4px;
   margin-bottom: 4px;
-  
-<<<<<<< HEAD
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    background-image: url('../assets/svg/Icondate.svg');
-    background-size: 20px; 
-    background-repeat: no-repeat;
-    background-position: right center; 
-  }
-  input[type="date"]{
-    width: 312px; 
-    height: 30px; 
-    padding: 4px;
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-    text-align: left;
-    border: none;
-    background: transparent;
-    margin-left: 16px;
-  }
-  input[type="date"]:focus {
-    outline: none;
-  }
-  #ringkasanBooking{
-    width: 542px;
-    height: 348px;
-    margin-right: 88px;
-    top: 295px;
-    position: static; 
-    margin-top: 64px;
-    left: 650px;
-    border-radius: 15px;
-    /* padding: 20px, 23px,20px, 23px; */
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 20px;
-    gap: 8px;
-    background-color: #FFFFFF;
-  }
-  
-  .scroll-active #ringkasanBooking {
-      position: fixed;
-      top: 0;
-  }
-  .btn{
-    width: 542px;
-    top: 295px;
-    left: 650px;
-    height: 43.93px;
-    margin-top: 22px;
-    padding: 5px;
-    gap: 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: #DAA520;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    cursor: pointer;
-  }
-  .btn:hover{
-    background-color: #ffc122;
-  }
-  .containerbtn{
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    margin-top: 22px; 
-  }
-  .btn-checkout{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
-  .txt-checkout{
-    margin-left: 10px;
-    width: 74px;
-    height: 24px;
-  }
-  .txt-checkout p{
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    font-family: 'Raleway';
-  }
-  h5{
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    font-family: 'Raleway';
-    color: #000000;
-  
-  }
-  .totalPemesanan{
-    padding-top: 20px;
-  }
-  h6{
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 28px;
-    color: #000000;
-    font-family: 'Raleway';
-  }
-  .totalTagihan{
-    padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
-  
-  }
-  .txt-total-tagihan{
-    font-family: 'Raleway';
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .totalHarga{
-    width: 496px;
-    height: 24px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-family: 'Raleway';
-    color: #000000;
-  }
-  .biaya{
-    width: 496px;
-    height: 122px;
-    padding: 15px, 0px, 15px, 0px;
-  }
-  hr{
-    margin-top: 15px;
-  }
-  .biayaTransaksi{
-    margin-top: 8px;
-    padding-top: 20px;
-  
-  }
-  </style>
-  <script setup>
-  import { ref, computed } from 'vue'
-  import navbar from "../components/NavBar.vue";
-  import payment from "../components/Pembayaran.vue";
-  import SelectPopup from '../components/SelectPopup.vue';
-=======
+
 }
->>>>>>> 515770700ab42e80c934ac929be16b2540bd6920
 
 input[type="date"]:focus {
   outline: none;
@@ -751,6 +614,7 @@ input[type="date"]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .plus {
@@ -762,16 +626,21 @@ input[type="date"]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  color:#d5d5d5;
+  color: #d5d5d5;
+  cursor: pointer;
 }
-.min:hover ,.plus:hover{
+
+.min:hover,
+.plus:hover {
   border: none;
   background-color: #000000;
 }
-.min:hover .path{
+
+.min:hover .path {
   fill: white;
 }
-.plus:hover .path{
+
+.plus:hover .path {
   fill: white;
 }
 
@@ -909,7 +778,7 @@ hr {
 import { ref, computed } from 'vue'
 import navbar from "../components/NavBar.vue";
 import payment from "../components/Pembayaran.vue";
-import SelectPopup from '../components/SelectPopup.vue';
+import SelectPopup from "../components/SelectPopup.vue";
 
 const selectPopup = ref(null)
 
@@ -947,9 +816,9 @@ const kurang = () => {
 }
 const tanggalSekarang = new Date().toISOString().substr(0, 10);
 
-  const focusInput = () => {
-    const input = document.getElementById('tanggalPemesanan').focus();
-    input.focus();
-    input.click();
-  }
-  </script>../components/NavBar.vue
+const focusInput = () => {
+  const input = document.getElementById('tanggalPemesanan').focus();
+  input.focus();
+  input.click();
+}
+</script>

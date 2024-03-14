@@ -11,7 +11,7 @@ const showSelectPopup = () => {
 }
 
 const closePopup = () => {
-  showPopup.value = false
+    showPopup.value = false
 }
 
 const showkreditPopup = () => {
@@ -19,52 +19,53 @@ const showkreditPopup = () => {
 }
 
 defineExpose({
-  showSelectPopup
+    showSelectPopup
 })
 </script>
 
 
 <template>
-<div v-if="showPopup" class="popup">
-  <div class="popup-inner">
-	<div class="nav-popup">
-		<div class="txt-nav-popup">
-			<h5> Pilih Pembayaran </h5>
-		</div>
-		<div class="icon-close">
-			<span @click="closePopup"><img src="../assets/svg/Frameclose.svg"></span>
-		</div>
-	</div>
-	<div class="kredit">
-		<div class="txt-kredit-popup">
-			<h6> Kartu Kredit/Debit </h6>
-		</div>
-		<div class="icon-kredit">
-			<span @click="showkreditPopup"><img src="../assets/svg/FrameVector-Right.svg"></span>
-		</div>
-	</div>
-	<div class="transfer">
-	<div class="txt-bank">
-		<h6> Bank Transfer </h6>
-	</div>
-	<div class="bank">
-		<div class="logo-bank">
-			<img src="../assets/svg/logobank.svg" alt="" class="logo-bjb">
-			<p>Bank BJB</p>
-		</div>
-		<span @click="toTransfer"><img src="../assets/svg/FrameVector-Right.svg"></span>
-	</div>
-	</div>
-  </div>
-</div>
+    <div v-if="showPopup" class="popup">
+        <div class="popup-inner">
+            <div class="nav-popup">
+                <div class="txt-nav-popup">
+                    <h5> Pilih Pembayaran </h5>
+                </div>
+                <div class="icon-close">
+                    <span @click="closePopup"><img src="../assets/svg/Frameclose.svg"></span>
+                </div>
+            </div>
+            <div class="kredit">
+                <div class="txt-kredit-popup">
+                    <h6> Kartu Kredit/Debit </h6>
+                </div>
+                <div class="icon-kredit">
+                    <span @click="showkreditPopup"><img src="../assets/svg/FrameVector-Right.svg"></span>
+                </div>
+            </div>
+            <div class="transfer">
+                <div class="txt-bank">
+                    <h6> Bank Transfer </h6>
+                </div>
+                <div class="bank">
+                    <div class="logo-bank">
+                        <img src="../assets/svg/logobank.svg" alt="" class="logo-bjb">
+                        <p>Bank BJB</p>
+                    </div>
+                    <span @click="toTransfer"><img src="../assets/svg/FrameVector-Right.svg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<KreditPopup ref="kreditPopup"/>
+    <KreditPopup ref="kreditPopup" />
 </template>
 
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 .popup {
     position: fixed;
     top: 0;
@@ -94,7 +95,7 @@ defineExpose({
     justify-content: space-between;
     width: 536px;
     height: 80px;
-	padding: 24px, 30px, 24px, 40px;
+    padding: 24px, 30px, 24px, 40px;
     border-bottom: 1px solid #d0d5dd;
     align-items: center;
 }

@@ -1,45 +1,45 @@
 <template>
     <div class="desktop">
-      <SejarahKeraton></SejarahKeraton>
+        <SejarahKeraton></SejarahKeraton>
     </div>
     <div class="handphone">
-      <Sejarah></Sejarah>
+        <Sejarah></Sejarah>
     </div>
-  </template>
-  
-  <script>
- 
- import Sejarah from "../views/Sejarah.vue";
- import SejarahKeraton from "../views/SejarahKeraton.vue";
-  
-  export default {
-    
+</template>
+
+<script>
+
+import Sejarah from "../views/Sejarah.vue";
+import SejarahKeraton from "../views/SejarahKeraton.vue";
+
+export default {
+
     components: {
-    SejarahKeraton,
-     Sejarah
-     
- },
-  };
-  </script>
-  
-  <style scoped>
-  @media screen and (max-width: 600px) {
+        SejarahKeraton,
+        Sejarah
+
+    },
+};
+</script>
+
+<style scoped>
+@media screen and (max-width: 600px) {
     .desktop {
-      display: none;
+        display: none;
     }
-  
+
     .handphone {
-      display: block;
+        display: block;
     }
-  }
-  
-  @media screen and (min-width: 601px) {
+}
+
+@media screen and (min-width: 601px) {
     .desktop {
-      display: block;
+        display: block;
     }
-  
+
     .handphone {
-      display: none;
+        display: none;
     }
-  }
-  </style>
+}
+</style>

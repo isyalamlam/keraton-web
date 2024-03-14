@@ -26,14 +26,14 @@
         <div class="pass">
           <div>
             <h3 class="text">Password</h3>
-            <div :class="{box2: true, 'error-border': passwordError}">
+            <div :class="{ box2: true, 'error-border': passwordError }">
               <input type="password" placeholder="6+ Characters">
               <h3 class="error-message" v-show="passwordError">{{ passwordErrorMessage }}</h3>
             </div>
           </div>
           <div>
             <h3 class="text">Konfirmasi Password</h3>
-            <div :class="{box2: true, 'error-border': passmatchError}">
+            <div :class="{ box2: true, 'error-border': passmatchError }">
               <input type="password">
               <h3 class="error-message" v-show="passmatchError">{{ passmatchErrorMessage }}</h3>
             </div>
@@ -41,7 +41,8 @@
         </div>
         <button class="button">Buat Akun</button>
         <h3 class="signup">Sudah buat akun? <router-link to="/signin" class="highlight">Sign In</router-link></h3>
-        <h3 class="terms">Dengan signin ke Keraton Kasepuhan Cirebon, anda setuju dengan <b>Terms</b> dan <b>Privacy Policy</b>.</h3>
+        <h3 class="terms">Dengan signin ke Keraton Kasepuhan Cirebon, anda setuju dengan <b>Terms</b> dan <b>Privacy
+            Policy</b>.</h3>
       </form>
     </div>
   </div>
@@ -84,7 +85,7 @@ const submitForm = () => {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-body{
+body {
   justify-content: center;
   align-items: center;
   font-family: 'Raleway';
@@ -93,7 +94,8 @@ body{
   top: 622px;
   left: 970px;
 }
-.highlight{
+
+.highlight {
   text-decoration: none;
 }
 

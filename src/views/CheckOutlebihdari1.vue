@@ -94,11 +94,11 @@
                   </div>
                 </legend>
                 <div class="test">
-                <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" >
-                <div class="icon-date">
+                  <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang">
+                  <div class="icon-date">
                     <img src="../assets/svg/Icondate.svg" alt="" @click.stop="focusInput">
+                  </div>
                 </div>
-              </div>
               </fieldset>
               <div class="supporting-text">
                 <div class="supporting-txt">
@@ -478,19 +478,21 @@ label {
   border-radius: 4px, 4px, 0px, 0px;
 }
 
-.icon-date{
+.icon-date {
   width: 48px;
   height: 48px;
   align-items: center;
   justify-content: center;
   padding: 8px;
 }
-.test{
+
+.test {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100% ;
+  width: 100%;
 }
+
 fieldset {
   width: 312px;
   height: 66px;
@@ -505,7 +507,8 @@ fieldset {
   font-size: 16px;
   font-family: 'Roboto';
 }
-fieldset:focus input[type="date"]::-webkit-calendar-picker-indicator{
+
+fieldset:focus input[type="date"]::-webkit-calendar-picker-indicator {
   display: block;
 }
 
@@ -517,6 +520,7 @@ legend {
   margin-left: 16px;
   margin-top: 12px;
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
@@ -536,12 +540,13 @@ input[type="date"] {
   margin-left: 16px;
   margin-top: 4px;
   margin-bottom: 4px;
-  
+
 }
 
 input[type="date"]:focus {
   outline: none;
 }
+
 .supporting-text {
   width: 312px;
   height: 20px;
@@ -639,23 +644,28 @@ input[type="date"]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  color:#d5d5d5;
+  color: #d5d5d5;
   transition: background-color 0.3s ease;
 
 }
-.min:hover ,.plus:hover{
+
+.min:hover,
+.plus:hover {
   border: none;
   background-color: #000000;
 }
-.min:hover .path{
+
+.min:hover .path {
   fill: white;
   border: none;
 }
-.plus:hover .path{
+
+.plus:hover .path {
   fill: white;
   border: none;
 
 }
+
 #ringkasanBooking {
   width: 542px;
   height: 348px;
@@ -787,7 +797,7 @@ hr {
 </style>
 
 <script setup>
-import { ref, computed, onMounted} from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import navbar from "../components/NavBar.vue";
 import payment from "../components/Pembayaran.vue";
 import SelectPopup from '../components/SelectPopup.vue';

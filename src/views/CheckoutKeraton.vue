@@ -1,10 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue'
 import navbar from '../components/NavBar.vue'
-<<<<<<< HEAD
-=======
+
 import Payment from '../components/Pembayaran.vue'
->>>>>>> 515770700ab42e80c934ac929be16b2540bd6920
 const count = ref(1)
 const layanan = 2500
 const jasaApp = 1000

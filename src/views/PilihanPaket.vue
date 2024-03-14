@@ -1,11 +1,8 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import navbar from '../components/NavBar.vue'
-<<<<<<< HEAD
 
-=======
 import Payment from '../components/Pembayaran.vue'
->>>>>>> 515770700ab42e80c934ac929be16b2540bd6920
 const count = ref(35)
 const layanan = 2500
 const jasaApp = 1000
@@ -299,7 +296,7 @@ onMounted(() => {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sBtn-text{
+.sBtn-text {
   font-family: 'Lexend';
   font-size: 14px;
   font-weight: 500;
@@ -399,7 +396,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .tambah,
-.kurang{
+.kurang {
   width: 24px;
   height: 24px;
   border-radius: 8px;
@@ -409,6 +406,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: center;
   margin: 0;
 }
+
 .tmbh-brg {
   margin-top: 20px;
 }

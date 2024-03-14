@@ -87,6 +87,7 @@ h1{
     font-size: 14px;
 }
 
+
 .signup{
     font-weight: 400;
     width: 418px;
@@ -97,6 +98,10 @@ h1{
 
 .highlight{
     color: #4F3CC9;
+    cursor: pointer;
+}
+.none{
+    color: #ffffff;
     cursor: pointer;
 }
 

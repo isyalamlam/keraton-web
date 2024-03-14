@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <div id="app">
     <div class="textAll">
     <nav>
@@ -14,139 +15,147 @@
       <div class="800ner">
        <img src="../assets/images/sejarah.jpg" alt="sejarah" class="fotobkg"> 
         <div class="upper">
-         {{ uppertext }}
-          </div>
-            <div class="upper-2">
-          {{ uppertext2 }}
-         </div>
+          {{ uppertext }}
         </div>
-        <div class="info">
-          <div class="info1">
-            <p>Kota Cirebon merupakan kota yang memiliki nilai historis yang sangat kental terutama pada masa
+        <div class="upper-2">
+          {{ uppertext2 }}
+        </div>
+      </div>
+      <div class="info">
+        <div class="info1">
+          <p>Kota Cirebon merupakan kota yang memiliki nilai historis yang sangat kental terutama pada masa
             kerajaan dan penyebaran agama Islam di Pulau Jawa.
-        
+
             <br><br>Salah satu peninggalan pada masa
             kerajaan tersebut adalah sebuah bangunan yang hingga kini masih berdiri dengan kokoh di kota
-            ini yaitu Rumah Adat Kasepuhan Cirebon.</p>
-            <img src="../assets/images/macanalikasepuhan.png" alt="">
-          </div>
-         <div class="info2">
+            ini yaitu Rumah Adat Kasepuhan Cirebon.
+          </p>
+          <img src="../assets/images/macanalikasepuhan.png" alt="">
+        </div>
+        <div class="info2">
           <img src="../assets/images/pendopo.png" alt="">
           <div class="info2-text">
-          
+
             .
-          <p class="between">Pada abad XV (-+ 1430)
-            
-            <br><br>Pangeran Cakrabuwana Putra mahkota Kerajaan Pajajaran membangun Keraton yang kemudian 
-            diserahkan kepada putrinya, Ratu Ayu Pakungwati. Maka Keratonnya dinamai Keraton Pakungwati 
-            (hingga sekarang dikenal dengan sebutan Dalem Agung Pakungwati)</p>
+            <p class="between">Pada abad XV (-+ 1430)
+
+              <br><br>Pangeran Cakrabuwana Putra mahkota Kerajaan Pajajaran membangun Keraton yang kemudian
+              diserahkan kepada putrinya, Ratu Ayu Pakungwati. Maka Keratonnya dinamai Keraton Pakungwati
+              (hingga sekarang dikenal dengan sebutan Dalem Agung Pakungwati)
+            </p>
           </div>
-            <img src="../assets/images/timeline.png" alt="" class="time">
-          
-         </div>
-         <div class="info3">
-            <img src="../assets/images/timeline1.png" alt="" class="time1">
-            <div class="info3-text">
-              <p class="jarak">Pada abad XVI</p> 
-              <p class="jarak1">  <br>Sunan Gunung Jati wafat. Kemudian Pangeran Emas Mochammad Arifin, cicit dari Sunan Gunung Jati,
-                 bertahta menggantikannya. Kemudian pada tahun Candra Sangkala Tunggal Tata Gunaning Wong atau 
-                 1451 Saka yaitu tahun 1529 Masehi beliau mendirikan Keraton baru sebelah barat daya Dalem Agung Pakungwati.
-                 Dan beliaupun bergelar Panembahan Pakungwati I.
-              </p>
-            </div>
-            <img src="../assets/images/k1.png" alt="" class="jarak2">
-         </div>
-         <div class="info4">
+          <img src="../assets/images/timeline.png" alt="" class="time">
+
+        </div>
+        <div class="info3">
+          <img src="../assets/images/timeline1.png" alt="" class="time1">
+          <div class="info3-text">
+            <p class="jarak">Pada abad XVI</p>
+            <p class="jarak1"> <br>Sunan Gunung Jati wafat. Kemudian Pangeran Emas Mochammad Arifin, cicit dari Sunan
+              Gunung Jati,
+              bertahta menggantikannya. Kemudian pada tahun Candra Sangkala Tunggal Tata Gunaning Wong atau
+              1451 Saka yaitu tahun 1529 Masehi beliau mendirikan Keraton baru sebelah barat daya Dalem Agung
+              Pakungwati.
+              Dan beliaupun bergelar Panembahan Pakungwati I.
+            </p>
+          </div>
+          <img src="../assets/images/k1.png" alt="" class="jarak2">
+        </div>
+        <div class="info4">
           <img src="../assets/images/m1.png" alt="" class="distance">
           <div class="info4-text">
             <p class="jarak3">Pada -+ 1549 M </p>
             <p><br>Masjid Agung Sang Cipta Rasa kebakaran. Ratu Ayu Pakungwati yang sudah tua itu turut memadamkan api.
-               Api dapat dipadamkan, namun Ratu Ayu Pakungwati kemudian wafat. Semenjak itu, nama atau sebutan Pakungwati
-                dimuliakan dan diabadikan oleh nasab Sunan Gunung Jati.</p>
-                
+              Api dapat dipadamkan, namun Ratu Ayu Pakungwati kemudian wafat. Semenjak itu, nama atau sebutan Pakungwati
+              dimuliakan dan diabadikan oleh nasab Sunan Gunung Jati.</p>
+
           </div><img src="../assets/images/timeline2.png" alt="">
-         </div>
+        </div>
         <div class="info5">
           <img src="../assets/images/timeline3.png" alt="" class="time2">
           <div class="">
             <p class="jarak4">Pada -+ 1679 M</p>
-           <p>
-            Didirikan Keraton Kanoman oleh Sultan Anom I (Sultan Badridin). Maka semenjak itu, Keraton Pakungwati disebut
-               Keraton Kasepuhan hingga sekarang dan sultannya bergelar Sultan Sepuh. Kasepuhan artinya tempat sepuh atau tua. 
-               Jadi, antara Kasepuhan dan Kanoman itu awalnya yang tua dan yang muda (kakak beradik). Lokasi bangunan Keraton 
-               Kasepuhan membujur dari utara ke Selatan atau menghadap ke utara, karena keraton-keraton di Jawa semuanya menghadap 
-               ke utara, artinya menghadap magnet dunia, artinya falsafahnya sang raja mengharapkan kekuatan.</p>
-               
-          </div><img src="../assets/images/n1.png" alt="" class="foto">
-         </div>
-        </div>
-        <div class="footer">
-       
-         <div class="logo">
-            <img src="../assets/images/logo_keraton.png" alt="">
-            <p>KERATON <br>KASEPUHAN <br>CIREBON</p>
-         </div>
-         <div class="footer-col">
-            <div class="footer-col-1">
-               <h3>Quick Links</h3>
-               <ul>
-               <li><a href="#">Beranda</a></li>
-               <li><a href="#">Sejarah</a></li>
-               <li><a href="#">Booking</a></li>
-               <li><a href="#">Objek Wisata</a></li>
-            </ul>
-            </div>
-            <div class="footer-col-2">
-               <h3>Socials</h3>
-               <ul>
-                  <li><a href="#">Whatsapp</a></li>
-                  <li><a href="#">Facebook</a></li>
-                  <li><a href="#">Instagram</a></li>
-                  <li><a href="#">Threads</a></li>
-               </ul>
-            </div>
-            <div class="footer-col-3">
-               <h3>Company</h3>
-               <ul>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Partners</a></li>
-                  <li><a href="#">Contact</a></li>
-               </ul>
-            </div>
-            <div class="footer-col-4">
-               <h3>Subscribes your email for updates!</h3>
-               <button class="button">Enter your email</button>
-               
+            <p>
+              Didirikan Keraton Kanoman oleh Sultan Anom I (Sultan Badridin). Maka semenjak itu, Keraton Pakungwati
+              disebut
+              Keraton Kasepuhan hingga sekarang dan sultannya bergelar Sultan Sepuh. Kasepuhan artinya tempat sepuh atau
+              tua.
+              Jadi, antara Kasepuhan dan Kanoman itu awalnya yang tua dan yang muda (kakak beradik). Lokasi bangunan
+              Keraton
+              Kasepuhan membujur dari utara ke Selatan atau menghadap ke utara, karena keraton-keraton di Jawa semuanya
+              menghadap
+              ke utara, artinya menghadap magnet dunia, artinya falsafahnya sang raja mengharapkan kekuatan.</p>
 
-            </div>
-         </div>
-         <div class="adress">
-            Jalan Kasepuhan 43
-            Cirebon, Jawa Barat
-            45114 
-         </div>
-         <div class="lower">
-            <div class="inlower">
+          </div><img src="../assets/images/n1.png" alt="" class="foto">
+        </div>
+      </div>
+      <div class="footer">
+
+        <div class="logo">
+          <img src="../assets/images/logo_keraton.png" alt="">
+          <p>KERATON <br>KASEPUHAN <br>CIREBON</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-1">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Beranda</a></li>
+              <li><a href="#">Sejarah</a></li>
+              <li><a href="#">Booking</a></li>
+              <li><a href="#">Objek Wisata</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-2">
+            <h3>Socials</h3>
+            <ul>
+              <li><a href="#">Whatsapp</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Threads</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-3">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Subscribes your email for updates!</h3>
+            <button class="button">Enter your email</button>
+
+
+          </div>
+        </div>
+        <div class="adress">
+          Jalan Kasepuhan 43
+          Cirebon, Jawa Barat
+          45114
+        </div>
+        <div class="lower">
+          <div class="inlower">
             @2024 Keraton Kasepuhan Cirebon
-            </div>
-            <div class="susun">
+          </div>
+          <div class="susun">
             <p>In collaboration</p>
 
             <div class="collab">
-                <img src="../assets/images/logo_keraton.png" alt="" class="foto1">
-               <img src="../assets/images/1 931.svg" alt="" class="foto2">
-               <img src="../assets/images/telkom.svg" alt="" class="foto3">
-               <img src="../assets/images/bjb.svg" alt="" class="foto4">
-               
+              <img src="../assets/images/logo_keraton.png" alt="" class="foto1">
+              <img src="../assets/images/1 931.svg" alt="" class="foto2">
+              <img src="../assets/images/telkom.svg" alt="" class="foto3">
+              <img src="../assets/images/bjb.svg" alt="" class="foto4">
+
             </div>
-         </div>
-         </div>
+          </div>
         </div>
       </div>
     </div>
-  </template>
-  
-  <script setup>
+  </div>
+</template>
+
+<script setup>
 import navbar from "../components/NavBar.vue";
 </script>
 
@@ -394,18 +403,19 @@ import navbar from "../components/NavBar.vue";
     
   }
 
-  .info5 p {
-    font-size: 30px;
-    font-weight: 400;
-    color:#212121;
-    text-align: left ;
-    width: 500px;
-    display: flex;
-    line-height: 40px;
-   }
-  .info5 img {
-      margin-left: 50px;
-  }
+.info5 p {
+  font-size: 30px;
+  font-weight: 400;
+  color: #212121;
+  text-align: left;
+  width: 500px;
+  display: flex;
+  line-height: 40px;
+}
+
+.info5 img {
+  margin-left: 50px;
+}
 
   .foto {
     width:483px;
@@ -462,74 +472,81 @@ import navbar from "../components/NavBar.vue";
    
 }
 
- 
- 
-  .logo {
-    font-size: 20px;
-    font-weight: 400;
-    display: flex;
-    flex-direction: row;
-    margin-left: 88px;
-   
-    
-  }
-  
-  .logo img {
-   width: 70px;
-   margin-right: 9px;
-  
-  }
 
-  .footer-col-2 {
-   margin-left: 60px;
-  }
-  .footer-col-3 {
-   margin-left: 60px;
-  }
-  .footer-col-4 {
-   margin-left: 139px;
-   width: 434px;
-  }
-  .footer-col li {
-      color: #212121;
-  }
-  .footer-col li:not(:last-child) {
-   margin-bottom: 11px;
-  }
-  .adress {
-   width:184px;
-   height: 84px;
-   font-size: 20px;
-   font-weight: 400;
-   margin-top:62px;
-   margin-left: 88px;
-  }
-  .lower {
-    
-    height: 142px;
-    margin-left: 88px;
-    display: flex;
-  }
-  .inlower {
-   padding-top:118px;
-   position: absolute;
-   
-   
-  }
-  .collab {
-   display: flex;
-   flex-direction: row;
-   gap:46px;
-   
-  }
-  .susun {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap:46px;
-   padding-left: 645px;
-  }
-  
-  </style>
-  
+
+.logo {
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  margin-left: 88px;
+
+
+}
+
+.logo img {
+  width: 70px;
+  margin-right: 9px;
+
+}
+
+.footer-col-2 {
+  margin-left: 60px;
+}
+
+.footer-col-3 {
+  margin-left: 60px;
+}
+
+.footer-col-4 {
+  margin-left: 139px;
+  width: 434px;
+}
+
+.footer-col li {
+  color: #212121;
+}
+
+.footer-col li:not(:last-child) {
+  margin-bottom: 11px;
+}
+
+.adress {
+  width: 184px;
+  height: 84px;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 62px;
+  margin-left: 88px;
+}
+
+.lower {
+
+  height: 142px;
+  margin-left: 88px;
+  display: flex;
+}
+
+.inlower {
+  padding-top: 118px;
+  position: absolute;
+
+
+}
+
+.collab {
+  display: flex;
+  flex-direction: row;
+  gap: 46px;
+
+}
+
+.susun {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 46px;
+  padding-left: 645px;
+}
+</style>
