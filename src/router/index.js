@@ -12,6 +12,7 @@ import BeranDa from '../views/BeranDa.vue'
 import Checkoutlebihdari1 from '../views/CheckOutlebihdari1.vue'
 import EventGratis from '../views/EventGratis.vue'
 import Booking from '../views/Booking.vue'
+import FilterBayar from '../views/FilterBayar.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -81,6 +82,11 @@ const router = createRouter({
       path: '/booking',
       name: 'booking',
       component: Booking
+    },
+    {
+      path: '/filterbayar',
+      name: 'filterbayar',
+      component: FilterBayar
     },
   ]
 })

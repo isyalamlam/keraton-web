@@ -1,64 +1,45 @@
 <template>
   <nav>
-    <navbar />
+    <navbar></navbar>
   </nav>
   <div class="header">
     <div class="text1">
       <ul>
-        <il href="#">Booking / Tiket Event</il>
+        <li><a>Booking / Tiket Event</a></li>
       </ul>
       <div class="kakaje">
         <ul>
-          <a class="text2">
-            <strong
-              ><a class="text2">Tiket Event Upacara Adat Tradisi</a></strong
-            >
-          </a>
+          <li>
+            <a class="text2"><strong>Tiket Event Upacara Adat Tradisi</strong></a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
   <div class="dropdown">
     <button @click="toggleDropdown" class="dropdown-toggle">
-      {{ dropdownTitle }} <img src="../assets/trigger.svg" />
+      {{ dropdownTitle }} <img src="../assets/svg/trigger.svg" />
     </button>
     <div v-if="isOpen" class="dropdown-menu">
-      <label
-        v-for="(option, index) in options"
-        :key="index"
-        class="checkbox-container"
-      >
-        <input
-          type="checkbox"
-          :value="option.value"
-          v-model="selectedOptions"
-        />
+      <label v-for="(option, index) in options" :key="index" class="checkbox-container">
+        <input type="checkbox" :value="option.value" v-model="selectedOptions" />
         {{ option.label }}
       </label>
     </div>
     <div class="kami">
       <button @click="toggleDropdown2" class="dropdown-toggle2">
-        {{ dropdownTitle2 }} <img src="../assets/trigger.svg" />
+        {{ dropdownTitle2 }} <img src="../assets/svg/trigger.svg" />
       </button>
       <div v-if="isOpen2" class="dropdown-menu2">
-        <!-- Perbaikan disini -->
-        <label
-          v-for="(option2, index2) in options2"
-          :key="index2"
-          class="checkbox-container"
-        >
-          <input
-            type="checkbox"
-            :value="option2.value"
-            v-model="selectedOptions2"
-          />
+        <label v-for="(option2, index2) in options2" :key="index2" class="checkbox-container">
+          <input type="checkbox" :value="option2.value" v-model="selectedOptions2" />
           {{ option2.label }}
         </label>
       </div>
     </div>
     <div class="container">
-      <div class="ni" v-for="(item, index) in items" :key="index">
-        <img class="image" src="../assets/images/sukuran.jpeg" alt="Gambar" />
+      <div class="ni" v-for="(item, index) in filteredItems" :key="index">
+        <img class="image" :src="item.image" alt="Gambar" />
         <div class="buttonaji">
           <button class="btn-small">{{ item.buttonText1 }}</button>
           <button class="btn-small">{{ item.buttonText2 }}</button>
@@ -67,9 +48,7 @@
         <h1 class="judul-besar">{{ item.titleBig }}</h1>
         <div class="tengah">
           <h3 class="judul-kecil">{{ item.price }}</h3>
-          <button class="tambah">
-            Tambah <img class="photo" src="../assets/Frame.svg" />
-          </button>
+          <button class="tambah">Tambah <img class="photo" src="../assets/Frame.svg" /></button>
         </div>
       </div>
     </div>
@@ -84,6 +63,9 @@ import navbar from "../components/NavBar.vue";
 import { ref } from "vue";
 
 export default {
+  components: {
+    navbar,
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -98,89 +80,79 @@ export default {
       default: "Jenis Event",
     },
   },
-  data() {
-    const image = ref(["../assets/images/cewe.jpeg"]);
+  setup() {
+    const isOpen = ref(false);
+    const isOpen2 = ref(false);
+    const selectedOptions = ref([]);
+    const selectedOptions2 = ref([]);
+
+    const options = [
+      { label: "Hari", value: "Perhari" },
+      { label: "Minggu", value: "Perminggu" },
+      { label: "Bulan", value: "Perbulan" },
+    ];
+
+    const options2 = [
+      { label: "Gratis", value: "Gratis" },
+      { label: "Berbayar", value: "Berbayar" },
+    ];
+
+    const items = [
+      {
+        image: "../assets/images/isra.png",
+        buttonText1: "Perbulan",
+        buttonText2: "Berbayar",
+        titleMedium: "Peringatan isra mi'raj di langgar alit",
+        titleBig:
+          "Keluarga Keraton Kasepuhan mengadakan acara Isra Miraj di Langgar Alit yang rutin digunakan untuk peringatan hari besar Islam",
+        price: "Rp. 25.000",
+      },
+      {
+        image: "../assets/images/MaskGroup.png",
+        buttonText1: "Perhari",
+        buttonText2: "Berbayar",
+        titleMedium: "Perayaan Maulid Nabi di Masjid Agung",
+        titleBig:
+          "Komunitas Muslim mengadakan acara perayaan Maulid Nabi di Masjid Agung setempat",
+        price: "Rp.40.000",
+      },
+      {
+        image: "../assets/images/bedug.png",
+        buttonText1: "Perminggu",
+        buttonText2: "Berbayar",
+        titleMedium: "Tadarus di langgar alit",
+        titleBig:
+          "Kegiatan tadarus Alquran ini biasanya dibimbing oleh kaum masjid dan dilakukan dua kali khatam selama bulan Ramadan",
+        price: "Rp.40.000",
+      },
+    ];
+
+    const filteredItems = ref(items);
+
+    const toggleDropdown = () => {
+      isOpen.value = !isOpen.value;
+    };
+
+    const toggleDropdown2 = () => {
+      isOpen2.value = !isOpen2.value;
+    };
 
     return {
-      isOpen: false,
-      isOpen2: false,
-      imageUrl: "../assets/trigger.svg",
-      options: [
-        { label: "Hari", value: "Perhari" },
-        { label: "Minggu", value: "Perminggu" },
-        { label: "Bulan", value: "Perbulan" },
-      ],
-      options2: [
-        { label: "Gratis", value: "Gratis" },
-        { label: "Berbayar", value: "Berbayar" },
-      ],
-      selectedOptions: [],
-      selectedOptions2: [],
-      items: [
-        {
-          image: "../assets/images/sukuran.jpeg",
-          buttonText1: "Perbulan",
-          buttonText2: "Berbayar",
-          titleMedium: "Peringatan isra mi'raj di langgar alit",
-          titleBig:
-            "Keluarga Keraton Kasepuhan mengadakan acara Isra Miraj di Langgar Alit yang rutin digunakan untuk peringatan hari besar Islam",
-          price: "Rp. 25.000",
-        },
-        {
-          image: "../assets/images/cewe.jpeg",
-          buttonText1: "Perhari",
-          buttonText2: "Berbayar",
-          titleMedium: "Perayaan Maulid Nabi di Masjid Agung",
-          titleBig:
-            "Komunitas Muslim mengadakan acara perayaan Maulid Nabi di Masjid Agung setempat",
-          price: "Rp.40.000",
-        },
-        {
-          image: "../assets/images/cewe.jpeg",
-          buttonText1: "Perminggu",
-          buttonText2: "Berbayar",
-          titleMedium: "Tadarus di langgar alit",
-          titleBig:
-            "Kegiatan tadarus Alquran ini biasanya dibimbing oleh kaum masjid dan dilakukan dua kali khatam selama bulan Ramadan",
-          price: "Rp.40.000",
-        },
-      ],
+      isOpen,
+      isOpen2,
+      options,
+      options2,
+      selectedOptions,
+      selectedOptions2,
+      items,
+      filteredItems,
+      toggleDropdown,
+      toggleDropdown2,
     };
-  },
-  methods: {
-    toggleDropdown() {
-      this.isOpen = !this.isOpen;
-    },
-    toggleDropdown2() {
-      this.isOpen2 = !this.isOpen2;
-    },
-    selectOption(option) {
-      this.selectedOptions.push(option);
-    },
-    selectOption2(option) {
-      this.selectedOptions2.push(option);
-    },
-    applySelection() {
-      // Close dropdowns
-      this.isOpen = false;
-      this.isOpen2 = false;
-      // Filter items based on selected options
-      const filteredItems = this.items.filter((item) => {
-        // Check if item matches selected pelaksanaan option
-        const pelaksanaanMatch =
-          this.selectedOptions.length === 0 ||
-          this.selectedOptions.includes(item.buttonText1.toLowerCase());
-        // Check if item matches selected jenis event option
-        const jenisEventMatch =
-          this.selectedOptions2.length === 0 ||
-          this.selectedOptions2.includes(item.buttonText2.toLowerCase());
-        return pelaksanaanMatch && jenisEventMatch;
-      });
-      console.log("Filtered items:", filteredItems);
-    },
   },
 };
 </script>
+
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
@@ -193,7 +165,7 @@ export default {
   );
   padding: 20px;
   text-align: center;
-  width: 1349px;
+  width: 100%;
   height: 101px;
   top: 104px;
   flex-direction: row;
@@ -357,7 +329,6 @@ nav ul li button:hover {
 .container {
   display: flex;
   justify-content: center;
-  margin-left: 130px;
 }
 
 .buttonaji {
@@ -452,8 +423,8 @@ nav ul li button:hover {
   cursor: pointer;
 }
 
-.tambah :hover {
-}
+/* .tambah :hover {
+} */
 
 .photo {
   text-align: center;
