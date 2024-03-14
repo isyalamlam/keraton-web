@@ -70,6 +70,11 @@ const router = createRouter({
       path: '/eventgratis',
       name: 'eventgratis',
       component: EventGratis
+    },
+    {
+      path: '/checkoutlebihdari1',
+      name: 'checkoutlebihdari1',
+      component: Checkoutlebihdari1
     }
   ]
 })

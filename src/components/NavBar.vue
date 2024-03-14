@@ -75,7 +75,6 @@ export default {
 </script>
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 .navbar {
@@ -131,8 +130,6 @@ nav ul {
   display: flex;
 }
 
-
-
 nav ul li a,
 nav ul li button {
   display: block;
@@ -186,8 +183,6 @@ border: 1px solid #123B32;
 border-radius: 10px;
 
 }
-
-  
 
 .dropdown menu li:hover {
   background-color: #f2f2f2;
