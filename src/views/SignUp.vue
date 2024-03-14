@@ -24,25 +24,24 @@
           <h3 class="error-message" v-show="emailError">{{ emailErrorMessage }}</h3>
         </div>
         <div class="pass">
-          <div>
-            <h3 class="text">Password</h3>
-            <div :class="{ box2: true, 'error-border': passwordError }">
-              <input type="password" placeholder="6+ Characters">
-              <h3 class="error-message" v-show="passwordError">{{ passwordErrorMessage }}</h3>
-            </div>
-          </div>
-          <div>
-            <h3 class="text">Konfirmasi Password</h3>
-            <div :class="{ box2: true, 'error-border': passmatchError }">
-              <input type="password">
-              <h3 class="error-message" v-show="passmatchError">{{ passmatchErrorMessage }}</h3>
-            </div>
-          </div>
-        </div>
+  <div>
+    <h3 class="text">Password</h3>
+    <div :class="{box2: true, 'error-border': passwordError}">
+      <input type="password" v-model="password" placeholder="6+ Characters">
+      <h3 class="error-message" v-show="passwordError">{{ passwordErrorMessage }}</h3>
+    </div>
+  </div>
+  <div>
+    <h3 class="text">Konfirmasi Password</h3>
+    <div :class="{box2: true, 'error-border': passmatchError}">
+      <input type="password" v-model="passmatch" placeholder="6+ Characters">
+      <h3 class="error-message" v-show="passmatchError">{{ passmatchErrorMessage }}</h3>
+    </div>
+  </div>
+</div>
         <button class="button">Buat Akun</button>
         <h3 class="signup">Sudah buat akun? <router-link to="/signin" class="highlight">Sign In</router-link></h3>
-        <h3 class="terms">Dengan signin ke Keraton Kasepuhan Cirebon, anda setuju dengan <b>Terms</b> dan <b>Privacy
-            Policy</b>.</h3>
+        <h3 class="terms">Dengan signin ke Keraton Kasepuhan Cirebon, anda setuju dengan <b>Terms</b> dan <b>Privacy Policy</b>.</h3>
       </form>
     </div>
   </div>
@@ -85,7 +84,7 @@ const submitForm = () => {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-body {
+body{
   justify-content: center;
   align-items: center;
   font-family: 'Raleway';
@@ -94,8 +93,7 @@ body {
   top: 622px;
   left: 970px;
 }
-
-.highlight {
+.highlight{
   text-decoration: none;
 }
 
@@ -278,14 +276,184 @@ b {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 416px;
+  width: 416px; /* Adjust the width as needed */
   height: 69px;
   gap: 16px;
 }
 
-@media screen and (max-width: 600px) {
-  .image {
-    display: none
-  }
+.pass > div {
+  width: calc(50% - 8px); /* Adjust the width of each password container */
 }
+
+@media screen and (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+
+  .handphone {
+    display: block;
+  }
+  .highlight{
+  text-decoration: none;
+}
+
+h1{
+  margin-bottom: 73px;
+}
+
+b{
+  font-weight: 1000;
+}
+.error {
+  color: #FF5656;
+  font-size: 12px; 
+  margin-top: 5px; 
+}
+
+.error-border {
+  border: 2px solid #FF5656;
+}
+
+.error-message {
+  color: #FF5656;
+  font-size: 12px;
+  margin-top: 8px; 
+  font-weight: 700;
+}
+
+
+body {
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway';
+  width: fit-content;
+  height: fit-content;
+  top: 622px;
+  left: 970px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Raleway';
+}
+
+.form {
+  height: 354px;
+  width: 418px;
+  margin: auto;
+  margin-top: 169px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.text{
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  font-family: 'Raleway';
+  margin-bottom: 4px;
+  margin-left: 45px;
+}
+
+.box {
+  background-color: #f0f0f0; 
+  border-radius: 8px;
+  width: 328px;
+  height: 40px;
+  margin-bottom: 38px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: auto; /* Center horizontally */
+  margin-bottom: 38px;
+
+ 
+}
+
+.box input {
+  border: none; 
+  outline: none; 
+  background: none; 
+  width: 328px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.box input::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  justify-content: center ;
+  top:36px;
+}
+
+.button {
+  background-color: #123B32;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 328px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Raleway';
+  justify-content: center;
+}
+
+.signup {
+  font-weight: 400;
+  width: 418px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 38px;
+  font-family: 'Raleway';
+}
+
+.highlight{
+  color: #4F3CC9;
+  cursor: pointer;
+}
+
+.terms{
+  font-family: 'Inter';
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #AFAFAF;
+  justify-content: center;
+  width: 328px;
+  margin: auto;
+  
+}
+
+.image{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.image h1{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.decor{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.logo{
+  display: none; /* This will hide the image on screens below 600px */
+}
+
+.logo h5{
+  display: none; /* This will hide the image on screens below 600px */
+}
+}
+
 </style>

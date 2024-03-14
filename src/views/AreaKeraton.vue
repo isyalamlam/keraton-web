@@ -940,20 +940,20 @@ background-size: cover;
 }
 
 #card-0{
-background: url(../assets/images/image 23.png);
+background: url(../assets/images/image23.png);
 background-size:cover;
 
 }
 
 #card-1{
-background: url(../assets/images/image 24.png);
+background: url(../assets/images/image24.png);
 background-size:cover;
 }#card-2{
-background: url(../assets/images/image 25.png);
+background: url(../assets/images/image25.png);
 background-size:cover;
 
 }#card-3{
-background: url(../assets/images/image 22.png);
+background: url(../assets/images/image22.png);
 background-size:cover;
 
 }#card-4{
