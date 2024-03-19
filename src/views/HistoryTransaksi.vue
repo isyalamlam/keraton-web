@@ -1,23 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-import navbar from '../components/NavBar.vue'
+import NavBar from '../components/NavBar.vue';
+
 const detail = ref(false);
 const selectedStatus = ref('sudahDigunakan');
-const transaksiDapatDigunakan = ref([
-  {
-    id: 1,
-    name: 'Nama Transaksi 1',
-    amount: 10000,
-    status: 'dapatDigunakan'
-  },
-  {
-    id: 2,
-    name: 'Nama Transaksi 2',
-    amount: 20000,
-    status: 'dapatDigunakan'
-  },
-  // Tambahkan data transaksi yang lain sesuai kebutuhan
-]);
+const statusSelected = ref(false);
 
 const openDetailTransaksi = () => {
   detail.value = !detail.value;
@@ -30,36 +17,38 @@ const closeDetailTransaksi = () => {
 </script>
 
 <template>
-  <nav class="navbar">
-    <navbar />
-  </nav>
-  <div class="projekk">
-    <div>
-      <h1 class="title">History transaksi</h1>
-    </div>
-    <div class="container">
-      <div class="form-input">
-        <div class="search">
-          <label for="search" class="search-label">
-            <img src="../assets/svg/search.svg" class="search-icon">
-            <input type="search" v-model="searchQuery" id="search" name="search" placeholder="Cari transaksi" class="Pencarian">
-          </label>
-        </div>
-        <div class="date">
-          <input value="Pilih tanggal" type="date" class="tanggal" placeholder="Pilih tanggal">
-        </div>
-        <div class="status">
-          <select name="Status" placeholder="status" value="Status" v-model="selectedStatus">
-            <option value="sudahDigunakan">Sudah digunakan</option>
-            <option value="dapatDigunakan">Dapat digunakan</option>
-            <option value="expired">Expired</option>
-            <option value="menungguPembayaran">Menunggu pembayaran</option>
-          </select>
+  <div>
+    <nav class="navbar">
+      <NavBar />
+    </nav>
+    <div class="projekk">
+      <div>
+        <h1 class="title">History transaksi</h1>
+      </div>
+      <div class="container">
+        <div class="form-input">
+          <div class="search">
+            <label for="search" class="search-label">
+              <img src="../assets/svg/search.svg" class="search-icon">
+              <input type="search" v-model="searchQuery" id="search" name="search" placeholder="Cari transaksi" class="Pencarian">
+            </label>
+          </div>
+          <div class="date">
+            <input value="Pilih tanggal" type="date" class="tanggal" placeholder="Pilih tanggal">
+          </div>
+          <div class="status">
+            <select name="Status" placeholder="status" value="Status" v-model="selectedStatus" @change="statusSelected = true">
+              <option value="sudahDigunakan">Sudah digunakan</option>
+              <option value="dapatDigunakan">Dapat digunakan</option>
+              <option value="expired">Expired</option>
+              <option value="menungguPembayaran">Menunggu pembayaran</option>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="tabel">
-      <div class="card-1" v-if="selectedStatus === 'sudahDigunakan'">
+      </div>
+    <div class="tabel" v-if="!statusSelected || selectedStatus === 'sudahDigunakan'">
+      <div class="card-1">
         <div class="tiket">
           <div class="tiket__header-container">
             <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -92,8 +81,8 @@ const closeDetailTransaksi = () => {
       </div>
     </div>
 
-    <div class="tabel">
-      <div class="card-1" v-if="selectedStatus === 'dapatDigunakan'">
+    <div class="tabel" v-if="!statusSelected || selectedStatus === 'dapatDigunakan'">
+      <div class="card-1">
     <div class="tiket">
       <div class="tiket__header-container">
         <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -126,8 +115,8 @@ const closeDetailTransaksi = () => {
   </div>
     </div>
 
-    <div class="tabel">
-      <div class="card-3" v-if="selectedStatus === 'expired'">            
+    <div class="tabel" v-if="!statusSelected || selectedStatus === 'expired'">
+      <div class="card-3">            
             <div class="tiket">
               <div class="tiket__header-container">
                 <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -160,8 +149,8 @@ const closeDetailTransaksi = () => {
           </div>
     </div>
 
-    <div class="tabel">
-      <div class="card-4" v-if="selectedStatus === 'menungguPembayaran'">
+    <div class="tabel" v-if="!statusSelected || selectedStatus === 'menungguPembayaran'">
+      <div class="card-4">
             <div class="tiket">
               <div class="tiket__header-container">
                 <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
@@ -193,14 +182,7 @@ const closeDetailTransaksi = () => {
             </div>
           </div>
     </div>
-    <!-- <div class="tabel">
 
-</div> -->
-
-
-
-
-    <!-- popup -->
    <!-- popup -->
    <section class="detail-transaksi" v-if="detail">
         <div class="popup">
@@ -417,12 +399,13 @@ const closeDetailTransaksi = () => {
     
     .tabel {
         width: 779px;
-        height: 225px;
+        height: fit-content;
         border-radius: 12px;
         box-shadow: 0 9px 6px rgba(0, 0, 0, 0.1);
         margin: 0 auto; /* Mengatur margin horizontal secara otomatis untuk memusatkan */
         margin-top: 48px;
         padding: 10px;
+        margin-bottom: 23px;
     }
     
     .icon-tiket {
