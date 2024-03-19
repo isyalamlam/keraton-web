@@ -11,17 +11,17 @@ const harga = ref(10000)
 const tanggalSekarang = new Date().toISOString().substr(0, 10);
 
 const hargaTiket = harga.value.toLocaleString('id-ID', {
-      maximumFractionDigits: 2,
-      minimumFractionDigits: 2 
-  });
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 2
+});
 
-  const hargaStringTiket = ref(hargaTiket); 
+const hargaStringTiket = ref(hargaTiket);
 
-  const hargaString = computed(() => (harga.value).toLocaleString('id-ID'));
-  const layananString = layanan.toLocaleString('id-ID');
-  const jasaAppString = jasaApp.toLocaleString('id-ID');
+const hargaString = computed(() => (harga.value).toLocaleString('id-ID'));
+const layananString = layanan.toLocaleString('id-ID');
+const jasaAppString = jasaApp.toLocaleString('id-ID');
 
-  const totalPemesanan = computed(() => (harga.value + layanan + jasaApp).toLocaleString('id-ID'));
+const totalPemesanan = computed(() => (harga.value + layanan + jasaApp).toLocaleString('id-ID'));
 
 const tambah = () => {
   count.value++;
@@ -120,27 +120,14 @@ const kurang = () => {
             </div>
             <div class="tmbh-brg">
               <div class="input-tiket1">
-                <button @click="kurang" class="kurang">-</button>
+                <button @click="kurang" class="kurang"><img src="../assets/svg/iconKurang.svg"></button>
                 <p class="input-tiket2">{{ count }}</p>
-                <button @click="tambah" class="tambah">+</button>
+                <button @click="tambah" class="tambah"><img src="../assets/svg/iconTambah.svg"></button>
               </div>
             </div>
           </div>
           <div class="content-5">
             <payment />
-            <!-- <div class="met-pembayaran">
-              <img src="../assets/svg/pil-pembayaran.svg">
-              <p class="plh-pembayaran">Pilih Pembayaran</p>
-            </div> -->
-            <!-- <div>
-              <button>
-                pop up <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M12.8354 1.5855L7.21055 7.21031C7.15831 7.26261 7.09628 7.30409 7.02799 7.3324C6.95971 7.36071 6.88652 7.37528 6.8126 7.37528C6.73868 7.37528 6.66548 7.36071 6.5972 7.3324C6.52892 7.30409 6.46688 7.26261 6.41464 7.21031L0.789838 1.5855C0.684294 1.47996 0.625 1.33681 0.625 1.18755C0.625 1.03829 0.684294 0.895138 0.789838 0.789594C0.895382 0.68405 1.03853 0.624756 1.18779 0.624756C1.33706 0.624756 1.4802 0.68405 1.58575 0.789594L6.8126 6.01715L12.0394 0.789594C12.0917 0.737334 12.1537 0.695879 12.222 0.667596C12.2903 0.639313 12.3635 0.624756 12.4374 0.624756C12.5113 0.624756 12.5845 0.639313 12.6528 0.667596C12.7211 0.695879 12.7831 0.737334 12.8354 0.789594C12.8876 0.841854 12.9291 0.903896 12.9574 0.972177C12.9856 1.04046 13.0002 1.11364 13.0002 1.18755C13.0002 1.26146 12.9856 1.33464 12.9574 1.40292C12.9291 1.4712 12.8876 1.53324 12.8354 1.5855Z"
-                    fill="black" />
-                </svg>
-              </button>
-            </div> -->
           </div>
         </div>
       </div>
@@ -264,6 +251,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .input-tiket1 {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.tmbh-brg {
+  margin-top: 20px;
+}
+
+
+.tambah,
+.kurang {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .tmbh-brg {
@@ -271,27 +278,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .tambah {
-  margin-left: -5px;
-  border: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 8px;
-  color: white;
-  background-color: #000000;
+  border: solid 1.5px #B0BEC5;
+  color: #B0BEC5;
+  background-color: #FFFFFF;
+  margin-left: 3%px;
 }
 
 .kurang {
-  width: 24px;
-  height: 24px;
-  border-radius: 8px;
-  border: solid 1.5px;
+  border: solid 1.5px #B0BEC5;
   color: #B0BEC5;
   background-color: #FFFFFF;
 }
 
+.tambah:hover,
+.kurang:hover {
+  border: none;
+  color: #FFFFFF;
+  background-color: #000000;
+}
+.tambah:hover img,
+.kurang:hover img {
+  filter: brightness(0) invert(1);
+}
+
+
 .input-tiket2 {
-  margin-left: 16px;
-  width: 28px;
+  margin-left: 3%;
   color: #000000;
   font-family: 'Manrope';
   font-weight: 600;
@@ -690,4 +702,12 @@ hr {
   margin-top: 8px;
   padding-top: 20px;
 }
-</style>../components/NavBar.vue../components/NavBar.vue
+
+/*-------------> Laptop L <------------- */
+@media screen and (min-width: 1440px) {
+  #ringkasanBooking {
+    margin-left: 100px;
+
+  }
+}
+</style>
