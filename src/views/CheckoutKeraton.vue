@@ -1,7 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
 import navbar from '../components/NavBar.vue'
-
 import Payment from '../components/Pembayaran.vue'
 const count = ref(1)
 const layanan = 2500
@@ -690,4 +689,4 @@ hr {
   margin-top: 8px;
   padding-top: 20px;
 }
-</style>../components/NavBar.vue../components/NavBar.vue
+</style>

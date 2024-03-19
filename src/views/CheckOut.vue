@@ -776,7 +776,7 @@ hr {
 
 <script setup>
 import { ref, computed } from 'vue'
-import navbar from "../components/NavBar.vue";
+import navbar from '../components/NavBar.vue'
 import payment from "../components/Pembayaran.vue";
 import SelectPopup from "../components/SelectPopup.vue";
 

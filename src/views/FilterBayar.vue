@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <navbar></navbar>
+  <navbar />
   </nav>
   <div class="header">
     <div class="text1">
@@ -56,7 +56,7 @@
 </template>
 
 <script setup>
-import navbar from "../components/NavBar.vue";
+import navbar from '../components/NavBar.vue'
 </script>
 
 <script>
@@ -547,7 +547,7 @@ nav ul li button:hover {
 }
 
 .dropdown-toggle2 span {
-  margin-right: 8px;
+  margin-right: 8px;  
 }
 
 .dropdown-toggle2 img {

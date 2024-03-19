@@ -156,11 +156,12 @@
 </template>
 
 <script setup>
-import navbar from "../components/NavBar.vue";
+// import navbar from "quasar-project/src/components/NavBar.vue";
+
 </script>
 
   <script>
-  import navbar from '../components/NavBar.vue';
+import navbar from '../components/NavBar.vue'
   export default {
     data() {
       return {
@@ -549,4 +550,4 @@ import navbar from "../components/NavBar.vue";
   gap: 46px;
   padding-left: 645px;
 }
-</style>
+</style>../../quasar-project/src/components/NavBar.vue

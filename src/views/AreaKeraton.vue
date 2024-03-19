@@ -187,7 +187,7 @@
 </template>
 
 <script setup>
-import navbar from "../components/NavBar.vue";
+import navbar from '../components/NavBar.vue'
 </script>
 
 
@@ -1004,4 +1004,4 @@ background-size:cover;
 }
 
 
-</style>
+</style>../../quasar-project/src/components/NavBar.vue

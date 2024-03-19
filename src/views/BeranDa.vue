@@ -204,7 +204,7 @@
 </template>
 
 <script setup>
-import navbar from "../components/NavBar.vue";
+import navbar from '../components/NavBar.vue'
 </script>
 
 <script>

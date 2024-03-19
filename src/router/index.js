@@ -9,10 +9,10 @@ import CheckoutKeraton from '../views/CheckoutKeraton.vue'
 import Checkout from '../views/CheckOut.vue'
 import PilihanPaket from '../views/PilihanPaket.vue'
 import BeranDa from '../views/BeranDa.vue'
-import Checkoutlebihdari1 from '../views/CheckOutlebihdari1.vue'
 import EventGratis from '../views/EventGratis.vue'
 import Booking from '../views/Booking.vue'
 import FilterBayar from '../views/FilterBayar.vue'
+import Quasar from '../views/Quasar.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -74,11 +74,6 @@ const router = createRouter({
       component: EventGratis
     },
     {
-      path: '/checkoutlebihdari1',
-      name: 'checkoutlebihdari1',
-      component: Checkoutlebihdari1
-    },
-    {
       path: '/booking',
       name: 'booking',
       component: Booking
@@ -87,6 +82,11 @@ const router = createRouter({
       path: '/filterbayar',
       name: 'filterbayar',
       component: FilterBayar
+    },
+    {
+      path: '/quasar',
+      name: 'quasar',
+      component: Quasar
     },
   ]
 })
