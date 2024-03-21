@@ -1,9 +1,9 @@
 <template>
 
-  <body>
   <nav>
     <navbar :transparent="true"/>
   </nav>
+  <body>
 
 
     <div class="image-container">
@@ -142,6 +142,8 @@
 </template>
 
 <script setup>
+import navbar from '../components/NavBar.vue'
+
 </script>
 
 <script>
@@ -199,9 +201,16 @@ export default {
 </style>
 
 <style scoped>
+nav {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  margin-left: -50px;
+}
+
 body {
-  width: 1366px;
-  height: 768px;
+  width: fit-content;
+  height: 0;
 }
 
 * {
@@ -287,11 +296,11 @@ body {
 .image-container {
   position: absolute;
   width: 1280px;
-  height: 768px;
+  height: 600px;
 }
 
 .image {
-  width: 1366px;
+  width: 1280px;
   height: 640px;
   object-fit: cover;
   filter: brightness(60%);
@@ -348,7 +357,7 @@ body {
   left: 55px;
   margin-left: 60px;
   border-radius: 30px;
-  margin-top: 428px;
+  margin-top: 330px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;

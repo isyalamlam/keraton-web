@@ -71,10 +71,15 @@
   <img alt="" class="image-Tourist3" src="../assets/images/image 35.png" />
 </div>
 
-<div class="Lokasi">
-     <p> Lokasi</p> 
-     <p class="Lokasi-samping">Dengan luas sekitar 13,5 hektar dan terdiri dari 2 komplek yaitu  Dalem Agung Pakungwati dan kompleks Keraton Pakungwati.</p>
-    </div>
+<div class="Lokasi-container">
+  <div class="Lokasi">
+    <p>Lokasi</p>
+  </div>
+  <div class="Lokasi-samping">
+    <p>Dengan luas sekitar 13,5 hektar dan terdiri dari 2 komplek yaitu Dalem Agung Pakungwati dan kompleks Keraton Pakungwati.</p>
+  </div>
+</div>
+
 
     <div class="Denah">
       <img src="../assets/images/Frame 80.png">
@@ -245,6 +250,8 @@ nav {
   position: relative;
   z-index: 1000;
   width: 100%;
+  margin-left: -50px;
+
 }
 
  body {
@@ -325,34 +332,39 @@ position: relative;
     margin-right: 120px; 
     margin-top: -450px;
 }
-.Lokasi{
-    width: 542px;
-    height: 72px;
-    top: 4255px;
-    left: 120px;
-    margin-left: 50px;
-    font-family: Raleway;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 400px;
-    display: flex;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #000000;
+.Lokasi-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 243px;
 }
-.Lokasi-samping{
-  width: 542px;
-    height: 72px;
-    top: 4455px;
-      margin-left: 700px;
-    font-family: Raleway;
-    font-size: 20px;
-    font-weight: 400;
-    position: absolute;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: right;
+
+.Lokasi {
+  width: 542px; /* Mengatur lebar menjadi otomatis agar sesuai dengan konten */
+  height: 72px; /* Mengatur tinggi menjadi otomatis agar sesuai dengan konten */
+  margin-left: 120px;
+  font-family: Raleway;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1; /* Sesuaikan dengan kebutuhan Anda */
+  display: flex;
+  align-items: center; /* Pusatkan vertikal konten */
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
 }
+
+.Lokasi-samping {
+  width: 562px; /* Mengatur lebar menjadi otomatis agar sesuai dengan konten */
+  height: 112px; /* Mengatur tinggi menjadi otomatis agar sesuai dengan konten */
+  margin-left: 20px; /* Sesuaikan margin kiri agar sesuai dengan kebutuhan Anda */
+  font-family: Raleway;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1; /* Sesuaikan dengan kebutuhan Anda */
+  letter-spacing: 0em;
+  text-align: right;
+}
+
 .Denah{
   position: absolute;
   width: 600px;
@@ -405,10 +417,10 @@ position: absolute;
 }
 .Fasilitas-Images{
   gap: 20px;
+  margin-bottom: 9px;
 }
 .Fasilitas-Images2{
   gap: 20px;
-
 }
 
 
@@ -417,7 +429,7 @@ position: absolute;
 height: 649px;
 top: 4153px;
 left: 55px;
-margin-top: 1420px;
+margin-top: 1220px;
 margin-left: 25px;
 border-radius: 30px;
 filter: opacity(70%);
@@ -530,7 +542,7 @@ position: absolute;
     position: absolute;
     width: 542px;
     height: 72px;
-    top: 7339px;
+    top: 7149px;
     left: 100px;
     margin-left: -50px;
     font-family: Raleway;
