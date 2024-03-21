@@ -1,6 +1,5 @@
-<!-- navbar.vue -->
 <template>
-  <div class="navbar">
+  <div class="navbar" :class="{ 'transparent': transparent }">
     <div class="navbar-left">
       <img alt="icon-aplikasi" src="../assets/images/logo_keraton.png" class="app-icon" />
       <span class="app-name">Keraton Kesepuhan Cirebon</span>
@@ -30,18 +29,22 @@
     <li v-if="parentSelectedOption">{{ parentSelectedOption.name }}</li>
   </div>
   <beranda>
-
   </beranda>
 </template>
 
 <script>
-
-import DropDown from '../components/DropDown.vue'
+// import DropDown from '../components/DropDown.vue'
 
 export default {
-  components: {
-    DropDown
+  props: {
+    transparent: {
+      type: Boolean,
+      default: false
+    }
   },
+  // components: {
+  //   DropDown
+  // },
   data() {
     return {
       selectedHistory: null,
@@ -73,8 +76,7 @@ export default {
     },
     keSejarah() {
       this.$router.push('/sejarahkeraton');
-    },
-
+    }
   }
 }
 </script>
@@ -88,8 +90,6 @@ export default {
   align-items: center;
   padding: 10px 10px 10px 0px;
   position: relative;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: 'Raleway', sans-serif;
   width: 100%;
   height: 104px;
@@ -197,5 +197,17 @@ li :first-child {
 
 .dropdown menu li:hover {
   background-color: #f2f2f2;
+}
+
+/* Gaya untuk navbar transparan */
+.navbar.transparent {
+  background-color: transparent;
+}
+
+/* Gaya untuk teks putih */
+.navbar.transparent .app-name,
+.navbar.transparent nav ul li a,
+.navbar.transparent nav ul li button {
+  color: white;
 }
 </style>

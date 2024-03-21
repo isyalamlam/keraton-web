@@ -13,6 +13,8 @@ import EventGratis from '../views/EventGratis.vue'
 import Booking from '../views/Booking.vue'
 import FilterBayar from '../views/FilterBayar.vue'
 import Quasar from '../views/Quasar.vue'
+import AgungDalem from '../views/AgungDalem.vue'
+import Lotus from '../views/Lotus.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -87,6 +89,16 @@ const router = createRouter({
       path: '/quasar',
       name: 'quasar',
       component: Quasar
+    },
+    {
+      path: '/agungdalem',
+      name: 'agungdalem',
+      component: AgungDalem
+    },
+    {
+      path: '/lotus',
+      name: 'lotus',
+      component: Lotus
     },
   ]
 })

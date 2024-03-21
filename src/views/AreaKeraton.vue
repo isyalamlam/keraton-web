@@ -1,11 +1,8 @@
 <template>
+  <nav>
+    <navbar :transparent="true"/>
+  </nav>
   <body>
-    <nav>
-<navbar :background-color="'transparent'" :text-color="'white'" :button-color="'#123B32'" />
-</nav>
-
-   
-
     <div class="image-container">
       <img alt="Area Keraton Image" class="image" src="../assets/images/image20.png" />
       <p class="image-text">BALUARTI KERATON</p>
@@ -180,10 +177,7 @@
      </div>
      </div>
     </div>
-
-
-
-</body>
+  </body>
 </template>
 
 <script setup>
@@ -240,11 +234,6 @@ methods: {
   }
 }
 };
-
-
-
-
-
 </script>
 
 <style>
@@ -252,14 +241,17 @@ methods: {
 </style>
 
 <style scoped>
+nav {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+}
+
  body {
   width: fit-content;
-  height: 1080px;
     margin:0;
     padding:0;
-         
-
-
+    margin-top: -105px;
   }
 *{
     margin: 0;
@@ -267,9 +259,7 @@ methods: {
     left: 0;
     right: 0;
     padding: 0;
-    
 }
-
 
 .Paket{
   position: absolute;
@@ -283,14 +273,15 @@ gap: 109px;
 
 }
   .image-container {
-position: absolute;   
-    width: 1366px;
-    height: 768px; 
+position: relative;   
+    width: 1280px;
+    height: 854px; 
+    z-index: 999;
   }
 
   .image {
     width: 1366px;
-    height: 640px;
+    height: 854px;
     object-fit: cover; 
     filter: brightness(60%);
   }
@@ -629,7 +620,7 @@ position: absolute;
   
   .Destinasi {
     font-family: Raleway;
-    margin-top: 900px; 
+    margin-top: 70px; 
     width: 1104px;
     height: 64px;
     top: 922px;
@@ -1004,4 +995,4 @@ background-size:cover;
 }
 
 
-</style>../../quasar-project/src/components/NavBar.vue
+</style>
