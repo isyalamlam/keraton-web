@@ -285,7 +285,7 @@ import navbar from '../components/NavBar.vue'
     align-items: center;
     margin-top: 157px;
     width:auto;
-    margin-left: vw;
+    margin-left: 5vw;
   
     
   }
