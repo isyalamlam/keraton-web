@@ -511,6 +511,7 @@ body {
   left: 0;
   width: 100%;
   box-sizing: border-box;
+  background-color: white;
   z-index: 10000;
 }
 

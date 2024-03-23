@@ -15,6 +15,7 @@ import FilterBayar from '../views/FilterBayar.vue'
 import Quasar from '../views/Quasar.vue'
 import AgungDalem from '../views/AgungDalem.vue'
 import Lotus from '../views/Lotus.vue'
+import SideBar from '../views/SideBar.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -99,6 +100,11 @@ const router = createRouter({
       path: '/lotus',
       name: 'lotus',
       component: Lotus
+    },
+    {
+      path: '/sidebar',
+      name: 'sidebar',
+      component: SideBar
     },
   ]
 })
