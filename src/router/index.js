@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
-import SejarahKeraton from '../views/SejarahKeraton.vue'
+import SejarahLP from '../views/SejarahLP.vue'
 import HistoryTransaksi from '../views/HistoryTransaksi.vue'
 import AreaKeraton from '../views/AreaKeraton.vue'
 import Museum from '../views/Museum.vue'
@@ -15,7 +15,7 @@ import FilterBayar from '../views/FilterBayar.vue'
 import Quasar from '../views/Quasar.vue'
 import AgungDalem from '../views/AgungDalem.vue'
 import Lotus from '../views/Lotus.vue'
-import SideBar from '../views/SideBar.vue'
+import Silsilahh from '../views/Silsilahh.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,9 +32,9 @@ const router = createRouter({
     },
     {
 
-      path: '/sejarahkeraton',
-      name: 'sejarahkeraton',
-      component: SejarahKeraton
+      path: '/sejarahlp',
+      name: 'sejarahlp',
+      component: SejarahLP
     }
     ,{
       path: '/areakeraton',
@@ -102,9 +102,9 @@ const router = createRouter({
       component: Lotus
     },
     {
-      path: '/sidebar',
-      name: 'sidebar',
-      component: SideBar
+      path: '/silsilahh',
+      name: 'silsilahh',
+      component: Silsilahh
     },
   ]
 })
