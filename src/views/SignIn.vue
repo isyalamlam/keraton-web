@@ -309,7 +309,7 @@ h1{
   height: 354px;
   width: 418px;
   margin: auto;
-  margin-top: 169px;
+  margin-top: 93px;
   justify-content: center;
   text-align: center;
   align-items: center;

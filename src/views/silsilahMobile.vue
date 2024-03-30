@@ -439,7 +439,7 @@
   </script>
     
     
-<style scoped>
+    <style scoped>
     .app{
       width: 390px;
 height: 7216px;
@@ -526,6 +526,7 @@ line-height: 33px;
 letter-spacing: 0em;
 text-align: left;
 margin-bottom: 10px;
+margin-left: -px;
 }
 
 .parag1{
@@ -539,6 +540,7 @@ font-weight: 400;
 line-height: 14px;
 letter-spacing: 0em;
 text-align: left;
+margin-left: 2px;
 
 }
 

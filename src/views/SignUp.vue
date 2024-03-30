@@ -13,35 +13,41 @@
     <div>
       <form @submit.prevent="submitForm" class="form">
         <h1>Sign Up</h1>
+        <div class="boxx">
         <label class="text">Nama Lengkap</label>
         <div :class="{ 'box': true, 'error-border': nameError }">
           <input type="text" v-model="name">
           <h3 class="error-message" v-show="nameError">{{ nameErrorMessage }}</h3>
         </div>
+      </div>
+      <div class="boxx">
         <label class="text">Email</label>
         <div :class="{ 'box': true, 'error-border': emailError }">
           <input type="email" v-model="email" placeholder="6+ Characters">
           <h3 class="error-message" v-show="emailError">{{ emailErrorMessage }}</h3>
         </div>
+      </div>
         <div class="pass">
-  <div>
-    <h3 class="text">Password</h3>
+  <div class="pw">
+    <h3 class="text textp">Password</h3>
     <div :class="{box2: true, 'error-border': passwordError}">
       <input type="password" v-model="password" placeholder="6+ Characters">
       <h3 class="error-message" v-show="passwordError">{{ passwordErrorMessage }}</h3>
     </div>
   </div>
-  <div>
-    <h3 class="text">Konfirmasi Password</h3>
+  <div class="cpw">
+    <h3 class="text textp">Konfirmasi Password</h3>
     <div :class="{box2: true, 'error-border': passmatchError}">
       <input type="password" v-model="passmatch" placeholder="6+ Characters">
       <h3 class="error-message" v-show="passmatchError">{{ passmatchErrorMessage }}</h3>
     </div>
   </div>
 </div>
+<div class="bottom">
         <button class="button">Buat Akun</button>
         <h3 class="signup">Sudah buat akun? <router-link to="/signin" class="highlight">Sign In</router-link></h3>
         <h3 class="terms">Dengan signin ke Keraton Kasepuhan Cirebon, anda setuju dengan <b>Terms</b> dan <b>Privacy Policy</b>.</h3>
+      </div>
       </form>
     </div>
   </div>
@@ -286,174 +292,190 @@ b {
 }
 
 @media screen and (max-width: 600px) {
-  .desktop {
-    display: none;
+  body {
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway';
+    width: fit-content;
+    height: fit-content;
+    top: 622px;
+    left: 970px;
   }
 
-  .handphone {
-    display: block;
+  .highlight {
+    text-decoration: none;
   }
-  .highlight{
-  text-decoration: none;
+
+  h1 {
+    margin-bottom: 73px;
+  }
+
+  b {
+    font-weight: 1000;
+  }
+
+  .error {
+    color: #FF5656;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .error-border {
+    border: 2px solid #FF5656;
+  }
+
+  .error-message {
+    color: #FF5656;
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Raleway';
+  }
+
+  .form {
+    height: 354px;
+    width: 418px;
+    margin: auto;
+    margin-top: 93px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .text {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Raleway';
+    margin-bottom: 4px;
+  }
+
+  .textp{
+    margin-left: 45px;
+  }
+
+  .boxx{
+    width: 328px;
+    margin-left: 45px;
+    text-align: left;
+  }
+
+  .box {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    width: 328px;
+    height: 40px;
+    margin-bottom: 38px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 38px;
+    margin-top: 10px;
+  }
+
+  .box input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+
+  .button {
+    background-color: #123B32;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 328px; 
+    height: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Raleway';
+    justify-content: center;
+  }
+
+  .signup {
+    font-weight: 400;
+    width: 100%; 
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 38px;
+    font-family: 'Raleway';
+  }
+
+  .highlight {
+    color: #4F3CC9;
+    cursor: pointer;
+  }
+
+  .terms {
+    font-family: 'Inter';
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #AFAFAF;
+    justify-content: center;
+    width: 100%; 
+    margin: auto;
+  }
+
+  .image {
+    display: none; /* This will hide the image on screens below 600px */
+  }
+
+  .image h1 {
+    display: none; /* This will hide the image on screens below 600px */
+  }
+
+  .decor {
+    display: none; /* This will hide the image on screens below 600px */
+  }
+
+  .logo {
+    display: none; /* This will hide the image on screens below 600px */
+  }
+
+  .logo h5 {
+    display: none; /* This will hide the image on screens below 600px */
+  }
+
+  /* CSS untuk mengatur tata letak elemen pw dan cpw pada tampilan responsif */
+  .pass {
+    flex-direction: column; /* Mengubah arah tata letak menjadi kolom */
+  }
+
+  .pass > div {
+    width: 100%; /* Menjadikan lebar masing-masing div 100% */
+    margin-bottom: 20px; /* Menambahkan margin antar elemen */
+  }
+
+  .box2 {
+    width: 328px;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-left: 45px;
+  }
+
+  .bottom{
+    margin-top: 140px;
+  }
 }
 
-h1{
-  margin-bottom: 73px;
-}
 
-b{
-  font-weight: 1000;
-}
-.error {
-  color: #FF5656;
-  font-size: 12px; 
-  margin-top: 5px; 
-}
-
-.error-border {
-  border: 2px solid #FF5656;
-}
-
-.error-message {
-  color: #FF5656;
-  font-size: 12px;
-  margin-top: 8px; 
-  font-weight: 700;
-}
-
-
-body {
-  justify-content: center;
-  align-items: center;
-  font-family: 'Raleway';
-  width: fit-content;
-  height: fit-content;
-  top: 622px;
-  left: 970px;
-}
-
-.container{
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-
-h1{
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-  font-family: 'Raleway';
-}
-
-.form {
-  height: 354px;
-  width: 418px;
-  margin: auto;
-  margin-top: 169px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-
-.text{
-  font-size: 16px;
-  font-weight: 700;
-  text-align: left;
-  font-family: 'Raleway';
-  margin-bottom: 4px;
-  margin-left: 45px;
-}
-
-.box {
-  background-color: #f0f0f0; 
-  border-radius: 8px;
-  width: 328px;
-  height: 40px;
-  margin-bottom: 38px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin: auto; /* Center horizontally */
-  margin-bottom: 38px;
-
- 
-}
-
-.box input {
-  border: none; 
-  outline: none; 
-  background: none; 
-  width: 328px;
-  height: 40px;
-  border-radius: 8px;
-  font-size: 16px;
-  padding-left: 10px;
-  box-sizing: border-box;
-}
-.box input::placeholder {
-  font-size: 14px;
-  font-weight: 400;
-  justify-content: center ;
-  top:36px;
-}
-
-.button {
-  background-color: #123B32;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 328px;
-  height: 40px;
-  font-weight: 500;
-  font-size: 14px;
-  font-family: 'Raleway';
-  justify-content: center;
-}
-
-.signup {
-  font-weight: 400;
-  width: 418px;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 38px;
-  font-family: 'Raleway';
-}
-
-.highlight{
-  color: #4F3CC9;
-  cursor: pointer;
-}
-
-.terms{
-  font-family: 'Inter';
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  color: #AFAFAF;
-  justify-content: center;
-  width: 328px;
-  margin: auto;
-  
-}
-
-.image{
-  display: none; /* This will hide the image on screens below 600px */
-}
-
-.image h1{
-  display: none; /* This will hide the image on screens below 600px */
-}
-
-.decor{
-  display: none; /* This will hide the image on screens below 600px */
-}
-
-.logo{
-  display: none; /* This will hide the image on screens below 600px */
-}
-
-.logo h5{
-  display: none; /* This will hide the image on screens below 600px */
-}
-}
 
 </style>

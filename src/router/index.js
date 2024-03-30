@@ -15,7 +15,7 @@ import FilterBayar from '../views/FilterBayar.vue'
 import Quasar from '../views/Quasar.vue'
 import AgungDalem from '../views/AgungDalem.vue'
 import Lotus from '../views/Lotus.vue'
-import Silsilahh from '../views/Silsilahh.vue'
+import sejarahSilsilah from '../views/sejarahSilsilah.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,8 +32,8 @@ const router = createRouter({
     },
     {
 
-      path: '/sejarahlp',
-      name: 'sejarahlp',
+      path: '/sejarah',
+      name: 'sejarah',
       component: SejarahLP
     }
     ,{
@@ -102,9 +102,9 @@ const router = createRouter({
       component: Lotus
     },
     {
-      path: '/silsilahh',
-      name: 'silsilahh',
-      component: Silsilahh
+      path: '/silsilah',
+      name: 'silsilah',
+      component: sejarahSilsilah
     },
   ]
 })
