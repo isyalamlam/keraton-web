@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import NavBar from '../components/NavBar.vue';
 
 const detail = ref(false);
+const cara = ref(false);
 const selectedStatus = ref('sudahDigunakan');
 const statusSelected = ref(false);
 
@@ -14,14 +15,65 @@ const closeDetailTransaksi = () => {
   detail.value = false;
 };
 
+const openMenungguPembayaran = () => {
+  cara.value = !cara.value;
+};
+
+const closeMenungguPembayaran = () => {
+  cara.value = false;
+};
+
+const transactions = [
+  {
+    status: 'sudahDigunakan',
+    label: 'Sudah digunakan',
+    class: 'sudah__digunakan',
+    cardClass: 'card-1',
+    actions: [
+      { label: 'Lihat detail transaksi', handler: openDetailTransaksi },
+      { label: 'Bantuan', handler: null }, // Handler bisa diisi sesuai kebutuhan
+    ],
+  },
+  {
+    status: 'dapatDigunakan',
+    label: 'Dapat digunakan',
+    class: 'dapat__digunakan',
+    cardClass: 'card-1',
+    actions: [
+      { label: 'Lihat detail transaksi', handler: openDetailTransaksi },
+      { label: 'Bantuan', handler: null }, // Handler bisa diisi sesuai kebutuhan
+    ],
+  },
+  {
+    status: 'expired',
+    label: 'Expired',
+    class: 'expired',
+    cardClass: 'card-3',
+    actions: [
+      { label: 'Lihat detail transaksi', handler: openDetailTransaksi },
+      { label: 'Bantuan', handler: null }, // Handler bisa diisi sesuai kebutuhan
+    ],
+  },
+  {
+    status: 'menungguPembayaran',
+    label: 'Menunggu pembayaran',
+    class: 'menunggu__pembayaran',
+    cardClass: 'card-4',
+    actions: [
+      { label: 'Lihat detail', handler: openDetailTransaksi },
+      { label: 'Cara Pembayaran', handler: openMenungguPembayaran },
+    ],
+  },
+];
 </script>
 
 <template>
-  <div>
+<div class="all-content">
+  <div> 
     <nav class="navbar">
       <NavBar />
     </nav>
-    <div class="projekk">
+    <div class="content">
       <div>
         <h1 class="title">History transaksi</h1>
       </div>
@@ -37,7 +89,7 @@ const closeDetailTransaksi = () => {
             <input value="Pilih tanggal" type="date" class="tanggal" placeholder="Pilih tanggal">
           </div>
           <div class="status">
-            <select name="Status" placeholder="status" value="Status" v-model="selectedStatus" @change="statusSelected = true">
+            <select name="Status" placeholder="status" value="Status" v-model="selectedStatus" @change="statusSelected = true" class="custom-select">
               <option value="sudahDigunakan">Sudah digunakan</option>
               <option value="dapatDigunakan">Dapat digunakan</option>
               <option value="expired">Expired</option>
@@ -47,14 +99,14 @@ const closeDetailTransaksi = () => {
         </div>
       </div>
       </div>
-    <div class="tabel" v-if="!statusSelected || selectedStatus === 'sudahDigunakan'">
-      <div class="card-1">
+    <div v-for="transaction in transactions" :key="transaction.status" class="tabel" v-if="!statusSelected || selectedStatus === transaction.status">
+      <div :class="transaction.cardClass">
         <div class="tiket">
           <div class="tiket__header-container">
             <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
             <p>Tiket</p>
             <label>17 Agu 2023</label>
-            <p class="sudah__digunakan">Sudah digunakan</p>
+            <p :class="transaction.class">{{ transaction.label }}</p>
           </div>
           <div class="tiket__content">
             <img src="../assets/images/img-1.jpg" alt="">
@@ -70,117 +122,17 @@ const closeDetailTransaksi = () => {
                   <p class="hrga">Rp. 33.500</p>
                 </div>
                 <div class="actions">
-                  <a @click="openDetailTransaksi" class="detail"><p>Lihat detail transaksi</p></a>
+                  <a v-for="(action, index) in transaction.actions" :key="index" @click="action.handler" class="detail">
+                    <p>{{ action.label }}</p>
+                  </a>
                   |
-                  <a href="" class="bantuan"><p>Bantuan</p></a>
+                  <a href="" class="bantuan" v-if="transaction.status !== 'menungguPembayaran'"><p>Bantuan</p></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="tabel" v-if="!statusSelected || selectedStatus === 'dapatDigunakan'">
-      <div class="card-1">
-    <div class="tiket">
-      <div class="tiket__header-container">
-        <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
-        <p>Tiket</p>
-        <label>17 Agu 2023</label>
-        <p class="dapat__digunakan">Dapat digunakan</p>
-      </div>
-      <div class="tiket__content">
-        <img src="../assets/images/img-1.jpg" alt="">
-        <div class="tiket__content-details">
-          <h6>Tiket Masuk Keraton Kasepuhan Cirebon+Museum+...</h6>
-          <div class="label">
-            <label class="labelharga">1 tiket x Rp. 10.000</label><br>
-            <label>+2 tiket lainnya</label>
-          </div>
-          <div class="total">
-            <div class="info">
-              <p class="total__belanja">Total belanja</p>
-              <p class="hrga">Rp. 33.500</p>
-            </div>
-            <div class="actions">
-              <a @click="openDetailTransaksi" class="detail"><p>Lihat detail transaksi</p></a>
-              |
-              <a href="" class="bantuan"><p>Bantuan</p></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-
-    <div class="tabel" v-if="!statusSelected || selectedStatus === 'expired'">
-      <div class="card-3">            
-            <div class="tiket">
-              <div class="tiket__header-container">
-                <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
-                <p>Tiket</p>
-                <label>17 Agu 2023</label>
-                <p class="expired">Expired</p>
-              </div>
-              <div class="tiket__content">
-                <img src="../assets/images/img-1.jpg" alt="">
-                <div class="tiket__content-details">
-                  <h6>Tiket Masuk Keraton Kasepuhan Cirebon+Museum+...</h6>
-                  <div class="label">
-                  <label class="labelharga">1 tiket x Rp. 10.000</label><br>
-                  <label>+2 tiket lainnya</label>
-                </div>
-                <div class="total">
-                <div class="info">
-                    <p class="total__belanja">Total belanja</p>
-                    <p class="hrga">Rp. 33.500</p>
-                </div>
-                <div class="actions">
-                    <a @click="openDetailTransaksi" class="detail"><p>Lihat detail transaksi</p></a>
-                    |
-                    <a href="" class="bantuan"><p>Bantuan</p></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
-
-    <div class="tabel" v-if="!statusSelected || selectedStatus === 'menungguPembayaran'">
-      <div class="card-4">
-            <div class="tiket">
-              <div class="tiket__header-container">
-                <img src="../assets/images/Vector.png" alt="icon-tiket" class="icon-tiket">
-                <p>Tiket</p>
-                <label>17 Agu 2023</label>
-                <p class="menunggu__pembayaran">Menunggu pembayaran</p>
-              </div>
-              <div class="tiket__content">
-                <img src="../assets/images/img-1.jpg" alt="">
-                <div class="tiket__content-details">
-                  <h6>Tiket Masuk Keraton Kasepuhan Cirebon+Museum+...</h6>
-                  <div class="label">
-                  <label class="labelharga">1 tiket x Rp. 10.000</label><br>
-                  <label>+2 tiket lainnya</label>
-                </div>
-                <div class="total">
-                <div class="info">
-                    <p class="total__belanja">Total belanja</p>
-                    <p class="hrga">Rp. 33.500</p>
-                </div>
-                <div class="actions">
-                    <a @click="openDetailTransaksi" class="detail"><p>Lihat detail</p></a>
-                    |
-                    <a @click="openMenungguPembayaran" class="cara"><p>Cara Pembayaran</p></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
     </div>
 
    <!-- popup -->
@@ -209,7 +161,7 @@ const closeDetailTransaksi = () => {
                   <img src="../assets/svg/gambarKraton.svg" alt="">
                   <div class="info-detail-tiket">
                     <p>Tiket Masuk Keraton Kasepuhan (UMUM)</p>
-                    <label class="harga">17 Agu 2023; 10:00</label>
+                    <label class="harga">17 Agu 2023; 10:00; </label>
                     <label class="harga">1 x Rp. 10.000</label>
                 </div>
               </div>
@@ -300,7 +252,7 @@ const closeDetailTransaksi = () => {
         </div>
     </section>
 
-
+  </div>
   </div>
     </template>
 
@@ -318,13 +270,15 @@ const closeDetailTransaksi = () => {
         padding: 0;
         background-color: #f8f8f8;
     }
-    
-    .projekk{
+
+    .all-content{
       font-family: raleway;
-      padding-top: 100px;
-      margin-bottom: 50px;
-      position: relative;
     }
+
+    .content{
+      padding-top: 100px;
+    }
+    
 
     h1.title {
         text-align: center;
@@ -339,7 +293,7 @@ const closeDetailTransaksi = () => {
     background-color: #FFFFFF; 
     z-index: 1000; 
   }
-    
+
     .Pencarian {
         width: 246px;
         height: 48px;
@@ -506,6 +460,20 @@ const closeDetailTransaksi = () => {
       width: 215px;
       height: 98.95px;
     }
+
+    .custom-select option {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-select option:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
 
     .label label{
         padding-right: 100px;
