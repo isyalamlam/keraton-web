@@ -16,7 +16,7 @@
   
         <div>
           <img
-            src="../assets/images/Frame.jpeg"
+            src="../assets/images/buled.jpeg"
             style="margin-left: -106px; margin-top: 15px"
           />
           <span class="gold-text">1662 M</span> <br /><br />
@@ -45,7 +45,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1697 M</span> <br /><br />
@@ -69,7 +69,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1720 M</span> <br /><br />
@@ -93,7 +93,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1750 M</span> <br /><br />
@@ -119,7 +119,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1778 M</span> <br /><br />
@@ -143,7 +143,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1784 M</span> <br /><br />
@@ -166,7 +166,7 @@
       </p>
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1790M</span> <br /><br />
@@ -191,7 +191,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1816 M</span> <br /><br />
@@ -215,7 +215,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1845 M</span> <br /><br />
@@ -239,7 +239,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1890 M</span> <br /><br />
@@ -260,7 +260,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1899 M</span> <br /><br />
@@ -288,7 +288,7 @@
           Sultan Sepuh XII memerintah selama 27 tahun dan wafat pada tahun 1969.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1942 M</span> <br /><br />
@@ -318,7 +318,7 @@
           Sultan Sepuh XIII memerintah selama 41 tahun dan wafat pada tahun 2010.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1969 M</span> <br /><br />
@@ -348,7 +348,7 @@
           Sultan Sepuh XIV memerintah selama 10 tahun dan wafat pada tahun 2020.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">2010 M</span> <br /><br />
@@ -382,7 +382,7 @@
           Sultan Sepuh XV memerintah tahun 2020 hingga sekarang.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">2020 M</span> <br /><br />
