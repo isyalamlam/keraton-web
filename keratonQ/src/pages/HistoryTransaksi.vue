@@ -31,7 +31,6 @@ const transactions = [
     cardClass: 'card-1',
     actions: [
       { label: 'Lihat detail transaksi', handler: openDetailTransaksi },
-      { label: '|'},
       { label: 'Bantuan', handler: null }, // Handler bisa diisi sesuai kebutuhan
     ],
   },
@@ -39,10 +38,9 @@ const transactions = [
     status: 'dapatDigunakan',
     label: 'Dapat digunakan',
     class: 'dapat__digunakan',
-    cardClass: 'card-2',
+    cardClass: 'card-1',
     actions: [
       { label: 'Lihat detail transaksi', handler: openDetailTransaksi },
-      { label: '|'},
       { label: 'Bantuan', handler: null }, // Handler bisa diisi sesuai kebutuhan
     ],
   },
@@ -53,7 +51,6 @@ const transactions = [
     cardClass: 'card-3',
     actions: [
       { label: 'Lihat detail transaksi', handler: openDetailTransaksi },
-      { label: '|'},
       { label: 'Bantuan', handler: null }, // Handler bisa diisi sesuai kebutuhan
     ],
   },
@@ -64,7 +61,6 @@ const transactions = [
     cardClass: 'card-4',
     actions: [
       { label: 'Lihat detail', handler: openDetailTransaksi },
-      { label: '|'},
       { label: 'Cara Pembayaran', handler: openMenungguPembayaran },
     ],
   },
@@ -127,9 +123,10 @@ const transactions = [
                 </div>
                 <div class="actions">
                   <a v-for="(action, index) in transaction.actions" :key="index" @click="action.handler" class="detail">
-                    <p class="bantu">{{ action.label }}</p>
+                    <p>{{ action.label }}</p>
                   </a>
-                  <a href="" class="bantuan" v-if="transaction.status !== 'menungguPembayaran'"></a>
+                  |
+                  <a href="" class="bantuan" v-if="transaction.status !== 'menungguPembayaran'"><p>Bantuan</p></a>
                 </div>
               </div>
             </div>
@@ -267,10 +264,6 @@ const transactions = [
 <style scoped>
     @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
     
-    .bantu{
-      color: #000000;
-    }
-    
     body {
         font-family: 'Raleway', sans-serif;
         margin: 0;
@@ -286,9 +279,6 @@ const transactions = [
       padding-top: 100px;
     }
     
-    p.bantuan{
-      color: #000000;
-    }
 
     h1.title {
         text-align: center;
@@ -540,7 +530,6 @@ const transactions = [
         padding-left: 30px; /* Sesuaikan padding kiri agar input tidak tumpang tindih dengan gambar */
     }
 
-    
     .bantuan {
           color: black;
           text-decoration: none;
