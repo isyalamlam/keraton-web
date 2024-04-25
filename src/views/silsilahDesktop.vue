@@ -1,7 +1,12 @@
 <template>
 <nav>
     <NavBar />
+    <div class="cover">
+      <img src="../assets/images/SilsilahSejarah.png">
+    </img>
+    </div>
 </nav>
+<div class="seluruh">
       <div class="container">
         <img
           src="../assets/images/Line 17.png"
@@ -405,7 +410,6 @@
     </div>
         </div>
         </div>
-        <div>
         </div>
   </template>
   
@@ -644,4 +648,84 @@ import NavBar from '../components/NavBar.vue';
     line-height: 24px;
     color: #212121;
   }
+
+
+  /* coba responsif */
+  .container {
+  width: 90%; /* Adjust width for larger screens */
+  max-width: 1200px; /* Limit maximum width for very large screens */
+  margin: 0 auto;
+}
+
+.column {
+  width: 100%; /* Take full width on smaller screens */
+}
+.seluruh{
+    margin-left: 5% ;
+  }
+.cover{
+  margin-left: 10%;
+}
+
+@media screen and (min-width: 768px) {
+  .column {
+    width: 50%; /* Take 50% width on screens larger than 768px */
+  }
+  .seluruh{
+    margin-left: 20%;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 5%;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .column {
+    width: 33.33%; /* Take 33.33% width on screens larger than 1024px */
+  }
+  .seluruh{
+    margin-left: 20%;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 5%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .column {
+    width: 25%; /* Take 25% width on screens larger than 1440px */
+  }
+  .seluruh{
+    margin-left: 20%;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .column {
+    width: 20%; /* Take 20% width on screens larger than 2560px */
+  }
+  .seluruh{
+    margin-left: -10%;
+    size: 20px;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+    width: 300px;
+    height: 1000px;
+  }
+
+}
+
+
   </style>

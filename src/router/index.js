@@ -16,6 +16,7 @@ import Quasar from '../views/Quasar.vue'
 import AgungDalem from '../views/AgungDalem.vue'
 import Lotus from '../views/Lotus.vue'
 import sejarahSilsilah from '../views/sejarahSilsilah.vue'
+import silsilahDesktop from '../views/silsilahDesktop.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -102,9 +103,14 @@ const router = createRouter({
       component: Lotus
     },
     {
-      path: '/silsilah',
-      name: 'silsilah',
+      path: '/sejarahsilsilah',
+      name: 'sejarahsilsilah',
       component: sejarahSilsilah
+    },
+    {
+      path: '/silsilahdesktop',
+      name: 'silsilahktop',
+      component: silsilahDesktop
     },
   ]
 })
