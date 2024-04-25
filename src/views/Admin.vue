@@ -1,7 +1,8 @@
 <template>
-  <nav class="nav">
+  <nav>
     <navbar />
   </nav>
+
   <section class="sec-home" id="section1">
     <div class="container">
       <div class="text1">

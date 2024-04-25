@@ -2,56 +2,26 @@
   <div class="navbar" :class="{ 'transparent': transparent }">
     <div class="navbar-left">
       <img alt="icon-aplikasi" src="../assets/images/logo_keraton.png" class="app-icon" />
-      <span class="app-name">Keraton Kesepuhan Cirebon</span>
+      <span class="app-name text">KERATON KASEPUHAN CIREBON</span>
     </div>
     <div class="navbar-right">
       <nav>
         <ul>
-          <li @click="keBeranda" class="short"><a href="/">Beranda</a></li>
-          <li @click="keSejarah" class="short">
+          <li @click="keBeranda" class="short text"><a href="/">Beranda</a></li>
+          <li @click="toggleDropdown('history')" class="short text">
             <a href="#">
               Sejarah
-              <span class="caret-down-svg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="none">
-                  <path d="M26.7081 12.7071L16.7081 22.7071C16.6152 22.8001 16.5049 22.8738 16.3835 22.9241C16.2621 22.9745 16.132 23.0004 16.0006 23.0004C15.8691 23.0004 15.739 22.9745 15.6176 22.9241C15.4962 22.8738 15.3859 22.8001 15.2931 22.7071L5.29306 12.7071C5.10542 12.5194 5 12.2649 5 11.9996C5 11.7342 5.10542 11.4797 5.29306 11.2921C5.4807 11.1044 5.73519 10.999 6.00056 10.999C6.26592 10.999 6.52042 11.1044 6.70806 11.2921L16.0006 20.5858L25.2931 11.2921C25.386 11.1992 25.4963 11.1255 25.6177 11.0752C25.7391 11.0249 25.8692 10.999 26.0006 10.999C26.132 10.999 26.2621 11.0249 26.3835 11.0752C26.5048 11.1255 26.6151 11.1992 26.7081 11.2921C26.801 11.385 26.8747 11.4953 26.9249 11.6167C26.9752 11.7381 27.0011 11.8682 27.0011 11.9996C27.0011 12.131 26.9752 12.2611 26.9249 12.3825C26.8747 12.5039 26.801 12.6142 26.7081 12.7071Z" fill="#343330"/>
-                </svg>
-              </span>
             </a>
-            <div class="dropdown" v-show="showHistoryDropdown">
-              <ul>
-                <li><a href="#">Silsilah</a></li>
-                <li><a href="#">Keraton</a></li>
-              </ul>
-            </div>
           </li>
-          <!-- Tambahkan menu dropdown 'silsilah' dan 'keraton' di sini -->
-          <li @click="keBooking" class="short">
+          <li @click="keBooking" class="short text">
             <a href="#">
               Booking
-              <span class="caret-down-svg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="none">
-                  <path d="M26.7081 12.7071L16.7081 22.7071C16.6152 22.8001 16.5049 22.8738 16.3835 22.9241C16.2621 22.9745 16.132 23.0004 16.0006 23.0004C15.8691 23.0004 15.739 22.9745 15.6176 22.9241C15.4962 22.8738 15.3859 22.8001 15.2931 22.7071L5.29306 12.7071C5.10542 12.5194 5 12.2649 5 11.9996C5 11.7342 5.10542 11.4797 5.29306 11.2921C5.4807 11.1044 5.73519 10.999 6.00056 10.999C6.26592 10.999 6.52042 11.1044 6.70806 11.2921L16.0006 20.5858L25.2931 11.2921C25.386 11.1992 25.4963 11.1255 25.6177 11.0752C25.7391 11.0249 25.8692 10.999 26.0006 10.999C26.132 10.999 26.2621 11.0249 26.3835 11.0752C26.5048 11.1255 26.6151 11.1992 26.7081 11.2921C26.801 11.385 26.8747 11.4953 26.9249 11.6167C26.9752 11.7381 27.0011 11.8682 27.0011 11.9996C27.0011 12.131 26.9752 12.2611 26.9249 12.3825C26.8747 12.5039 26.801 12.6142 26.7081 12.7071Z" fill="#343330"/>
-                </svg>
-              </span>
             </a>
-            <div class="dropdown">
-              <DropDown :selectedOption="selectedBooking" :options="bookingOptions"
-                @update:selectedOption="selectedBooking = $event" />
-            </div>
           </li>
-          <li class="short">
+          <li class="short text">
             <a href="#">
               Objek Wisata
-              <span class="caret-down-svg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="none">
-                  <path d="M26.7081 12.7071L16.7081 22.7071C16.6152 22.8001 16.5049 22.8738 16.3835 22.9241C16.2621 22.9745 16.132 23.0004 16.0006 23.0004C15.8691 23.0004 15.739 22.9745 15.6176 22.9241C15.4962 22.8738 15.3859 22.8001 15.2931 22.7071L5.29306 12.7071C5.10542 12.5194 5 12.2649 5 11.9996C5 11.7342 5.10542 11.4797 5.29306 11.2921C5.4807 11.1044 5.73519 10.999 6.00056 10.999C6.26592 10.999 6.52042 11.1044 6.70806 11.2921L16.0006 20.5858L25.2931 11.2921C25.386 11.1992 25.4963 11.1255 25.6177 11.0752C25.7391 11.0249 25.8692 10.999 26.0006 10.999C26.132 10.999 26.2621 11.0249 26.3835 11.0752C26.5048 11.1255 26.6151 11.1992 26.7081 11.2921C26.801 11.385 26.8747 11.4953 26.9249 11.6167C26.9752 11.7381 27.0011 11.8682 27.0011 11.9996C27.0011 12.131 26.9752 12.2611 26.9249 12.3825C26.8747 12.5039 26.801 12.6142 26.7081 12.7071Z" fill="#343330"/>
-                </svg>
-              </span>
             </a>
-            <div class="dropdown">
-              <DropDown :selectedOption="selectedAttraction" :options="attractionOptions"
-                @update:selectedOption="selectedAttraction = $event" />
-            </div>
           </li>
           <button @click="keSignIn"
             style=" margin-top: 10px ;border-radius: 5px;border: none; background-color: #123B32; color: white;width:162px;height: 34px; font-family: 'Raleway'; font-weight: 700; cursor: pointer;">Dapatkan
@@ -65,24 +35,32 @@
   </beranda>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      showHistoryDropdown: false,
-      // Your other data properties
-    };
-  },
-  methods: {
-    keSejarah() {
-      this.showHistoryDropdown = !this.showHistoryDropdown;
-    },
-    toggleDropdown() {
-      this.showHistoryDropdown = !this.showHistoryDropdown;
-    },
-    // Your other methods
-  },
+<script setup>
+import { ref } from 'vue';
+
+const showHistoryDropdown = ref(false);
+const transparent = ref(false);
+const selectedBooking = ref(null);
+const bookingOptions = ref([]);
+const selectedAttraction = ref(null);
+const attractionOptions = ref([]);
+
+const keSejarah = () => {
+  showHistoryDropdown.value = !showHistoryDropdown.value;
 };
+
+const toggleDropdown = (dropdown) => {
+  if (dropdown === 'history') {
+    showHistoryDropdown.value = !showHistoryDropdown.value;
+  }
+};
+
+const keSignIn = () => {
+  // Implement sign-in logic here
+};
+
+// Implement other methods
+
 </script>
 
 <style scoped>
@@ -143,7 +121,7 @@ export default {
 }
 
 .navbar-right {
-  margin-left: 24em;
+  margin-left: 30%;
   width: 50%;
   margin-top: 28px;
 }
