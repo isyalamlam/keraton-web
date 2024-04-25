@@ -18,13 +18,25 @@
     <p class="bawah-destinasi">Menawarkan berbagai hal menarik untuk dilihat dan dipelajari, mulai dari sejarah, arsitektur, hingga budaya.</p>
     
   
-    <div class="slider">
-  <div v-for="(card, index) in cards" :key="index" :id="'card-' + index" :class="{ cardd: true, active: index === currentIndex }">{{ card.content }}</div>
-</div>
+    <div class="slider" ref="slider">
+    <div
+      v-for="(card, index) in cards"
+      :key="index"
+      :id="'card-' + index"
+      :class="{ cardd: true, active: index === currentIndex }"
+    >
+      {{ card.content }}
+    </div>
+  </div>
 
   <div class="button-container">
     <button class="button-slider" @click="prevCard">&lt;</button>
-    <div class="bulet" v-for="(bullet, index) in bullets" :key="index" :class="{ active: index === currentIndex }"></div>
+    <div
+      class="bulet"
+      v-for="(bullet, index) in bullets"
+      :key="index"
+      :class="{ active: index === currentIndex }"
+    ></div>
     <button class="button-slider" @click="nextCard">&gt;</button>
   </div>
 
@@ -202,42 +214,62 @@ const scrollToContent = () => {
       behavior: 'smooth' 
   });}
 
-export default {
-data() {
-  return {
-    cards: [
-      { id: 'card-0' },
-      { id: 'card-1' },
-      { id: 'card-2' },
-      { id: 'card-3' },
-      { id: 'card-4' }
-    ],
-    currentIndex: 2 // Set currentIndex untuk menunjuk ke tengah awalnya
-  };
-},
-computed: {
-  bullets() {
-    return Array(this.cards.length).fill('');
-  }
-},
-methods: {
-  prevCard() {
-    // Cek apakah currentIndex adalah 0, jika ya, geser ke kartu terakhir
-    if (this.currentIndex === 0) {
-      this.currentIndex = this.cards.length - 1;
-    } else {
-      this.currentIndex--;
+ export default {
+  data() {
+    return {
+      cards: [
+        { content: '' },
+        { content: '' },
+        { content: '' },
+        { content: '' },
+        { content: '' }
+      ],
+      currentIndex: 2
+    };
+  },
+  computed: {
+    bullets() {
+      return Array(this.cards.length).fill('');
     }
   },
-  nextCard() {
-    // Cek apakah currentIndex adalah kartu terakhir, jika ya, geser ke kartu pertama
-    if (this.currentIndex === this.cards.length - 1) {
-      this.currentIndex = 0;
-    } else {
-      this.currentIndex++;
-    }
+  methods: {
+    prevCard() {
+  if (this.currentIndex === 0) {
+    this.currentIndex = this.cards.length - 1;
+  } else {
+    this.currentIndex--;
   }
-}
+},
+nextCard() {
+  if (this.currentIndex === this.cards.length - 1) {
+    this.currentIndex = 0;
+  } else {
+    this.currentIndex++;
+  }
+},
+    centerActiveCard() {
+      const sliderWidth = this.$refs.slider.offsetWidth;
+      const cardWidth = 250;
+      const offset = (sliderWidth - cardWidth) / 2;
+      const cardContainer = document.querySelector('.slider');
+      const activeCard = document.querySelector('.cardd.active');
+
+      if (activeCard && cardContainer) {
+        const index = this.currentIndex;
+        const newPosition = -index * cardWidth + offset;
+        cardContainer.style.transform = `translateX(${newPosition}px)`;
+      }
+    }
+  },
+  watch: {
+    currentIndex() {
+      this.centerActiveCard();
+    }
+  },
+  mounted() {
+    this.centerActiveCard();
+    setInterval(this.nextCard, 100000000); // Auto slide every 3 seconds
+  }
 };
 </script>
 
@@ -250,13 +282,13 @@ nav {
   position: relative;
   z-index: 1000;
   width: 100%;
+  max-width: 1280px;
   margin-left: -50px;
 
 }
 
  body {
   width: fit-content;
-    margin:0;
     margin-top: -105px;
     overflow-x: hidden;
   }
@@ -286,15 +318,15 @@ position: relative;
   }
 
   .image {
-    width: 1240px;
-    height: 854px;
+    width: 1280px;
+    height: 654px;
     object-fit: cover; 
     filter: brightness(60%);
   }
   .Tourist-Container {
     display: flex;
     background-color: #212121;
-    width: 1240px;
+    width: 1280px;
     height: 700px;
     
 }
@@ -338,28 +370,28 @@ position: relative;
 }
 
 .Lokasi {
-  width: 542px; /* Mengatur lebar menjadi otomatis agar sesuai dengan konten */
-  height: 72px; /* Mengatur tinggi menjadi otomatis agar sesuai dengan konten */
+  width: 542px;
+  height: 72px; 
   margin-left: 120px;
   font-family: Raleway;
   font-size: 64px;
   font-weight: 400;
-  line-height: 1; /* Sesuaikan dengan kebutuhan Anda */
+  line-height: 1;
   display: flex;
-  align-items: center; /* Pusatkan vertikal konten */
+  align-items: center;
   letter-spacing: 0em;
   text-align: left;
   color: #000000;
 }
 
 .Lokasi-samping {
-  width: 562px; /* Mengatur lebar menjadi otomatis agar sesuai dengan konten */
-  height: 112px; /* Mengatur tinggi menjadi otomatis agar sesuai dengan konten */
-  margin-left: 20px; /* Sesuaikan margin kiri agar sesuai dengan kebutuhan Anda */
+  width: 562px; 
+  height: 112px; 
+  margin-left: 20px; 
   font-family: Raleway;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1; /* Sesuaikan dengan kebutuhan Anda */
+  line-height: 1;
   letter-spacing: 0em;
   text-align: right;
 }
@@ -530,7 +562,8 @@ position: absolute;
   font-family: Raleway;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1000px;
+  line-height: 50px;
+  margin-top: 450px;
   margin-left: 45px;
   letter-spacing: 0em;
   text-align: center;
@@ -647,12 +680,10 @@ position: absolute;
     font-family: Raleway;
     margin-top: 200px; 
     color: #ffffff;
-    width: 1240px;
+    width: 1280px;
     height: 1844px;
     top: 2168px;
-    left: 0;
-    background: linear-gradient(to bottom,white,#5f5f5f, #212121);
-    margin-left: 0px;
+    background: linear-gradient(to bottom,#21212100,#2121215d,#212121ab, #212121);
     height: 250px;    
     font-size: 56px;
     font-weight: 400;
@@ -919,15 +950,17 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1240px;}
+  width: 1260px;
+}
+  
 
 .cardd{
-width: 225.72px;
+width: 211.86px;
 position: relative;
-height: 414px;
+height: 341.65px;
 backdrop-filter: blur(20px);
 background-color: #ccc;
-margin: 7px;
+margin: 5px;
 margin-top: 50px;
 border: none;   
 justify-content: center;
@@ -939,6 +972,7 @@ cursor: pointer;
 border-radius: 20px;
 transition: all 0.3s ease-in-out;
 background-size: cover;
+right: 100px;
 }
 
 #card-0{
@@ -965,15 +999,15 @@ background-size:cover;
 }
 
 .cardd.active{
-  transform: translate(0px ,-20px);
+  width: 255px;
+  height: 414px;
   z-index: 9999;
-  box-shadow: 0 0 10px #212121;
 }
 
 .button-container{
   margin-top: 30px;
   left: 600px;
-  margin-left: -85px;
+  margin-left: -10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -990,6 +1024,7 @@ background-size:cover;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.5s ease;
+  
 }
 .bulet{
   width: 6px;
@@ -1002,7 +1037,6 @@ background-size:cover;
 }
 .button-slider.active{
   background-color: rgb(0, 0, 0);
-  color: blue;
 }
 
 
