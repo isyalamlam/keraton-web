@@ -313,7 +313,7 @@ body {
   position: absolute;
   width: 542px;
   height: 72px;
-  top: 1500px;
+  top: 1600px;
   left: 120px;
   margin-left: -50px;
   font-family: Raleway;
@@ -358,7 +358,7 @@ body {
   left: 55px;
   margin-left: 60px;
   border-radius: 30px;
-  margin-top: 428px;
+  margin-top: 230px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
@@ -512,8 +512,8 @@ body {
   position: absolute;
   width: 1000px;
   height: 72px;
-  top: 280px;
-left: 188px;
+  top: 380px;
+left: 160px;
   color: white;
   font-size: 64px;
   font-weight: 700;
@@ -529,7 +529,7 @@ left: 188px;
   position: absolute;
   width: 362px;
   height: 18px;
-  top: 490px;
+  top: 690px;
   left: 90px;
   font-size: 16px;
   line-height: 24px;
@@ -540,7 +540,7 @@ left: 188px;
   position: absolute;
   width: 360px;
   height: 48px;
-  top: 490px;
+  top: 690px;
   left: 499px;
   font-size: 16px;
   line-height: 24px;
@@ -552,7 +552,7 @@ left: 188px;
   position: absolute;
   width: 362px;
   height: 48px;
-  top: 490px;
+  top: 690px;
   left: 889px;
   font-size: 16px;
   line-height: 24px;
@@ -563,7 +563,7 @@ left: 188px;
   position: absolute;
   width: 32px;
   height: 32px;
-  top: 600px;
+  top: 820px;
   left: 624px;
   cursor: pointer;
 }
@@ -571,7 +571,7 @@ left: 188px;
 
 .Destinasi {
   font-family: Raleway;
-  margin-top: 750px;
+  margin-top: 850px;
   width: 1104px;
   height: 64px;
   top: 922px;
@@ -878,4 +878,23 @@ ul {
   background-color: rgb(0, 0, 0);
   color: blue;
 }
+
+@media screen and (max-width: 1000px)  
+{
+  .image-text {
+  top: 250px;
+  font-size: 40px;
+  text-align: left;
+}
+}
+
+@media screen and (max-width: 500px)  
+{
+  .image-text {
+  top: 200px;
+  font-size: 30px;
+  text-align: left;
+}
+}
+
 </style>

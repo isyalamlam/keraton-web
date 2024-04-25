@@ -257,15 +257,14 @@ nav {
  body {
   width: fit-content;
     margin:0;
-    padding:0;
     margin-top: -105px;
+    overflow-x: hidden;
   }
 *{
     margin: 0;
     top: 0;
     left: 0;
     right: 0;
-    padding: 0;
 }
 
 .Paket{
@@ -287,7 +286,7 @@ position: relative;
   }
 
   .image {
-    width: 1366px;
+    width: 1240px;
     height: 854px;
     object-fit: cover; 
     filter: brightness(60%);
@@ -295,7 +294,7 @@ position: relative;
   .Tourist-Container {
     display: flex;
     background-color: #212121;
-    width: 1366px;
+    width: 1240px;
     height: 700px;
     
 }
@@ -496,7 +495,7 @@ position: absolute;
   color: #ffffff;
   }
   .card-text2{
-  width: 1000px;
+  width: 500px;
   height: 48px;
   top: 662px;
   left: 242px;
@@ -504,7 +503,7 @@ position: absolute;
   font-size: 40px;
   font-weight: 700;
   line-height: 1000px;
-  margin-left: -170px;
+  margin-left: 45px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
@@ -524,7 +523,7 @@ position: absolute;
   color: #ffffff;
   }
   .card-text4{
-  width: 1000px;
+  width: 500px;
   height: 48px;
   top: 662px;
   left: 242px;
@@ -532,7 +531,7 @@ position: absolute;
   font-size: 40px;
   font-weight: 700;
   line-height: 1000px;
-  margin-left: -170px;
+  margin-left: 45px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
@@ -606,7 +605,7 @@ position: absolute;
   }
   .text-bottom3 {
     position: absolute;
-    width: 362px;
+    width: 350px;
     height: 48px;
     top: 490px;
     left: 889px;
@@ -648,7 +647,7 @@ position: absolute;
     font-family: Raleway;
     margin-top: 200px; 
     color: #ffffff;
-    width: 1366px;
+    width: 1240px;
     height: 1844px;
     top: 2168px;
     left: 0;
@@ -714,7 +713,7 @@ position: absolute;
     
 }
 .Dalem2{
-    width: 1366px;
+    width: 500px;
     height: 150px;
     top: 2824.67px;
     left: 740px;
@@ -920,7 +919,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1280px;}
+  width: 1240px;}
 
 .cardd{
 width: 225.72px;
