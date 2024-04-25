@@ -1,7 +1,12 @@
 <template>
 <nav>
     <NavBar />
+    <div class="cover">
+      <img src="../assets/images/SilsilahSejarah.png">
+    </img>
+    </div>
 </nav>
+<div class="seluruh">
       <div class="container">
         <img
           src="../assets/images/Line 17.png"
@@ -16,7 +21,7 @@
   
         <div>
           <img
-            src="../assets/images/Frame.jpeg"
+            src="../assets/images/buled.jpeg"
             style="margin-left: -106px; margin-top: 15px"
           />
           <span class="gold-text">1662 M</span> <br /><br />
@@ -45,7 +50,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1697 M</span> <br /><br />
@@ -69,7 +74,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1720 M</span> <br /><br />
@@ -93,7 +98,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1750 M</span> <br /><br />
@@ -119,7 +124,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1778 M</span> <br /><br />
@@ -143,7 +148,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1784 M</span> <br /><br />
@@ -166,7 +171,7 @@
       </p>
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1790M</span> <br /><br />
@@ -191,7 +196,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1816 M</span> <br /><br />
@@ -215,7 +220,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1845 M</span> <br /><br />
@@ -239,7 +244,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1890 M</span> <br /><br />
@@ -260,7 +265,7 @@
   
       <div>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1899 M</span> <br /><br />
@@ -288,7 +293,7 @@
           Sultan Sepuh XII memerintah selama 27 tahun dan wafat pada tahun 1969.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1942 M</span> <br /><br />
@@ -318,7 +323,7 @@
           Sultan Sepuh XIII memerintah selama 41 tahun dan wafat pada tahun 2010.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">1969 M</span> <br /><br />
@@ -348,7 +353,7 @@
           Sultan Sepuh XIV memerintah selama 10 tahun dan wafat pada tahun 2020.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">2010 M</span> <br /><br />
@@ -382,7 +387,7 @@
           Sultan Sepuh XV memerintah tahun 2020 hingga sekarang.
         </p>
         <img
-          src="../assets/images/Frame.jpeg"
+          src="../assets/images/buled.jpeg"
           style="margin-left: -106px; margin-top: 15px"
         />
         <span class="gold-text">2020 M</span> <br /><br />
@@ -405,7 +410,6 @@
     </div>
         </div>
         </div>
-        <div>
         </div>
   </template>
   
@@ -644,4 +648,84 @@ import NavBar from '../components/NavBar.vue';
     line-height: 24px;
     color: #212121;
   }
+
+
+  /* coba responsif */
+  .container {
+  width: 90%; /* Adjust width for larger screens */
+  max-width: 1200px; /* Limit maximum width for very large screens */
+  margin: 0 auto;
+}
+
+.column {
+  width: 100%; /* Take full width on smaller screens */
+}
+.seluruh{
+    margin-left: 5% ;
+  }
+.cover{
+  margin-left: 10%;
+}
+
+@media screen and (min-width: 768px) {
+  .column {
+    width: 50%; /* Take 50% width on screens larger than 768px */
+  }
+  .seluruh{
+    margin-left: 20%;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 5%;
+  }
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .column {
+    width: 33.33%; /* Take 33.33% width on screens larger than 1024px */
+  }
+  .seluruh{
+    margin-left: 20%;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 5%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .column {
+    width: 25%; /* Take 25% width on screens larger than 1440px */
+  }
+  .seluruh{
+    margin-left: 20%;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .column {
+    width: 20%; /* Take 20% width on screens larger than 2560px */
+  }
+  .seluruh{
+    margin-left: -10%;
+    size: 20px;
+  }
+  .cover{
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+    width: 300px;
+    height: 1000px;
+  }
+
+}
+
+
   </style>

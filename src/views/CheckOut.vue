@@ -792,9 +792,15 @@ hr {
 
 <script setup>
 import { ref, computed } from 'vue'
+<<<<<<< HEAD
 import navbar from "../components/NavBar.vue";
 import payment from "../components/Pembayaran.vue";
 import SelectPopup from '../components/SelectPopup.vue';
+=======
+import navbar from '../components/NavBar.vue'
+import payment from "../components/pembayaran.vue";
+import SelectPopup from "../components/SelectPopup.vue";
+>>>>>>> 98cf9fb21a93d3a2fd5aaf28cda159c795a6d7a0
 
 const selectPopup = ref(null)
 
