@@ -94,11 +94,11 @@
                   </div>
                 </legend>
                 <div class="test">
-                  <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" disabled>
-                  <div class="icon-date">
+                <input type="date" name="" id="tanggalPemesanan" :value="tanggalSekarang" disabled>
+                <div class="icon-date">
                     <img src="../assets/svg/Icondate.svg" alt="">
-                  </div>
                 </div>
+              </div>
               </fieldset>
               <div class="supporting-text">
                 <div class="supporting-txt">
@@ -107,10 +107,10 @@
               </div>
             </div>
             <div class="detail-tiket-masuk">
-              <div class="tiket-masuk">
+              <div class="nama-tiket">
                 <h6>Tadarus di Langgar Alit</h6>
               </div>
-              <div class="txt-harga">
+              <div class="harga-tiket">
                 <h6>Rp. {{ hargaStringTiket }}</h6>
               </div>
             </div>
@@ -223,8 +223,8 @@ nav {
 }
 
 .custom-radio-btn {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border: 2px solid goldenrod;
   border-radius: 50%;
   display: flex;
@@ -233,8 +233,8 @@ nav {
 }
 
 .custom-radio-btn .checkmark {
-  width: calc(100% - 5px);
-  height: calc(100% - 5px);
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
   background-color: goldenrod;
   border-radius: 50%;
   display: inline-block;
@@ -414,7 +414,6 @@ input[type="radio"] {
   top: 133px;
   padding: 12px, 20px, 12px, 20px;
   margin-right: 27px;
-  cursor: pointer;
 }
 
 .pelajar {
@@ -426,7 +425,6 @@ input[type="radio"] {
   left: 149px;
   padding: 12px, 20px, 12px, 20px;
   margin-right: 27px;
-  cursor: pointer;
 }
 
 .mancanegara {
@@ -437,7 +435,6 @@ input[type="radio"] {
   top: 133px;
   left: 301px;
   padding: 12px, 20px, 12px, 20px;
-  cursor: pointer;
 }
 
 .umum,
@@ -453,6 +450,7 @@ label {
   margin-left: 10px;
   color: #212121;
   cursor: pointer;
+  height: 20px;
 }
 
 .detail-tiket {
@@ -466,22 +464,19 @@ label {
   color: #999999;
   opacity: 0.5;
 }
-
-.icon-date {
+.icon-date{
   width: 48px;
   height: 48px;
   align-items: center;
   justify-content: center;
   padding: 8px;
 }
-
-.test {
+.test{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100% ;
 }
-
 fieldset {
   width: 312px;
   height: 66px;
@@ -506,7 +501,6 @@ legend {
   margin-left: 16px;
   margin-top: 12px;
 }
-
 input[type="date"] {
   width: 248px;
   height: 48px;
@@ -522,7 +516,7 @@ input[type="date"] {
   margin-left: 16px;
   margin-top: 4px;
   margin-bottom: 4px;
-
+  
 }
 
 input[type="date"]:focus {
@@ -552,13 +546,13 @@ input[type="date"]:focus {
   margin-left: 16px;
 }
 
-.tiket-masuk {
+.nama-tiket {
   width: 375px;
   height: 28px;
   top: 370px;
 }
 
-.tiket-masuk h6 {
+.nama-tiket h6 {
   margin-top: 10px;
   font-family: 'Raleway';
   font-size: 20px;
@@ -569,13 +563,13 @@ input[type="date"]:focus {
   color: #000000;
 }
 
-.txt-harga {
-  width: 125px;
+.harga-tiket {
+  width: 200px;
   height: 28px;
   top: 402px;
 }
 
-.txt-harga h6 {
+.harga-tiket h6 {
   margin-top: 4px;
   font-family: 'Raleway';
   font-size: 20px;
@@ -590,11 +584,11 @@ input[type="date"]:focus {
   margin-top: 20px;
   align-items: center;
   display: flex;
-  gap: 16px;
+  gap: 5px;
 }
 
 .btn-tiket p {
-  width: 7px;
+  width: 30px;
   height: 22px;
   font-family: 'Manrope';
   font-size: 16px;
@@ -614,7 +608,6 @@ input[type="date"]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 .plus {
@@ -626,21 +619,17 @@ input[type="date"]:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #d5d5d5;
-  cursor: pointer;
+  color:#d5d5d5;
 }
-
-.min:hover,
-.plus:hover {
+.min:hover ,.plus:hover{
   border: none;
   background-color: #000000;
+  cursor: pointer;
 }
-
-.min:hover .path {
+.min:hover .path{
   fill: white;
 }
-
-.plus:hover .path {
+.plus:hover .path{
   fill: white;
 }
 
@@ -649,6 +638,7 @@ input[type="date"]:focus {
   width: 542px;
   height: 348px;
   margin-right: 88px;
+  margin-left: 98px;
   top: 295px;
   position: static;
   margin-top: 64px;
@@ -772,13 +762,39 @@ hr {
   padding-top: 20px;
 
 }
+
+@media only screen and (max-width: 1280px){
+  #ringkasanBooking{
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  #ringkasanBooking{
+    margin-left: 188px;
+  }
+} 
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  #ringkasanBooking {
+    margin-top: 20px; 
+    margin-left:230px;
+  }
+  #detailPemesanan{
+    margin-left:230px;
+  }
+}
+
 </style>
 
 <script setup>
 import { ref, computed } from 'vue'
-import navbar from '../components/NavBar.vue'
+import navbar from "../components/NavBar.vue";
 import payment from "../components/Pembayaran.vue";
-import SelectPopup from "../components/SelectPopup.vue";
+import SelectPopup from '../components/SelectPopup.vue';
 
 const selectPopup = ref(null)
 
@@ -816,9 +832,9 @@ const kurang = () => {
 }
 const tanggalSekarang = new Date().toISOString().substr(0, 10);
 
-const focusInput = () => {
-  const input = document.getElementById('tanggalPemesanan').focus();
-  input.focus();
-  input.click();
-}
-</script>
+  const focusInput = () => {
+    const input = document.getElementById('tanggalPemesanan').focus();
+    input.focus();
+    input.click();
+  }
+  </script>
