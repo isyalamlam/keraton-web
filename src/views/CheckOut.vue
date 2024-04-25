@@ -795,9 +795,6 @@ import { ref, computed } from 'vue'
 import navbar from "../components/NavBar.vue";
 import payment from "../components/pembayaran.vue";
 import SelectPopup from '../components/SelectPopup.vue';
-import navbar from '../components/NavBar.vue'
-import payment from "../components/pembayaran.vue";
-import SelectPopup from "../components/SelectPopup.vue";
 
 const selectPopup = ref(null)
 
