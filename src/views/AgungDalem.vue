@@ -1,65 +1,97 @@
 <template>
-
   <body>
     <nav>
-    <navbar :transparent="true"/>
-  </nav>
-
+      <navbar :transparent="true" />
+    </nav>
 
     <div class="image-container">
-      <img alt="Area Keraton Image" class="image" src="../assets/images/agung.png" />
+      <img
+        alt="Area Keraton Image"
+        class="image"
+        src="../assets/images/agung.png"
+      />
       <p class="image-text">AGUNG DALEM PANGKUWATI</p>
-      <p class="text-bottom1">Salah satu destinasi wisata yang wajib dikunjungi jika Anda berkunjung ke Cirebon.</p>
-      <p class="text-bottom2">Dibangun pada tahun 1430 oleh Pangeran Cakrabuana, pendiri Kerajaan Cirebon.</p>
-      <p class="text-bottom3">Memiliki koleksi benda bersejarah, seperti kereta kencana, gamelan, dan lukisan.</p>
-      <a class="arrow-down" @click="scrollToContent"><img src="../assets/images/Frame.svg"></a>
+      <p class="text-bottom1">
+        Salah satu destinasi wisata yang wajib dikunjungi jika Anda berkunjung
+        ke Cirebon.
+      </p>
+      <p class="text-bottom2">
+        Dibangun pada tahun 1430 oleh Pangeran Cakrabuana, pendiri Kerajaan
+        Cirebon.
+      </p>
+      <p class="text-bottom3">
+        Memiliki koleksi benda bersejarah, seperti kereta kencana, gamelan, dan
+        lukisan.
+      </p>
+      <a class="arrow-down" @click="scrollToContent"
+        ><img src="../assets/images/Frame.svg"
+      /></a>
     </div>
 
     <div class="Destinasi">
-      <p> <span class="bold">Mengapresiasi</span> nilai seni Cirebon </p>
+      <p><span class="bold">Mengapresiasi</span> nilai seni Cirebon</p>
     </div>
-    <p class="bawah-destinasi">Dalem Agung Pakungwati merupakan kompleks bangunan utama di Keraton Kasepuhan, Cirebon, Jawa Barat. </p>
+    <p class="bawah-destinasi">
+      Dalem Agung Pakungwati merupakan kompleks bangunan utama di Keraton
+      Kasepuhan, Cirebon, Jawa Barat.
+    </p>
 
     <div class="slider">
-      <div v-for="(card, index) in cards" :key="index" :id="'card-' + index"
-        :class="{ cardd: true, active: index === currentIndex }">{{ card.content }}</div>
+      <div
+        v-for="(card, index) in cards"
+        :key="index"
+        :id="'card-' + index"
+        :class="{ cardd: true, active: index === currentIndex }"
+      >
+        {{ card.content }}
+      </div>
     </div>
 
     <div class="button-container">
       <button class="button-slider" @click="prevCard">&lt;</button>
-      <div class="bulet" v-for="(bullet, index) in bullets" :key="index" :class="{ active: index === currentIndex }">
-      </div>
+      <div
+        class="bulet"
+        v-for="(bullet, index) in bullets"
+        :key="index"
+        :class="{ active: index === currentIndex }"
+      ></div>
       <button class="button-slider" @click="nextCard">&gt;</button>
     </div>
 
     <div class="Fasilitas">
       <p>Fasilitas</p>
-      <p class="Fasilitas-Text">Fasilitas di Keraton Kasepuhan Cirebon cukup lengkap untuk menunjang kegiatan wisata dan
-        budaya.</p>
+      <p class="Fasilitas-Text">
+        Fasilitas di Keraton Kasepuhan Cirebon cukup lengkap untuk menunjang
+        kegiatan wisata dan budaya.
+      </p>
     </div>
 
     <div class="Fasilitas-Images">
       <div class="card">
-        <div class="card-text">Panggung<br>Sanggabuwana</div>
-    </div>
+        <div class="card-text">Panggung<br />Sanggabuwana</div>
+      </div>
 
       <div class="card2">
-        <p class="card-text2">Pendopo Agung<br>Pakungwati</p>
+        <p class="card-text2">Pendopo Agung<br />Pakungwati</p>
       </div>
       <div class="Fasilitas-Images2">
         <div class="card3">
-          <p class="card-text3">Masjid Agung<br>
-Kasepuhan</p>
+          <p class="card-text3">
+            Masjid Agung<br />
+            Kasepuhan
+          </p>
         </div>
         <div class="card4">
-          <p class="card-text4">Museum Pusaka<br>Keraton Kasepuhan</p>
+          <p class="card-text4">Museum Pusaka<br />Keraton Kasepuhan</p>
         </div>
       </div>
     </div>
 
     <div class="Kunjungan">
       <p>Kunjungan</p>
-      <p class="Kunjungan-Text">Kunjungi Keraton Kasepuhan Cirebon dengan berbagai pilihan paket wisata yang menarik.
+      <p class="Kunjungan-Text">
+        Kunjungi Keraton Kasepuhan Cirebon dengan berbagai pilihan paket wisata
+        yang menarik.
       </p>
       <button class="button-Kunjungan">Dapatkan Tiket Sekarang!</button>
     </div>
@@ -73,13 +105,12 @@ Kasepuhan</p>
         <p>Area Museum Pusaka</p>
       </div>
 
-      <img class="paket-images" src="../assets/images/sat1.png">
+      <img class="paket-images" src="../assets/images/sat1.png" />
     </div>
     <div class="footer">
-
       <div class="logo">
-        <img src="../assets/images/logo_keraton.png" alt="">
-        <p>KERATON <br>KASEPUHAN <br>CIREBON</p>
+        <img src="../assets/images/logo_keraton.png" alt="" />
+        <p>KERATON <br />KASEPUHAN <br />CIREBON</p>
       </div>
       <div class="footer-col">
         <div class="footer-col-1">
@@ -111,70 +142,55 @@ Kasepuhan</p>
         <div class="footer-col-4">
           <h3>Subscribes your email for updates!</h3>
           <button class="button">Enter your email</button>
-
-
         </div>
       </div>
-      <div class="adress">
-        Jalan Kasepuhan 43
-        Cirebon, Jawa Barat
-        45114
-      </div>
+      <div class="adress">Jalan Kasepuhan 43 Cirebon, Jawa Barat 45114</div>
       <div class="lower">
-        <div class="inlower">
-          @2024 Keraton Kasepuhan Cirebon
-        </div>
+        <div class="inlower">@2024 Keraton Kasepuhan Cirebon</div>
         <div class="susun">
           <p>In collaboration</p>
 
           <div class="collab">
-            <img src="../assets/images/logo_keraton.png" alt="" class="foto1">
-            <img src="../assets/images/1 931.png" alt="" class="foto2">
-            <img src="../assets/images/telkom.png" alt="" class="foto3">
-            <img src="../assets/images/bjb.png" alt="" class="foto4">
-
+            <img src="../assets/images/logo_keraton.png" alt="" class="foto1" />
+            <img src="../assets/images/1 931.png" alt="" class="foto2" />
+            <img src="../assets/images/telkom.png" alt="" class="foto3" />
+            <img src="../assets/images/bjb.png" alt="" class="foto4" />
           </div>
         </div>
       </div>
     </div>
-
-
   </body>
 </template>
 
 <script setup>
-import navbar from '../components/NavBar.vue'
+import navbar from "../components/NavBars.vue";
 </script>
 
 <script>
-
 const scrollToContent = () => {
-  document.querySelector('.slider').scrollIntoView({
-    behavior: 'smooth'
+  document.querySelector(".slider").scrollIntoView({
+    behavior: "smooth",
   });
 };
-
-
 
 export default {
   data() {
     return {
       cards: [
-        { id: 'card-0' },
-        { id: 'card-1' },
-        { id: 'card-2' },
-        { id: 'card-3' },
-        { id: 'card-4' }
+        { id: "card-0" },
+        { id: "card-1" },
+        { id: "card-2" },
+        { id: "card-3" },
+        { id: "card-4" },
       ],
 
-
-      currentIndex: 3
+      currentIndex: 3,
     };
   },
   computed: {
     bullets() {
-      return Array(this.cards.length).fill('');
-    }
+      return Array(this.cards.length).fill("");
+    },
   },
   methods: {
     prevCard() {
@@ -190,14 +206,13 @@ export default {
       } else {
         this.currentIndex++;
       }
-    }
-  }
+    },
+  },
 };
-
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 </style>
 
 <style scoped>
@@ -239,7 +254,7 @@ body {
   top: 3700px;
   margin-top: 86px;
 
-  border-bottom: 1px solid #D0D5DD;
+  border-bottom: 1px solid #d0d5dd;
 }
 
 .bold2 {
@@ -282,7 +297,6 @@ body {
   position: absolute;
 }
 
-
 .paket-images {
   width: 1085px;
   max-width: 1085px;
@@ -306,14 +320,11 @@ body {
   filter: brightness(60%);
 }
 
-
-
-
 .Fasilitas {
   position: absolute;
   width: 542px;
   height: 72px;
-  top: 1500px;
+  top: 1600px;
   left: 120px;
   margin-left: -50px;
   font-family: Raleway;
@@ -323,8 +334,6 @@ body {
   letter-spacing: 0em;
   text-align: left;
   color: #000000;
-
-
 }
 
 .Fasilitas-Text {
@@ -346,9 +355,7 @@ body {
 
 .Fasilitas-Images2 {
   gap: 20px;
-
 }
-
 
 .card {
   font: raleway;
@@ -358,13 +365,11 @@ body {
   left: 55px;
   margin-left: 60px;
   border-radius: 30px;
-  margin-top: 428px;
+  margin-top: 230px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
   background-image: url(../assets/images/rec1.png);
-
-
 }
 
 .card2 {
@@ -396,7 +401,6 @@ body {
 
 .card3 {
   background-image: url(../assets/images/rec3.png);
-
 }
 
 .card4 {
@@ -411,7 +415,6 @@ body {
   background-image: url(../assets/images/rec4.png);
   background-size: cover;
   position: absolute;
-  
 }
 
 .card-text {
@@ -428,8 +431,6 @@ body {
   text-align: center;
   color: #ffffff;
 }
-
-
 
 .card-text2 {
   width: 1000px;
@@ -490,8 +491,6 @@ body {
   letter-spacing: 0em;
   text-align: left;
   color: #000000;
-
-
 }
 
 .Kunjungan-Text {
@@ -512,24 +511,23 @@ body {
   position: absolute;
   width: 1000px;
   height: 72px;
-  top: 280px;
-left: 188px;
+  top: 380px;
+  left: 160px;
   color: white;
   font-size: 64px;
   font-weight: 700;
   line-height: 72px;
   letter-spacing: 0em;
   text-align: center;
-
 }
-.image-text p{
+.image-text p {
   text-align: center;
 }
 .text-bottom1 {
   position: absolute;
   width: 362px;
   height: 18px;
-  top: 490px;
+  top: 690px;
   left: 90px;
   font-size: 16px;
   line-height: 24px;
@@ -540,19 +538,18 @@ left: 188px;
   position: absolute;
   width: 360px;
   height: 48px;
-  top: 490px;
+  top: 690px;
   left: 499px;
   font-size: 16px;
   line-height: 24px;
   color: white;
-
 }
 
 .text-bottom3 {
   position: absolute;
   width: 362px;
   height: 48px;
-  top: 490px;
+  top: 690px;
   left: 889px;
   font-size: 16px;
   line-height: 24px;
@@ -563,15 +560,14 @@ left: 188px;
   position: absolute;
   width: 32px;
   height: 32px;
-  top: 600px;
+  top: 820px;
   left: 624px;
   cursor: pointer;
 }
 
-
 .Destinasi {
   font-family: Raleway;
-  margin-top: 750px;
+  margin-top: 850px;
   width: 1104px;
   height: 64px;
   top: 922px;
@@ -607,8 +603,6 @@ left: 188px;
   text-align: center;
 }
 
-
-
 .foto1 {
   width: 68px;
   height: 71px;
@@ -634,8 +628,6 @@ left: 188px;
   height: 650px;
   margin-top: 1900px;
   position: relative;
-
-
 }
 
 a {
@@ -660,13 +652,9 @@ ul {
 }
 
 .footer-col-1 {
-
   margin-left: 88px;
   color: #212121;
-
 }
-
-
 
 .logo {
   font-size: 20px;
@@ -674,14 +662,11 @@ ul {
   display: flex;
   flex-direction: row;
   margin-left: 88px;
-
-
 }
 
 .logo img {
   width: 70px;
   margin-right: 9px;
-
 }
 
 .footer-col-2 {
@@ -725,15 +710,12 @@ ul {
   padding-top: 600px;
   margin-left: 80px;
   position: absolute;
-
-
 }
 
 .collab {
   display: flex;
   flex-direction: row;
   gap: 46px;
-
 }
 
 .susun {
@@ -750,8 +732,8 @@ ul {
   height: 58px;
   border-radius: 10px;
   border: none;
-  background-color: #123B32;
-  color: #FFFFFF;
+  background-color: #123b32;
+  color: #ffffff;
   text-align: left;
   padding-left: 22px;
   font-size: 20px;
@@ -766,8 +748,8 @@ ul {
   height: 40px;
   border-radius: 10px;
   border: none;
-  background-color: #123B32;
-  color: #FFFFFF;
+  background-color: #123b32;
+  color: #ffffff;
   text-align: left;
   padding-left: 22px;
   font-size: 20px;
@@ -809,7 +791,6 @@ ul {
 #card-0 {
   background: url(../assets/images/img1.png);
   background-size: cover;
-
 }
 
 #card-1 {
@@ -820,19 +801,16 @@ ul {
 #card-2 {
   background: url(../assets/images/img3.png);
   background-size: cover;
-
 }
 
 #card-3 {
   background: url(../assets/images/img4.png);
   background-size: cover;
-
 }
 
 #card-4 {
   background: url(../assets/images/img5.png);
   background-size: cover;
-
 }
 
 .cardd.active {
@@ -877,5 +855,21 @@ ul {
 .button-slider.active {
   background-color: rgb(0, 0, 0);
   color: blue;
+}
+
+@media screen and (max-width: 1000px) {
+  .image-text {
+    top: 250px;
+    font-size: 40px;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .image-text {
+    top: 200px;
+    font-size: 30px;
+    text-align: left;
+  }
 }
 </style>

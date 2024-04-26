@@ -1,71 +1,88 @@
 <template>
   <nav>
-  <navbar />
+    <navbar />
   </nav>
   <div class="header">
     <div class="text1">
       <ul>
-        <li><a>Booking / Tiket Event</a></li>
+        <il href="#">Booking / Tiket Event</il>
       </ul>
       <div class="kakaje">
         <ul>
-          <li>
-            <a class="text2"><strong>Tiket Event Upacara Adat Tradisi</strong></a>
-          </li>
+          <a class="text2">
+            <strong
+              ><a class="text2">Tiket Event Upacara Adat Tradisi</a></strong
+            >
+          </a>
         </ul>
       </div>
     </div>
   </div>
   <div class="dropdown">
     <button @click="toggleDropdown" class="dropdown-toggle">
-      {{ dropdownTitle }} <img src="../assets/svg/trigger.svg" />
+      {{ dropdownTitle }} <img src="../assets/images/shape.png" />
     </button>
     <div v-if="isOpen" class="dropdown-menu">
-      <label v-for="(option, index) in options" :key="index" class="checkbox-container">
-        <input type="checkbox" :value="option.value" v-model="selectedOptions" />
+      <label
+        v-for="(option, index) in options"
+        :key="index"
+        class="checkbox-container"
+      >
+        <input
+          type="checkbox"
+          :value="option.value"
+          v-model="selectedOptions"
+        />
         {{ option.label }}
       </label>
     </div>
     <div class="kami">
       <button @click="toggleDropdown2" class="dropdown-toggle2">
-        {{ dropdownTitle2 }} <img src="../assets/svg/trigger.svg" />
+        {{ dropdownTitle2 }} <img src="../assets/images/shape.png" />
       </button>
       <div v-if="isOpen2" class="dropdown-menu2">
-        <label v-for="(option2, index2) in options2" :key="index2" class="checkbox-container">
-          <input type="checkbox" :value="option2.value" v-model="selectedOptions2" />
+        <label
+          v-for="(option2, index2) in options2"
+          :key="index2"
+          class="checkbox-container"
+        >
+          <input
+            type="checkbox"
+            :value="option2.value"
+            v-model="selectedOptions2"
+          />
           {{ option2.label }}
         </label>
       </div>
     </div>
     <div class="container">
-      <div class="ni" v-for="(item, index) in filteredItems" :key="index">
-        <img class="image" :src="item.image" alt="Gambar" />
-        <div class="buttonaji">
-          <button class="btn-small">{{ item.buttonText1 }}</button>
-          <button class="btn-small">{{ item.buttonText2 }}</button>
-        </div>
-        <h2 class="judul-sedang">{{ item.titleMedium }}</h2>
-        <h1 class="judul-besar">{{ item.titleBig }}</h1>
-        <div class="tengah">
+      <div class="ni" v-for="(item, index) in items" :key="index">
+    <img class="image" :src="item.image" alt="Gambar" />
+     <div class="buttonaji">
+    <button class="btn-small">{{ item.buttonText1 }}</button>
+    <button class="btn-small">{{ item.buttonText2 }}</button>
+          </div>
+          <h2 class="judul-sedang">{{ item.titleMedium }}</h2>
+          <h1 class="judul-besar">{{ item.titleBig }}</h1>
+          <div class="tengah">
           <h3 class="judul-kecil">{{ item.price }}</h3>
-          <button class="tambah">Tambah <img class="photo" src="../assets/Frame.svg" /></button>
-        </div>
+          <button class="tambah">
+          Tambah <img class="photo" src="../assets/Frame.svg" />
+        </button>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
-import navbar from '../components/NavBar.vue'
+import navbar from "../components/NavBar.vue";
 </script>
 
 <script>
 import { ref } from "vue";
 
 export default {
-  components: {
-    navbar,
-  },
   props: {
     disabled: {
       type: Boolean,
@@ -80,79 +97,87 @@ export default {
       default: "Jenis Event",
     },
   },
-  setup() {
-    const isOpen = ref(false);
-    const isOpen2 = ref(false);
-    const selectedOptions = ref([]);
-    const selectedOptions2 = ref([]);
-
-    const options = [
-      { label: "Hari", value: "Perhari" },
-      { label: "Minggu", value: "Perminggu" },
-      { label: "Bulan", value: "Perbulan" },
-    ];
-
-    const options2 = [
-      { label: "Gratis", value: "Gratis" },
-      { label: "Berbayar", value: "Berbayar" },
-    ];
-
-    const items = [
-      {
-        image: "../assets/images/isra.png",
-        buttonText1: "Perbulan",
-        buttonText2: "Berbayar",
-        titleMedium: "Peringatan isra mi'raj di langgar alit",
-        titleBig:
-          "Keluarga Keraton Kasepuhan mengadakan acara Isra Miraj di Langgar Alit yang rutin digunakan untuk peringatan hari besar Islam",
-        price: "Rp. 25.000",
-      },
-      {
-        image: "../assets/images/MaskGroup.png",
-        buttonText1: "Perhari",
-        buttonText2: "Berbayar",
-        titleMedium: "Perayaan Maulid Nabi di Masjid Agung",
-        titleBig:
-          "Komunitas Muslim mengadakan acara perayaan Maulid Nabi di Masjid Agung setempat",
-        price: "Rp.40.000",
-      },
-      {
-        image: "../assets/images/bedug.png",
-        buttonText1: "Perminggu",
-        buttonText2: "Berbayar",
-        titleMedium: "Tadarus di langgar alit",
-        titleBig:
-          "Kegiatan tadarus Alquran ini biasanya dibimbing oleh kaum masjid dan dilakukan dua kali khatam selama bulan Ramadan",
-        price: "Rp.40.000",
-      },
-    ];
-
-    const filteredItems = ref(items);
-
-    const toggleDropdown = () => {
-      isOpen.value = !isOpen.value;
-    };
-
-    const toggleDropdown2 = () => {
-      isOpen2.value = !isOpen2.value;
-    };
-
+  data() {
     return {
-      isOpen,
-      isOpen2,
-      options,
-      options2,
-      selectedOptions,
-      selectedOptions2,
-      items,
-      filteredItems,
-      toggleDropdown,
-      toggleDropdown2,
+      isOpen: false,
+      isOpen2: false,
+      imageUrl: "../assets/trigger.svg",
+      options: [
+        { label: "Hari", value: "Perhari" },
+        { label: "Minggu", value: "Perminggu" },
+        { label: "Bulan", value: "Perbulan" },
+      ],
+      options2: [
+        { label: "Gratis", value: "Gratis" },
+        { label: "Berbayar", value: "Berbayar" },
+      ],
+      selectedOptions: [],
+      selectedOptions2: [],
+      items: [
+        {
+          image: "src/assets/images/isra.png",
+          buttonText1: "Perbulan",
+          buttonText2: "Berbayar",
+          titleMedium: "Peringatan isra mi'raj di langgar alit",
+          titleBig:
+            "Keluarga Keraton Kasepuhan mengadakan acara Isra Miraj di Langgar Alit yang rutin digunakan untuk peringatan hari besar Islam",
+          price: "Rp. 25.000",
+        },
+        {
+          image: "/src/assets/images/sholat.png",
+          buttonText1: "Perhari",
+          buttonText2: "Berbayar",
+          titleMedium: "Perayaan Maulid Nabi di Masjid Agung",
+          titleBig:
+            "Komunitas Muslim mengadakan acara perayaan Maulid Nabi di Masjid Agung setempat",
+          price: "Rp.40.000",
+        },
+        {
+          image: "src/assets/images/bedug.png",
+          buttonText1: "Perminggu",
+          buttonText2: "Berbayar",
+          titleMedium: "Tadarus di langgar alit",
+          titleBig:
+            "Kegiatan tadarus Alquran ini biasanya dibimbing oleh kaum masjid dan dilakukan dua kali khatam selama bulan Ramadan",
+          price: "Rp.36.000",
+        },
+      ],
     };
+  },
+  methods: {
+    toggleDropdown() {
+      this.isOpen = !this.isOpen;
+    },
+    toggleDropdown2() {
+      this.isOpen2 = !this.isOpen2;
+    },
+    selectOption(option) {
+      this.selectedOptions.push(option);
+    },
+    selectOption2(option) {
+      this.selectedOptions2.push(option);
+    },
+    applySelection() {
+      // Close dropdowns
+      this.isOpen = false;
+      this.isOpen2 = false;
+      // Filter items based on selected options
+      const filteredItems = this.items.filter((item) => {
+        // Check if item matches selected pelaksanaan option
+        const pelaksanaanMatch =
+          this.selectedOptions.length === 0 ||
+          this.selectedOptions.includes(item.buttonText1.toLowerCase());
+        // Check if item matches selected jenis event option
+        const jenisEventMatch =
+          this.selectedOptions2.length === 0 ||
+          this.selectedOptions2.includes(item.buttonText2.toLowerCase());
+        return pelaksanaanMatch && jenisEventMatch;
+      });
+      console.log("Filtered items:", filteredItems);
+    },
   },
 };
 </script>
-
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
@@ -165,7 +190,7 @@ export default {
   );
   padding: 20px;
   text-align: center;
-  width: 100%;
+  width: 1535px;
   height: 101px;
   top: 104px;
   flex-direction: row;
@@ -320,16 +345,23 @@ nav ul li button:hover {
 }
 
 .ni {
-  width: 325px;
-  height: 181px;
-  margin-top: 90px; /* Mengurangi margin-top agar tidak terlalu jauh dari elemen di atasnya */
-  margin-right: 88px;
+  width: 370px;
+  height: 90px;
+  margin-top: 90px;
+  margin-right: 149px;
+  transform: scale(1.2); /* Contoh penambahan ukuran */
+  position: relative;
 }
 
 .container {
   display: flex;
   justify-content: center;
+  margin-left: 750px;
+  width: 250px; /* Contoh ukuran lebar */
+  height: 200px; /* Contoh ukuran tinggi */
+  position: relative;
 }
+
 
 .buttonaji {
   display: flex; /* Use flexbox */
@@ -349,6 +381,7 @@ nav ul li button:hover {
   height: 181px;
   object-fit: cover;
   border-radius: 10px; /* Adjust the value to change the roundness */
+  z-index: 2;
 }
 
 .btn-small {
@@ -459,10 +492,12 @@ nav ul li button:hover {
 
 .dropdown-toggle span {
   margin-right: 8px;
+  z-index: 1;
 }
 
 .dropdown-toggle img {
   margin-left: auto; /* Jarak antara teks dan gambar */
+  z-index: 1;
 }
 
 .dropdown-menu {
@@ -478,6 +513,7 @@ nav ul li button:hover {
   font-size: 14px;
   line-height: 17.5px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .checkbox-container {
@@ -490,12 +526,14 @@ nav ul li button:hover {
   font-family: Lexend;
   font-size: 14px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .checkbox-container label {
   display: flex;
   align-items: center;
   cursor: pointer;
+  z-index: 1;
 }
 
 .checkbox-icon {
@@ -511,6 +549,7 @@ nav ul li button:hover {
 
 .container input:checked ~ .checkmark {
   background-image: linear-gradient(gold, gold);
+  z-index: 1;
 }
 
 .dropdown-toggle2 {
@@ -532,6 +571,7 @@ nav ul li button:hover {
   color: #333333;
   margin-left: 170px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .dropdown-menu2 {
@@ -544,13 +584,16 @@ nav ul li button:hover {
   background-color: #ffffff;
   margin-left: 170px;
   cursor: pointer;
+  z-index: 1;
 }
 
 .dropdown-toggle2 span {
-  margin-right: 8px;  
+  margin-right: 8px;
+  z-index: 1;
 }
 
 .dropdown-toggle2 img {
   margin-left: auto; /* Jarak antara teks dan gambar */
+  z-index: 1;
 }
 </style>
