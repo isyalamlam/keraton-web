@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <navbar />
+    <navbar border/>
   </nav>
   <div class="header">
     <div class="text1">
@@ -190,7 +190,7 @@ export default {
   );
   padding: 20px;
   text-align: center;
-  width: 1535px;
+  width: 100%;
   height: 101px;
   top: 104px;
   flex-direction: row;
@@ -290,76 +290,21 @@ nav ul li a:hover,
 nav ul li button:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.navbar-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-family: "Raleway", sans-serif;
-  width: auto;
-  height: fit-content;
-  gap: 30px;
-  margin-right: 50px;
-}
-
-.navbar-right nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-right nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-.navbar-right nav ul li:last-child {
-  margin-right: 0;
-}
-
-.navbar-right nav ul li a {
-  text-decoration: none;
-  color: #123b32;
-  font-family: "Raleway", sans-serif;
-}
-
-.navbar-right nav ul li a:hover {
-  text-decoration: underline;
-}
-
-.navbar-right button {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.navbar-right button:focus {
-  outline: none;
-}
-
-.navbar-right button img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
 
 .ni {
   width: 370px;
   height: 90px;
   margin-top: 90px;
-  margin-right: 149px;
-  transform: scale(1.2); /* Contoh penambahan ukuran */
+  margin-right: 20px;
   position: relative;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  margin-left: 750px;
+  margin-left: 131px;
   width: 250px; /* Contoh ukuran lebar */
   height: 200px; /* Contoh ukuran tinggi */
-  position: relative;
+  
 }
 
 

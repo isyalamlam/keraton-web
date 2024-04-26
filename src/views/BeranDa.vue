@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-    <navbar />
+    <navbar isWhiteText/>
   </nav>
   <section class="sec-home" id="section1">
     <div class="container">
@@ -181,7 +181,7 @@
         <h4 class="compText">Company</h4>
         <div class="company">
           <ul>
-            <li><a href="#">About us</a></li>
+            <li><a href="curaweda.com">About us</a></li>
             <li><a href="#">Partners</a></li>
             <li><a href="#">Contact</a></li>
           </ul>

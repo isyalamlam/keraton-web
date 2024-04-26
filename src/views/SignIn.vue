@@ -3,12 +3,12 @@
     <div class="image">
       <div class="decor">
         <div class="logo">
-          <img src="../assets/images/logo_keraton.png">
+          <img src="../assets/images/logo_keraton.png" >
           <h5>KERATON KASEPUHAN CIREBON</h5>
         </div>
         <h1>Bersama Lestarikan Keraton Tertua di Kota Cirebon</h1>
       </div>
-      <img src="../assets/images/keraton.png" alt="Gambar">
+      <img src="../assets/images/keraton.png" alt="Gambar" class="crop">
     </div>
     <div>
       <form @submit.prevent="submitForm" class="form">
@@ -198,9 +198,13 @@ h1{
 
 .image{
   width: 514px;
-  height: 913px;
+  height: 836px;
   position: relative;
   height: fit-content;
+}
+.crop{
+  width: 514px;
+  height: 836px;
 }
 
 .image h1{

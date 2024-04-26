@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <navbar />
+    <navbar border/>
   </nav>
   <div class="body">
     <div class="group1">

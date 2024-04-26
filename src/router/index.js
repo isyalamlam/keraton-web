@@ -12,7 +12,6 @@ import BeranDa from '../views/BeranDa.vue'
 import EventGratis from '../views/EventGratis.vue'
 import Booking from '../views/Booking.vue'
 import FilterBayar from '../views/FilterBayar.vue'
-import Quasar from '../views/Quasar.vue'
 import AgungDalem from '../views/AgungDalem.vue'
 import Lotus from '../views/Lotus.vue'
 import sejarahSilsilah from '../views/sejarahSilsilah.vue'
@@ -86,11 +85,6 @@ const router = createRouter({
       path: '/filterbayar',
       name: 'filterbayar',
       component: FilterBayar
-    },
-    {
-      path: '/quasar',
-      name: 'quasar',
-      component: Quasar
     },
     {
       path: '/agungdalem',

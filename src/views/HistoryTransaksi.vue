@@ -75,7 +75,7 @@ const transactions = [
 <div class="all-content">
   <div> 
     <nav class="navbar">
-      <NavBar />
+      <NavBar border/>
     </nav>
     <div class="content">
       <div>

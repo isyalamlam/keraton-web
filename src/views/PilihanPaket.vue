@@ -56,7 +56,7 @@ onMounted(() => {
 
 <template>
   <nav class="navbar">
-    <navbar />
+    <navbar border/>
   </nav>
   <div class="body">
     <div class="title">

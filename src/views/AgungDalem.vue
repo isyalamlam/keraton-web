@@ -2,10 +2,8 @@
 
   <body>
     <nav>
-    <navbar :transparent="true"/>
+    <navbar isWhiteText/> 
   </nav>
-
-
     <div class="image-container">
       <img alt="Area Keraton Image" class="image" src="../assets/images/agung.png" />
       <p class="image-text">AGUNG DALEM PANGKUWATI</p>
@@ -20,17 +18,27 @@
     </div>
     <p class="bawah-destinasi">Dalem Agung Pakungwati merupakan kompleks bangunan utama di Keraton Kasepuhan, Cirebon, Jawa Barat. </p>
 
-    <div class="slider">
-      <div v-for="(card, index) in cards" :key="index" :id="'card-' + index"
-        :class="{ cardd: true, active: index === currentIndex }">{{ card.content }}</div>
-    </div>
+    <div class="slider" ref="slider">
+  <div
+    v-for="(card, index) in cards"
+    :key="index"
+    :id="'card-' + index"
+    :class="{ cardd: true, active: index === currentIndex || index === (currentIndex + 0) % cards.length }"
+  >
+    {{ card.content }}
+  </div>
+</div>
 
-    <div class="button-container">
-      <button class="button-slider" @click="prevCard">&lt;</button>
-      <div class="bulet" v-for="(bullet, index) in bullets" :key="index" :class="{ active: index === currentIndex }">
-      </div>
-      <button class="button-slider" @click="nextCard">&gt;</button>
-    </div>
+  <div class="button-container">
+  <button class="button-slider1" @click="prevCard">&lt;</button>
+  <div
+    class="bulet"
+    v-for="(bullet, index) in bullets"
+    :key="index"
+    :class="{ active: index === currentIndex }"
+  ></div>
+  <button class="button-slider" @click="nextCard">&gt;</button>
+</div>
 
     <div class="Fasilitas">
       <p>Fasilitas</p>
@@ -137,6 +145,7 @@ Kasepuhan</p>
         </div>
       </div>
     </div>
+    
 
 
   </body>
@@ -160,15 +169,13 @@ export default {
   data() {
     return {
       cards: [
-        { id: 'card-0' },
-        { id: 'card-1' },
-        { id: 'card-2' },
-        { id: 'card-3' },
-        { id: 'card-4' }
+        { content: '' },
+        { content: '' },
+        { content: '' },
+        { content: '' },
+        { content: '' }
       ],
-
-
-      currentIndex: 3
+      currentIndex: 2
     };
   },
   computed: {
@@ -177,21 +184,38 @@ export default {
     }
   },
   methods: {
-    prevCard() {
-      if (this.currentIndex === 0) {
-        this.currentIndex = this.cards.length - 1;
-      } else {
-        this.currentIndex--;
-      }
-    },
-    nextCard() {
-      if (this.currentIndex === this.cards.length - 1) {
-        this.currentIndex = 0;
-      } else {
-        this.currentIndex++;
-      }
-    }
+  prevCard() {
+    this.currentIndex = (this.currentIndex - 1 + this.cards.length) % this.cards.length;
+  },
+  nextCard() {
+    this.currentIndex = (this.currentIndex + 1) % this.cards.length;
+  },
+  centerActiveCard() {
+    const sliderWidth = this.$refs.slider.offsetWidth;
+    const cardWidth = 250;
+    const offset = (sliderWidth - cardWidth) / 2;
+    const cardContainer = document.querySelector('.slider');
+    const activeCard = document.querySelector('.cardd.active');
+
+    if (activeCard && cardContainer) {
+  const index = this.currentIndex;
+  const newPosition = -index * cardWidth + offset;
+  cardContainer.style.transform = translateX($,newPosition,px); // Perhatikan penggunaan tanda kutip dan tanda kurung kurawal
+}
+
+  
+},
+
+  adjacentIndex(index, offset) {
+    const length = this.cards.length;
+    return (index + offset + length) % length;
   }
+},
+watch: {
+  currentIndex() {
+    this.centerActiveCard();
+  }
+}
 };
 
 </script>
@@ -204,11 +228,13 @@ export default {
 nav {
   position: relative;
   z-index: 1000;
-  width: 100%;
+  width: 95%;
+  margin-left: 1px;
+  color: white;
 }
 
 body {
-  width: 1366px;
+  width: 1300px;
   height: 768px;
 }
 
@@ -300,7 +326,7 @@ body {
 }
 
 .image {
-  width: 1280px;
+  width: 1305px;
   height: 859px;
   object-fit: cover;
   filter: brightness(60%);
@@ -311,7 +337,7 @@ body {
 
 .Fasilitas {
   position: absolute;
-  width: 542px;
+  width: 442px;
   height: 72px;
   top: 1600px;
   left: 120px;
@@ -358,7 +384,7 @@ body {
   left: 55px;
   margin-left: 60px;
   border-radius: 30px;
-  margin-top: 230px;
+  margin-top: 222px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
@@ -783,68 +809,78 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 1260px;
 }
 
 .cardd {
-  width: 255.72px;
-  position: relative;
-  height: 414px;
-  backdrop-filter: blur(20px);
-  background-color: #ccc;
-  margin: 0 10px;
-  margin-top: 50px;
-  border: none;
-  justify-content: center;
-  padding-top: 90px;
-  text-align: center;
-  align-items: center;
-  border-radius: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.3s ease-in-out;
-  background-size: cover;
+  width: 211.86px;
+position: relative;
+height: 341.65px;
+backdrop-filter: blur(20px);
+background-color: #ccc;
+margin: 5px;
+margin-top: 50px;
+border: none;   
+justify-content: center;
+padding-top: 50px;
+text-align: center;
+align-items: center;
+box-sizing: border-box;
+cursor: pointer;
+border-radius: 20px;
+transition: all 0.3s ease-in-out;
+background-size: cover;
+right: 100px;
 }
 
 #card-0 {
-  background: url(../assets/images/img1.png);
-  background-size: cover;
-
+  background-image: url(../assets/images/img1.png); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
 }
+
 
 #card-1 {
-  background: url(../assets/images/img2.png);
-  background-size: cover;
+  background-image: url(../assets/images/img2.png); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
 }
+
 
 #card-2 {
-  background: url(../assets/images/img3.png);
-  background-size: cover;
-
+  background-image: url(../assets/images/img3.png);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
+
 
 #card-3 {
-  background: url(../assets/images/img4.png);
-  background-size: cover;
-
+  background-image: url(../assets/images/img4.png); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
+
 
 #card-4 {
-  background: url(../assets/images/img5.png);
-  background-size: cover;
-
+  background-image: url(../assets/images/img5.png);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
 
-.cardd.active {
-  transform: translate(0px, -20px);
+
+.cardd.active{
+  width: 255.72px;
+  height: 414px;
   z-index: 9999;
-  box-shadow: 0 0 10px #212121;
 }
 
 .button-container {
-  left: 0;
   margin-top: 30px;
-  left: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -852,7 +888,18 @@ ul {
 }
 
 .button-slider {
-  width: 32px;
+  width:30px;
+  height: 35px;
+  background: transparent;
+  color: #212121;
+  font-weight: bold;
+  border: 3px solid #212121;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.button-slider1 {
+  width:30px;
   height: 35px;
   background: transparent;
   color: #212121;
@@ -876,25 +923,9 @@ ul {
 
 .button-slider.active {
   background-color: rgb(0, 0, 0);
-  color: blue;
 }
-
-@media screen and (max-width: 1000px)  
-{
-  .image-text {
-  top: 250px;
-  font-size: 40px;
-  text-align: left;
-}
-}
-
-@media screen and (max-width: 500px)  
-{
-  .image-text {
-  top: 200px;
-  font-size: 30px;
-  text-align: left;
-}
+.button-slider1.active {
+  background-color: rgb(0, 0, 0);
 }
 
 </style>

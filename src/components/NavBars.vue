@@ -84,7 +84,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
+    
   }
   
   :root {
@@ -101,7 +101,7 @@
   }
   
   body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway';
     color: var(--dark);
   }
   
@@ -109,6 +109,7 @@
     width: 1152px;
     max-width: 90%;
     margin: 0 auto;
+    height: 104px;
   }
   
   .nav-wrapper {
@@ -136,7 +137,6 @@
   .nav-wrapper ul.nav-list li a {
     color: var(--dark);
     text-decoration: none;
-    letter-spacing: 1px;
     transition: all .5s ease-in-out;
   }
   
@@ -241,10 +241,11 @@
     position: absolute;
     width: 139px;
     height: 84px;
-    left: 166px;
+    left: 170px;
     top: 10px;
     color: black;
     font-size: 20px;
+    letter-spacing: -1px;
   }
   
   .user {

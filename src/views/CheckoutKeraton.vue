@@ -39,7 +39,7 @@ const kurang = () => {
 
 <template>
   <nav class="navbar">
-    <navbar />
+    <navbar border/>
   </nav>
   <div>
     <div class="title">

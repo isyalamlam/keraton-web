@@ -1,6 +1,6 @@
 <template>
 <nav>
-    <NavBar />
+    <NavBar border/>
     <div class="cover">
       <img src="../assets/images/SilsilahSejarah.png">
     </img>

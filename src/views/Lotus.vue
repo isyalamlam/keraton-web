@@ -2,7 +2,7 @@
 
     <body>
       <nav>
-        <navbar :background-color="'transparent'" :text-color="'white'" :button-color="'#123B32'" />
+        <navbar isWhiteText/>
       </nav>
   
   
