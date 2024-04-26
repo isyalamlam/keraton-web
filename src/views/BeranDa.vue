@@ -27,7 +27,7 @@
   <section class="sec-home" id="section3">
     <div class="container">
       <div class="text">
-        <a href="https://your-link-here.com"> <img src="../assets/images/Frame.png"> </a>
+        <a href="https://www.youtube.com/watch?v=0FnJXClnXXQ"> <img src="../assets/images/Frame.png"> </a> 
       </div>
     </div>
   </section>
@@ -67,13 +67,11 @@
         </a>
       </div>
 
-      <a href="https://your-link-here.com">
+      <a href="/sejarah">
         <img class="pls" src="../assets/images/btninfo.png"></a>
 
     </div>
   </section>
-
-
 
   <section id="section5">
     <div class="container">
@@ -81,26 +79,28 @@
         <p class="eventText">Event</p>
         <p class="ksc5Text">Keraton Kesepuhan Cirebon</p>
       </div>
+      <div class="container-card">
       <div class="card4">
-        <a href="#"><img src="../assets/images/card4.png">
+        <a href="#">
           <p class="title4">Tadarus di Langgar Anggit</p>
           <p class="subtitle4">Tradisi ini dilaksanakan di keraton kesepuhan cirebon pada tanggal 10 maret - 9 April
             2024</p>
         </a>
       </div>
       <div class="card5">
-        <a href="#"><img src="../assets/images/card5.png">
+        <a href="#">
           <p class="title5">Jamasan Kerisa dan Tombak</p>
         </a>
       </div>
       <div class="card6">
-        <a href="#"><img src="../assets/images/card6.png">
+        <a href="#">
           <p class="title6">Siraman Panjat Jimat</p>
         </a>
       </div>
+    </div>
       <p class="sec5Text">Hingga saat ini, Keraton Kasepuhan Cirebon tetap mempertahankan keaslian dan tradisi turun
         menurun dengan rutin melaksanakan upacara adat tradisi mereka.</p>
-      <a href="https://your-link-here.com">
+      <a href="/filterbayar">
         <img class="btnViewMore" src="../assets/images/btninfo.png">
       </a>
     </div>
@@ -117,7 +117,9 @@
           <p class="sej3Text">Mari mengenal budaya kasepuhan Cirebon. Bersama kita lestarikan dan apresiasikan beragam
             budaya dan
             tradisi Indonesia dengan mengunjungi Keraton Kasepuhan Cirebon.</p>
-          <a> <img class="btn2" src="../assets/images/tiket.png"> </a>
+            <a href="/areakeraton">
+           <img class="btn2" src="../assets/images/tiket.png">
+            </a>
         </div>
       </div>
     </div>
@@ -161,19 +163,19 @@
         <h4 class="qlText">Quick Links</h4>
         <div class="quickLinks">
           <ul>
-            <li><a href="../beranda">Beranda</a></li>
-            <li><a href="#">Sejarah</a></li>
-            <li><a href="#">Booking</a></li>
-            <li><a href="#">Objek Wisata</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/sejarah">Sejarah</a></li>
+            <li><a href="/booking">Booking</a></li>
+            <li><a href="/areakeraton">Objek Wisata</a></li>
           </ul>
         </div>
 
         <h4 class="socText">Social</h4>
         <div class="social">
           <ul>
-            <li><a href="#">WhatsApp</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
+            <li><a href="/wabuarne">WhatsApp</a></li>
+            <li><a href="https://web.facebook.com/smkn4bandung">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
             <li><a href="#">Threads</a></li>
           </ul>
         </div>
@@ -410,7 +412,7 @@ export default {
   position: absolute;
   width: 35%;
   left: 32%;
-  top: 6%;
+  top:  12%;
   line-height: 30px;
 }
 
@@ -418,7 +420,7 @@ export default {
   position: absolute;
   width: 33%;
   left: 33%;
-  top: 10%;
+  top: 15%;
   font-family: 'Inria Serif';
   font-style: normal;
   font-weight: 700;
@@ -455,6 +457,7 @@ export default {
 .card2:hover img,
 .card3:hover img {
   filter: brightness(70%);
+  transform: scale(1.15);
 }
 
 .card1 img {
@@ -464,34 +467,40 @@ export default {
   left: 5%;
   top: 35%;
   border-radius: 50px;
+  transform: .2s all ease;
+  transform: .2s all ease;
 }
 
 .card2 img {
   position: absolute;
-  width: 31%;
-  height: 51%;
-  left: 35%;
-  top: 32%;
+  width: 25%;
+  height: 45%;
+  left: 37.9%;
+  top: 35%;
   border-radius: 50px;
+  transform: .2s all ease;
 }
 
 .card3 img {
   position: absolute;
   width: 25%;
   height: 45%;
-  left: 71%;
+  left: 70%;
   top: 35%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   border-radius: 50px;
-
+  transform: .2s all ease;
 }
+
 
 .title3 {
   text-align: left;
   position: absolute;
-  width: 19%;
-  left: 74%;
-  top: 500px;
+  width: 199px;
+  left: 72%; 
+  /* bottom: 60%; */
+  top: 670px;
+  /* margin-top: 248px; */
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
@@ -504,7 +513,7 @@ export default {
 .caption svg {
   position: absolute;
   left: 91%;
-  top: 505px;
+  top: 693px;
 }
 
 .pls {
@@ -543,8 +552,8 @@ export default {
 .eventText {
   position: absolute;
   text-align: center;
-  top: -350px;
-  left: -50px;
+  top: -450px;
+  right: -35px;
   font-family: 'Inria Serif';
   font-size: 25px;
   color: #FAE084;
@@ -554,31 +563,37 @@ export default {
   position: absolute;
   text-align: center;
   width: 485px;
-  top: -320px;
-  left: -245px;
+  top: -420px;
+  left: -236px;
   font-family: 'Inria Serif';
   font-size: 40px;
   line-height: 48px;
   color: #FFFFFF;
 }
 
-.card4 img {
+.container-hover-card{
+  display: flex;
+}
+
+/* .card4 img {
   position: absolute;
-  width: 26%;
+  width: 18%;
   height: 41%;
   left: 14%;
   top: 29%;
   filter: brightness(70%);
   border-radius: 10px;
+  flex: 1;
 }
 
 .card5 img {
   position: absolute;
-  width: 18%;
-  height: 41%;
-  left: 43%;
+  width: 270px;
+  height: 427px;
+  left: 40%;
   top: 29%;
   border-radius: 10px;
+  flex: 1;
 }
 
 .card6 img {
@@ -588,63 +603,124 @@ export default {
   left: 65%;
   top: 29%;
   border-radius: 10px;
+  flex: 1;
+}
+.card4 img 
+.card5 img 
+.card6 img{
+  flex: 2;
+  background-color: rgb(207,207,207); 
+} */
+.container-card{
+  position: absolute;
+  display: flex;
+  margin-top: 50px;
+  gap: 16.1px;
+  width: 1200px;
+  align-items: center;
+  justify-content: center;
+  height: 427px;
+}
+.card4{
+  background-image: url("../assets/images/card4.png");
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  margin-left: 10px;
+  height: 427px;
+  width: 273.21px;
+  background-color: #b6b6b6;
+  flex: 1;
+  transition: .3s all ease;
+  /* filter: brightness(70%); */
+}
+.card5{
+  background-image: url("../assets/images/card5.png");
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  margin-left: 10px;
+  height: 427px;
+  width: 273px;
+  background-color: #b6b6b6;
+  flex: 1;
+  transition: .3s all ease;
+
+}
+.card6{
+  background-image: url("../assets/images/card6.png");
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  margin-left: 10px;
+  height: 427px;
+  width: 273px;
+  background-color: #b6b6b6;
+  flex: 1;
+  transition: .3s all ease;
+
+}
+.card4:hover,
+.card5:hover,
+.card6:hover{
+    flex: 200px;
 }
 
 .title4 {
   position: absolute;
-  width: 40%;
-  left: 6%;
-  top: 56%;
+  bottom: 8%; 
+  left: 26px; 
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
   line-height: 32px;
-  color: #FFFFFF;
+  color: #ffffff;
+  transform: translateY(-50%); 
+  text-align: left; 
+  filter: brightness(150%);
 }
 
 .subtitle4 {
   position: absolute;
-  text-align: left;
-  width: 25%;
-  left: 16%;
-  top: 61%;
+  bottom: 10px; 
+  left: 26px; 
+  right: 26px;
+  width: calc(100% - 26px); 
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: #FFFFFF;
+  text-align: left; 
 }
+
 
 .title5 {
   position: absolute;
-  width: 15%;
-  height: 10%;
-  left: 44%;
-  top: 57%;
-  text-align: left;
+  bottom: 10px; /* Geser ke bawah sejauh 10px dari tepi kartu */
+  left: 26px; /* Geser ke kiri sejauh 10px dari tepi kartu */
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 40px;
   color: #FFFFFF;
+  text-align: left; /* Teks diatur menjadi rata kiri */
 }
 
 .title6 {
-  text-align: left;
   position: absolute;
-  width: 15%;
-  height: 10%;
-  left: 66%;
-  top: 57%;
+  bottom: 10px; /* Geser ke bawah sejauh 10px dari tepi kartu */
+  left: 26px; /* Geser ke kiri sejauh 10px dari tepi kartu */
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 40px;
   color: #FFFFFF;
+  text-align: left; /* Teks diatur menjadi rata kiri */
 }
 
 .sec5Text {
@@ -652,8 +728,8 @@ export default {
   text-align: center;
   width: 50%;
   height: 10%;
-  top: 73%;
-  font-family: 'Raleway';
+  top: 78%;
+  font-family: 'Raleway';   
   font-size: 20px;
   color: #FFFFFF;
 }
@@ -668,7 +744,7 @@ export default {
   width: 15%;
   height: 7%;
   left: 43%;
-  top: 85%;
+  margin-top: 380px;
 }
 
 .btnViewMore:hover {
@@ -1295,7 +1371,7 @@ input::placeholder {
   line-height: 48px;
   color: #FFFFFF;
 }
-
+/* 
 .card4 img {
   position: absolute;
   width: 26%;
@@ -1403,8 +1479,142 @@ input::placeholder {
   height: 8%;
   left: 21%;
   top: 85%;
+} */
+.container-card{
+  position: absolute;
+  display: flex;
+  margin-top: 50px;
+  gap: 16.1px;
+  width: 1200px;
+  align-items: center;
+  justify-content: center;
+  height: 427px;
+}
+.card4{
+  background-image: url("../assets/images/card4.png");
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  margin-left: 10px;
+  height: 427px;
+  width: 273.21px;
+  background-color: #b6b6b6;
+  flex: 1;
+  transition: .3s all ease;
+  /* filter: brightness(70%); */
+}
+.card5{
+  background-image: url("../assets/images/card5.png");
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  margin-left: 10px;
+  height: 427px;
+  width: 273px;
+  background-color: #b6b6b6;
+  flex: 1;
+  transition: .3s all ease;
+
+}
+.card6{
+  background-image: url("../assets/images/card6.png");
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  margin-left: 10px;
+  height: 427px;
+  width: 273px;
+  background-color: #b6b6b6;
+  flex: 1;
+  transition: .3s all ease;
+
+}
+.card4:hover,
+.card5:hover,
+.card6:hover{
+    flex: 200px;
 }
 
+.title4 {
+  position: absolute;
+  bottom: 8%; 
+  left: 26px; 
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+  color: #ffffff;
+  transform: translateY(-50%); 
+  text-align: left; 
+  filter: brightness(150%);
+}
+
+.subtitle4 {
+  position: absolute;
+  bottom: 10px; 
+  left: 26px; 
+  right: 26px;
+  width: calc(100% - 26px); 
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-align: left; 
+}
+
+
+.title5 {
+  position: absolute;
+  bottom: 10px; /* Geser ke bawah sejauh 10px dari tepi kartu */
+  left: 26px; /* Geser ke kiri sejauh 10px dari tepi kartu */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  text-align: left; /* Teks diatur menjadi rata kiri */
+}
+
+.title6 {
+  position: absolute;
+  bottom: 10px; /* Geser ke bawah sejauh 10px dari tepi kartu */
+  left: 26px; /* Geser ke kiri sejauh 10px dari tepi kartu */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  text-align: left; /* Teks diatur menjadi rata kiri */
+}
+
+.sec5Text {
+  position: absolute;
+  text-align: center;
+  width: 50%;
+  height: 10%;
+  top: 78%;
+  font-family: 'Raleway';   
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.btnViewMore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  gap: 10px;
+  position: absolute;
+  width: 15%;
+  height: 7%;
+  left: 43%;
+  margin-top: 380px;
+}
 .btnViewMore:hover {
   filter: brightness(70%);
 }
