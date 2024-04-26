@@ -776,6 +776,7 @@ a {
     height: 18px;
     top: 1222px;
     left: 143px;
+    padding-left: 783px;
     margin-top: 100px;
     margin-left: 150px;
     font-family: Raleway;
@@ -792,7 +793,7 @@ a {
     height: Hug (53.22px);
     top: 1276px;
     left: 41px;
-    gap: 33px;
+    gap: 40px;
     margin-left: 35px;
     margin-top: 20px;
 }

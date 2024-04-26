@@ -443,7 +443,7 @@ import navbar from '../components/NavBar.vue'
    height: auto;
    margin-top: 278px;
    position: relative;
- 
+    margin-bottom: 100px;
    
  } 
  a {
@@ -539,7 +539,7 @@ import navbar from '../components/NavBar.vue'
   display: flex;
   flex-direction: row;
   gap: 46px;
-
+  
 }
 
 .susun {
@@ -548,6 +548,6 @@ import navbar from '../components/NavBar.vue'
   justify-content: center;
   align-items: center;
   gap: 46px;
-  padding-left: 645px;
+  padding-left: 795px;
 }
 </style>../../quasar-project/src/components/NavBar.vue
