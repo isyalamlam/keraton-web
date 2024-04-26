@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <navbar isWhiteText/>
+    <navbar :transparent="true"/>
   </nav>
   <body>
     <div class="image-container">
@@ -30,14 +30,14 @@
   </div>
 
   <div class="button-container">
-    <button class="button-slider" @click="prevCard">&lt;</button>
+    <img class="button-slider" @click="prevCard" src="../assets/svg/ArrowLeft.svg"></img>
     <div
       class="bulet"
       v-for="(bullet, index) in bullets"
       :key="index"
       :class="{ active: index === currentIndex }"
     ></div>
-    <button class="button-slider" @click="nextCard">&gt;</button>
+    <img class="button-slider" @click="nextCard" src="../assets/svg/ArrrowRight.svg"></img>
   </div>
 
   <div class="Tourist">
@@ -257,7 +257,7 @@ nextCard() {
       if (activeCard && cardContainer) {
         const index = this.currentIndex;
         const newPosition = -index * cardWidth + offset;
-        cardContainer.style.transform = `translateX(${newPosition}px)`;
+        cardContainer.style.transform = translateX(${newPosition}px);
       }
     }
   },
@@ -312,14 +312,15 @@ gap: 109px;
 }
   .image-container {
 position: relative;   
-    width: 1280px;
-    height: 854px; 
-    z-index: 999;
+    width: 100%;
+    height: 580px; 
   }
 
   .image {
-    width: 1280px;
-    height: 654px;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    max-height: 600px;
     object-fit: cover; 
     filter: brightness(60%);
   }
@@ -460,7 +461,7 @@ position: absolute;
 height: 649px;
 top: 4153px;
 left: 55px;
-margin-top: 1220px;
+margin-top: 1505px;
 margin-left: 25px;
 border-radius: 30px;
 filter: opacity(70%);
@@ -605,7 +606,7 @@ position: absolute;
     position: absolute;
     width: 625px;
     height: 72px;
-    top: 280px;
+    top: 250px;
     left: 327px;
     color: white;
     font-size: 64px;
@@ -619,7 +620,7 @@ position: absolute;
     position: absolute;
     width: 362px;
     height: 18px;
-    top: 490px;
+    top: 420px;
     left: 90px;
     font-size: 16px;
     line-height: 24px;
@@ -629,7 +630,7 @@ position: absolute;
     position: absolute;
     width: 360px;
     height: 48px;
-    top: 490px;
+    top: 420px;
     left: 489px;
     font-size: 16px;
     line-height: 24px;
@@ -640,7 +641,7 @@ position: absolute;
     position: absolute;
     width: 350px;
     height: 48px;
-    top: 490px;
+    top: 420px;
     left: 889px;
     font-size: 16px;
     line-height: 24px;
@@ -650,7 +651,7 @@ position: absolute;
     position: absolute;
     width: 32px;
     height: 32px;
-    top: 600px;
+    top: 530px;
     left: 624px;
     cursor: pointer; 
   }
@@ -1015,13 +1016,7 @@ background-size:cover;
 }
 
 .button-slider{
-  width: 32px;
-  height: 35px;
-  background:transparent;
-  color: #212121;
   font-weight: bold;
-  border: 3px solid #212121;
-  border-radius: 50%;
   cursor: pointer;
   transition: all 0.5s ease;
   
