@@ -28,27 +28,7 @@
     {{ card.content }}
   </div>
 </div>
-    <div class="slider" ref="slider">
-  <div
-    v-for="(card, index) in cards"
-    :key="index"
-    :id="'card-' + index"
-    :class="{ cardd: true, active: index === currentIndex || index === (currentIndex + 0) % cards.length }"
-  >
-    {{ card.content }}
-  </div>
-</div>
 
-  <div class="button-container">
-  <button class="button-slider1" @click="prevCard">&lt;</button>
-  <div
-    class="bulet"
-    v-for="(bullet, index) in bullets"
-    :key="index"
-    :class="{ active: index === currentIndex }"
-  ></div>
-  <button class="button-slider" @click="nextCard">&gt;</button>
-</div>
   <div class="button-container">
   <button class="button-slider1" @click="prevCard">&lt;</button>
   <div
@@ -166,7 +146,6 @@ Kasepuhan</p>
       </div>
     </div>
     
-    
 
 
   </body>
@@ -194,14 +173,8 @@ export default {
         { content: '' },
         { content: '' },
         { content: '' },
-        { content: '' },
-        { content: '' },
-        { content: '' },
-        { content: '' },
-        { content: '' },
-        { content: '' },
+        { content: '' }
       ],
-      currentIndex: 2,
       currentIndex: 2
     };
   },
@@ -211,38 +184,21 @@ export default {
     }
   },
   methods: {
-  prevCard() {
-    this.currentIndex = (this.currentIndex - 1 + this.cards.length) % this.cards.length;
-  },
-  nextCard() {
-    this.currentIndex = (this.currentIndex + 1) % this.cards.length;
-  },
-  centerActiveCard() {
-    const sliderWidth = this.$refs.slider.offsetWidth;
-    const cardWidth = 250;
-    const offset = (sliderWidth - cardWidth) / 2;
-    const cardContainer = document.querySelector('.slider');
-    const activeCard = document.querySelector('.cardd.active');
-
-    if (activeCard && cardContainer) {
-  const index = this.currentIndex;
-  const newPosition = -index * cardWidth + offset;
-  cardContainer.style.transform = translateX($,newPosition,px); // Perhatikan penggunaan tanda kutip dan tanda kurung kurawal
-}
-
-  
-},
-
-  adjacentIndex(index, offset) {
-    const length = this.cards.length;
-    return (index + offset + length) % length;
+    prevCard() {
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.cards.length - 1;
+      } else {
+        this.currentIndex--;
+      }
+    },
+    nextCard() {
+      if (this.currentIndex === this.cards.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    }
   }
-},
-watch: {
-  currentIndex() {
-    this.centerActiveCard();
-  }
-}
 };
 
 </script>
@@ -258,13 +214,9 @@ nav {
   width: 95%;
   margin-left: 1px;
   color: white;
-  width: 95%;
-  margin-left: 1px;
-  color: white;
 }
 
 body {
-  width: 1300px;
   width: 1300px;
   height: 768px;
 }
@@ -358,7 +310,6 @@ body {
 
 .image {
   width: 1305px;
-  width: 1305px;
   height: 859px;
   object-fit: cover;
   filter: brightness(60%);
@@ -369,7 +320,6 @@ body {
 
 .Fasilitas {
   position: absolute;
-  width: 442px;
   width: 442px;
   height: 72px;
   top: 1600px;
@@ -417,7 +367,6 @@ body {
   left: 55px;
   margin-left: 60px;
   border-radius: 30px;
-  margin-top: 222px;
   margin-top: 222px;
   border-radius: 30px;
   filter: opacity(70%);
@@ -844,28 +793,9 @@ ul {
   justify-content: center;
   align-items: center;
   width: 1260px;
-  width: 1260px;
 }
 
 .cardd {
-  width: 211.86px;
-position: relative;
-height: 341.65px;
-backdrop-filter: blur(20px);
-background-color: #ccc;
-margin: 5px;
-margin-top: 50px;
-border: none;   
-justify-content: center;
-padding-top: 50px;
-text-align: center;
-align-items: center;
-box-sizing: border-box;
-cursor: pointer;
-border-radius: 20px;
-transition: all 0.3s ease-in-out;
-background-size: cover;
-right: 100px;
   width: 211.86px;
 position: relative;
 height: 341.65px;
@@ -891,12 +821,7 @@ right: 100px;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
-  background-image: url(../assets/images/img1.png); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
 }
-
 
 
 #card-1 {
@@ -904,12 +829,7 @@ right: 100px;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
-  background-image: url(../assets/images/img2.png); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat;
 }
-
 
 
 #card-2 {
@@ -917,12 +837,7 @@ right: 100px;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  background-image: url(../assets/images/img3.png);
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
 }
-
 
 
 #card-3 {
@@ -930,12 +845,7 @@ right: 100px;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  background-image: url(../assets/images/img4.png); 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
 }
-
 
 
 #card-4 {
@@ -943,17 +853,9 @@ right: 100px;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
-  background-image: url(../assets/images/img5.png);
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
 }
 
 
-
-.cardd.active{
-  width: 255.72px;
-  height: 414px;
 .cardd.active{
   width: 255.72px;
   height: 414px;
@@ -969,18 +871,6 @@ right: 100px;
 }
 
 .button-slider {
-  width:30px;
-  height: 35px;
-  background: transparent;
-  color: #212121;
-  font-weight: bold;
-  border: 3px solid #212121;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-.button-slider1 {
-  width:30px;
   width:30px;
   height: 35px;
   background: transparent;
@@ -1016,8 +906,25 @@ right: 100px;
 
 .button-slider.active {
   background-color: rgb(0, 0, 0);
+  color: blue;
 }
-.button-slider1.active {
-  background-color: rgb(0, 0, 0);
+
+@media screen and (max-width: 1000px)  
+{
+  .image-text {
+  top: 250px;
+  font-size: 40px;
+  text-align: left;
 }
+}
+
+@media screen and (max-width: 500px)  
+{
+  .image-text {
+  top: 200px;
+  font-size: 30px;
+  text-align: left;
+}
+}
+
 </style>
