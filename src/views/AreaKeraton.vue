@@ -257,7 +257,7 @@ nextCard() {
       if (activeCard && cardContainer) {
         const index = this.currentIndex;
         const newPosition = -index * cardWidth + offset;
-        cardContainer.style.transform = translateX(${newPosition}px);
+        cardContainer.style.transform = `translateX(${newPosition}px)`
       }
     }
   },

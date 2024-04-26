@@ -41,8 +41,7 @@
       :class="{ active: index === currentIndex }"
     ></div>
     <img class="button-slider" @click="nextCard" src="../assets/svg/ArrrowRight.svg"></img>
-  </div>
-
+  </div>  
     <div class="Fasilitas">
       <p>Fasilitas</p>
       <p class="Fasilitas-Text">Fasilitas di Keraton Kasepuhan Cirebon cukup lengkap untuk menunjang kegiatan wisata dan
@@ -202,7 +201,7 @@ export default {
     if (activeCard && cardContainer) {
       const index = this.currentIndex;
       const newPosition = -index * cardWidth + offset;
-      cardContainer.style.transform = translateX(${newPosition}px);
+      cardContainer.style.transform = `translateX(${newPosition}px)`;
     }
   
 },
