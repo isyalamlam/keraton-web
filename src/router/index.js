@@ -13,10 +13,8 @@ import EventGratis from '../views/EventGratis.vue'
 import Booking from '../views/Booking.vue'
 import FilterBayar from '../views/FilterBayar.vue'
 import Quasar from '../views/Quasar.vue'
-import AgungDalem from '../views/AgungDalem.vue'
-import Lotus from '../views/Lotus.vue'
-import sejarahSilsilah from '../views/sejarahSilsilah.vue'
-import silsilahDesktop from '../views/silsilahDesktop.vue'
+import Silsilah from '../views/Silsilah.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -93,24 +91,9 @@ const router = createRouter({
       component: Quasar
     },
     {
-      path: '/agungdalem',
-      name: 'agungdalem',
-      component: AgungDalem
-    },
-    {
-      path: '/lotus',
-      name: 'lotus',
-      component: Lotus
-    },
-    {
-      path: '/sejarahsilsilah',
-      name: 'sejarahsilsilah',
-      component: sejarahSilsilah
-    },
-    {
-      path: '/silsilahdesktop',
-      name: 'silsilahktop',
-      component: silsilahDesktop
+      path: '/silsilah',
+      name: 'silsilah',
+      component: Silsilah
     },
   ]
 })

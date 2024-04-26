@@ -777,7 +777,7 @@ hr {
 @media screen and (max-width: 1200px) {
   .container {
     flex-direction: column;
-  }
+  }../components/pembayaran.vue
 
   #ringkasanBooking {
     margin-top: 20px; 

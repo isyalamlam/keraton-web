@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import SelectPopup from '../components/SelectPopup.vue';
+import SelectPopup from './SelectPopup.vue';
 
 const selectPopup = ref(null)
 
