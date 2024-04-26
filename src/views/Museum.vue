@@ -21,17 +21,27 @@
     <p class="bawah-destinasi">Museum ini menyimpan berbagai koleksi benda bersejarah, seperti kereta kencana, gamelan,
       dan lukisan.</p>
 
-    <div class="slider">
-      <div v-for="(card, index) in cards" :key="index" :id="'card-' + index"
-        :class="{ cardd: true, active: index === currentIndex }">{{ card.content }}</div>
-    </div>
+      <div class="slider" ref="slider">
+  <div
+    v-for="(card, index) in cards"
+    :key="index"
+    :id="'card-' + index"
+    :class="{ cardd: true, active: index === currentIndex || index === (currentIndex + 1) % cards.length }"
+  >
+    {{ card.content }}
+  </div>
+</div>
 
-    <div class="button-container">
-      <button class="button-slider" @click="prevCard">&lt;</button>
-      <div class="bulet" v-for="(bullet, index) in bullets" :key="index" :class="{ active: index === currentIndex }">
-      </div>
-      <button class="button-slider" @click="nextCard">&gt;</button>
-    </div>
+  <div class="button-container">
+  <button class="button-slider" @click="prevCard">&lt;</button>
+  <div
+    class="bulet"
+    v-for="(bullet, index) in bullets"
+    :key="index"
+    :class="{ active: index === currentIndex }"
+  ></div>
+  <button class="button-slider" @click="nextCard">&gt;</button>
+</div>
 
     <div class="Fasilitas">
       <p>Fasilitas</p>
@@ -74,6 +84,7 @@
 
       <img class="paket-images" src="../assets/images/museumPaket.png">
     </div>
+
     <div class="footer">
 
       <div class="logo">
@@ -160,15 +171,13 @@ export default {
   data() {
     return {
       cards: [
-        { id: 'card-0' },
-        { id: 'card-1' },
-        { id: 'card-2' },
-        { id: 'card-3' },
-        { id: 'card-4' }
+        { content: '' },
+        { content: '' },
+        { content: '' },
+        { content: '' },
+        { content: '' }
       ],
-
-
-      currentIndex: 3
+      currentIndex: 2
     };
   },
   computed: {
@@ -177,23 +186,38 @@ export default {
     }
   },
   methods: {
-    prevCard() {
-      if (this.currentIndex === 0) {
-        this.currentIndex = this.cards.length - 1;
-      } else {
-        this.currentIndex--;
-      }
-    },
-    nextCard() {
-      if (this.currentIndex === this.cards.length - 1) {
-        this.currentIndex = 0;
-      } else {
-        this.currentIndex++;
-      }
-    }
-  }
-};
+  prevCard() {
+    this.currentIndex = (this.currentIndex - 1 + this.cards.length) % this.cards.length;
+  },
+  nextCard() {
+    this.currentIndex = (this.currentIndex + 1) % this.cards.length;
+  },
+  centerActiveCard() {
+    const sliderWidth = this.$refs.slider.offsetWidth;
+    const cardWidth = 250;
+    const offset = (sliderWidth - cardWidth) / 2;
+    const cardContainer = document.querySelector('.slider');
+    const activeCard = document.querySelector('.cardd.active');
 
+    if (activeCard && cardContainer) {
+      const index = this.currentIndex;
+      const newPosition = -index * cardWidth + offset;
+      cardContainer.style.transform = `translateX(${newPosition}px)`;
+    }
+  
+},
+
+  adjacentIndex(index, offset) {
+    const length = this.cards.length;
+    return (index + offset + length) % length;
+  }
+},
+watch: {
+  currentIndex() {
+    this.centerActiveCard();
+  }
+}
+};
 </script>
 
 <style>
@@ -205,12 +229,14 @@ nav {
   position: relative;
   z-index: 1000;
   width: 100%;
+  max-width: 1280px;
   margin-left: -50px;
 }
 
 body {
   width: fit-content;
-  height: 0;
+overflow-x: hidden;  
+  
 }
 
 * {
@@ -222,29 +248,24 @@ body {
 }
 
 .Paket {
-  /* Frame 81 */
 
   box-sizing: border-box;
-
-  /* Auto layout */
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 0px 10px;
+  padding: 0px 0px 10px ;
   gap: 109px;
-
   position: absolute;
   width: 1085px;
   height: 207px;
   left: 109px;
   top: 3700px;
   margin-top: 86px;
-
   border-bottom: 1px solid #D0D5DD;
 }
 
 .bold2 {
-  width: 1050px;
+  width: 900px;
   height: 120px;
   top: 32px;
   font-family: Raleway;
@@ -285,8 +306,7 @@ body {
 
 
 .paket-images {
-  width: 1085px;
-  max-width: 1085px;
+  width: 1280px;
   height: 207px;
   left: 109px;
   top: 3715px;
@@ -295,11 +315,12 @@ body {
 
 .image-container {
   position: absolute;
-  width: 1280px;
+  width: 100%;
   height: 600px;
 }
 
 .image {
+  width: 100%;
   width: 1280px;
   height: 640px;
   object-fit: cover;
@@ -355,9 +376,9 @@ body {
   height: 649px;
   top: 5773px;
   left: 55px;
-  margin-left: 60px;
+  margin-left: 30px;
   border-radius: 30px;
-  margin-top: 330px;
+  margin-top: 320px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
@@ -372,7 +393,7 @@ body {
   top: 1773px;
   left: 685px;
   margin-top: 110px;
-  margin-left: -10px;
+  margin-left: -40px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
@@ -385,7 +406,7 @@ body {
   height: 649px;
   top: 1850px;
   left: 0;
-  margin-left: 60px;
+  margin-left: 30px;
   margin-top: 690px;
   border-radius: 30px;
   filter: opacity(70%);
@@ -404,10 +425,10 @@ body {
   top: 1850px;
   left: 685px;
   margin-top: 690px;
-  margin-left: -10px;
+  margin-left: -40px;
   border-radius: 30px;
   filter: opacity(70%);
-  background-image: url(../assets/images/card4.png);
+  background-image: url(../assets/images/card4Museum.png);
   background-size: cover;
   position: absolute;
 }
@@ -428,7 +449,7 @@ body {
 }
 
 .card-text2 {
-  width: 1000px;
+  width: 500px;
   height: 48px;
   top: 662px;
   left: 242px;
@@ -436,7 +457,7 @@ body {
   font-size: 40px;
   font-weight: 700;
   line-height: 1000px;
-  margin-left: -180px;
+  margin-left: 60px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
@@ -458,15 +479,15 @@ body {
 }
 
 .card-text4 {
-  width: 1000px;
-  height: 48px;
-  top: 662px;
+  width: 500px;
+  height: 18px;
   left: 242px;
   font-family: Raleway;
   font-size: 40px;
   font-weight: 700;
-  line-height: 1000px;
-  margin-left: -170px;
+  line-height: 50px;
+  margin-top: 450px;
+  margin-left: 60px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
@@ -777,68 +798,66 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 1260px;
 }
 
 .cardd {
-  width: 255.72px;
-  position: relative;
-  height: 414px;
-  backdrop-filter: blur(20px);
-  background-color: #ccc;
-  margin: 0 10px;
-  margin-top: 50px;
-  border: none;
-  justify-content: center;
-  padding-top: 90px;
-  text-align: center;
-  align-items: center;
-  border-radius: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.3s ease-in-out;
-  background-size: cover;
+  width: 211.86px;
+position: relative;
+height: 341.65px;
+backdrop-filter: blur(20px);
+background-color: #ccc;
+margin: 5px;
+margin-top: 50px;
+border: none;   
+justify-content: center;
+padding-top: 50px;
+text-align: center;
+align-items: center;
+box-sizing: border-box;
+cursor: pointer;
+border-radius: 20px;
+transition: all 0.3s ease-in-out;
+background-size: cover;
+right: 100px;
 }
-
 #card-0 {
-  background: url(../assets/images/paket3.png);
+  background: url(../assets/images/sliderM1.png);
   background-size: cover;
 
 }
 
 #card-1 {
-  background: url(../assets/images/paket2.png);
+  background: url(../assets/images/sliderM2.png);
   background-size: cover;
 }
 
 #card-2 {
-  background: url(../assets/images/paket1.png);
+  background: url(../assets/images/sliderM3.png);
   background-size: cover;
 
 }
 
 #card-3 {
-  background: url(../assets/images/paket4.png);
+  background: url(../assets/images/sliderM4.png);
   background-size: cover;
 
 }
 
 #card-4 {
-  background: url(../assets/images/paket5.png);
+  background: url(../assets/images/sliderM5.png);
   background-size: cover;
 
 }
 
-.cardd.active {
-  transform: translate(0px, -20px);
+.cardd.active{
+  width: 255.72px;
+  height: 414px;
   z-index: 9999;
-  box-shadow: 0 0 10px #212121;
 }
 
 .button-container {
-  left: 0;
   margin-top: 30px;
-  left: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -846,7 +865,7 @@ ul {
 }
 
 .button-slider {
-  width: 32px;
+  width:30px;
   height: 35px;
   background: transparent;
   color: #212121;
@@ -870,6 +889,5 @@ ul {
 
 .button-slider.active {
   background-color: rgb(0, 0, 0);
-  color: blue;
 }
 </style>
