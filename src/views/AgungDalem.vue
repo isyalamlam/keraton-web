@@ -2,8 +2,10 @@
 
   <body>
     <nav>
-    <navbar isWhiteText/> 
+    <navbar isWhiteText/>
   </nav>
+
+
     <div class="image-container">
       <img alt="Area Keraton Image" class="image" src="../assets/images/agung.png" />
       <p class="image-text">AGUNG DALEM PANGKUWATI</p>
@@ -184,21 +186,38 @@ export default {
     }
   },
   methods: {
-    prevCard() {
-      if (this.currentIndex === 0) {
-        this.currentIndex = this.cards.length - 1;
-      } else {
-        this.currentIndex--;
-      }
-    },
-    nextCard() {
-      if (this.currentIndex === this.cards.length - 1) {
-        this.currentIndex = 0;
-      } else {
-        this.currentIndex++;
-      }
-    }
+  prevCard() {
+    this.currentIndex = (this.currentIndex - 1 + this.cards.length) % this.cards.length;
+  },
+  nextCard() {
+    this.currentIndex = (this.currentIndex + 1) % this.cards.length;
+  },
+  centerActiveCard() {
+    const sliderWidth = this.$refs.slider.offsetWidth;
+    const cardWidth = 250;
+    const offset = (sliderWidth - cardWidth) / 2;
+    const cardContainer = document.querySelector('.slider');
+    const activeCard = document.querySelector('.cardd.active');
+
+    if (activeCard && cardContainer) {
+  const index = this.currentIndex;
+  const newPosition = -index * cardWidth + offset;
+  cardContainer.style.transform = translateX`(${newPosition}px)`; // Perhatikan penggunaan tanda kutip dan tanda kurung kurawal
+}
+
+  
+},
+
+  adjacentIndex(index, offset) {
+    const length = this.cards.length;
+    return (index + offset + length) % length;
   }
+},
+watch: {
+  currentIndex() {
+    this.centerActiveCard();
+  }
+}
 };
 
 </script>
@@ -906,25 +925,8 @@ right: 100px;
 
 .button-slider.active {
   background-color: rgb(0, 0, 0);
-  color: blue;
 }
-
-@media screen and (max-width: 1000px)  
-{
-  .image-text {
-  top: 250px;
-  font-size: 40px;
-  text-align: left;
+.button-slider1.active {
+  background-color: rgb(0, 0, 0);
 }
-}
-
-@media screen and (max-width: 500px)  
-{
-  .image-text {
-  top: 200px;
-  font-size: 30px;
-  text-align: left;
-}
-}
-
 </style>

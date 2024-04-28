@@ -161,10 +161,6 @@ export default {
 
 
 <style scoped>
-/* .halatas{
-     display: flex;
-     flex-direction: column;
-    } */
 .container-gambar {
     background-image: url(../assets/images/Awal.png);
     width: 390px;

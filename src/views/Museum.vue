@@ -1,7 +1,7 @@
 <template>
 
   <nav>
-    <navbar :transparent="true"/>
+    <navbar isWhiteText/>
   </nav>
   <body>
 
