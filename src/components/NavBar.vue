@@ -16,7 +16,7 @@
           </div>
           <ul class="nav-list">
             <li class="title" :class="{ 'navbar--white': isWhiteText, 'border': border }">
-              <a href="" >Beranda</a>
+              <a href="http://localhost:8080" >Beranda</a>
             </li>
             <li class="title">
               <p :class="{ 'navbar--white': isWhiteText, 'border': border }">Sejarah</p>

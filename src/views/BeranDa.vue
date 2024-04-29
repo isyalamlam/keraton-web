@@ -552,7 +552,7 @@ export default {
 .eventText {
   position: absolute;
   text-align: center;
-  top: 10%;
+  top: -450px;
   right: -35px;
   font-family: 'Inria Serif';
   font-size: 25px;

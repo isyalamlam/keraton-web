@@ -188,8 +188,18 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
+body{
+    width: 1280px;
+  }
+
+  .cover img{
+    width: 1485px;
+    height: 720px;
+    margin-left: -100px;
+  }
 
 
 /* 1024 */
@@ -261,11 +271,6 @@ export default {
   color: #212121;  
 }
 
-body  {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; 
-}
 .fotobkg {
   width:100%;
   height: auto;
@@ -485,7 +490,7 @@ margin-left: 50px;
  margin-top: 278px;
  position: relative;
   margin-bottom: 100px;
- 
+ margin-left: 50px;;
 } 
 a {
  text-decoration: none;

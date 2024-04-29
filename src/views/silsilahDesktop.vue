@@ -488,6 +488,15 @@ import NavBar from '../components/NavBarend.vue';
   @import url("https://fonts.gss2?family=Inter:wght@400;500&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
   
+  body{
+    width: 1280px;
+  }
+
+  .cover img{
+    width: 1485px;
+    height: 720px;
+  }
+
   #app{
     margin-left: 58px;
   }
@@ -717,7 +726,7 @@ import NavBar from '../components/NavBarend.vue';
  height: 650px;
  margin-top: 402px;
  position: relative;
-
+margin-left: 90px;
  
 } 
 a {
@@ -808,7 +817,7 @@ ul {
  justify-content: center;
  align-items: center;
  gap:46px;
- padding-left: 645px;
+ padding-left: 745px;
 }
 
 .button {

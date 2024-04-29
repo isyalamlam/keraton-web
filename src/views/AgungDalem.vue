@@ -202,7 +202,7 @@ computed: {
     if (activeCard && cardContainer) {
   const index = this.currentIndex;
   const newPosition = -index * cardWidth + offset;
-  cardContainer.style.transform = `translateX(${newPosition}px);` // Perhatikan penggunaan tanda kutip dan tanda kurung kurawal
+  cardContainer.style.transform = translateX`(${newPosition}px)`; // Perhatikan penggunaan tanda kutip dan tanda kurung kurawal
 }
 
   
@@ -236,8 +236,7 @@ nav {
 }
 
 body {
-  width: 1300px;
-  height: 768px;
+  width: 1280px;
   overflow-y: 1024px;
 }
 
