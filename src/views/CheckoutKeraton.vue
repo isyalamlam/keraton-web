@@ -39,7 +39,7 @@ const kurang = () => {
 
 <template>
   <nav class="navbar">
-    <navbar border/>
+    <navbar border />
   </nav>
   <div>
     <div class="title">
@@ -295,6 +295,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #FFFFFF;
   background-color: #000000;
 }
+
 .tambah:hover img,
 .kurang:hover img {
   filter: brightness(0) invert(1);
@@ -703,11 +704,48 @@ hr {
   padding-top: 20px;
 }
 
-/*-------------> Laptop L <------------- */
 @media screen and (min-width: 1440px) {
   #ringkasanBooking {
     margin-left: 100px;
-
   }
+}
+
+@media screen and (max-width: 1024px) {
+  #ringkasanBooking {
+    margin-left: -150px;
+  }
+
+  .nav2 {
+    margin-left: -60px;
+  }
+
+  .title {
+    margin-left: -60px;
+  }
+
+}
+
+@media screen and (min-width: 1360px) {
+  #ringkasanBooking {
+    margin-left: 60px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+ #ringkasanBooking{
+  margin-left: 250px;
+ }
+}
+
+@media screen and (min-width: 1660px) {
+ #ringkasanBooking{
+  margin-left: 270px;
+ }
+}
+
+@media screen and (min-width: 1920px) {
+ #ringkasanBooking{
+  margin-left: 550px;
+ }
 }
 </style>

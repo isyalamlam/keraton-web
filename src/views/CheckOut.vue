@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <navbar border/>
+    <navbar border />
   </nav>
   <div class="body">
     <div class="group1">
@@ -738,7 +738,7 @@ h6 {
 }
 
 .totalHarga {
-  width: 496px;
+  width: auto;
   height: 24px;
   display: flex;
   justify-content: space-between;
@@ -748,7 +748,7 @@ h6 {
 }
 
 .biaya {
-  width: 496px;
+  width: auto;
   height: 122px;
   padding: 15px, 0px, 15px, 0px;
 }
@@ -774,19 +774,7 @@ hr {
     margin-left: 188px;
   }
 } 
-@media screen and (max-width: 1200px) {
-  .container {
-    flex-direction: column;
-  }
 
-  #ringkasanBooking {
-    margin-top: 20px; 
-    margin-left:230px;
-  }
-  #detailPemesanan{
-    margin-left:230px;
-  }
-}
 
 </style>
 

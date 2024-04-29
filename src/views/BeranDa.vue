@@ -206,7 +206,7 @@
 </template>
 
 <script setup>
-import navbar from '../components/NavBar.vue'
+import navbar from '../components/NavBarend.vue'
 </script>
 
 <script>
@@ -376,8 +376,8 @@ export default {
 
 .sej2Text {
   position: absolute;
-  left: 46%;
-  top: 8%;
+  left: 47%;
+  margin-top: 8%;
   font-family: 'Inria Serif';
   font-weight: 700;
   font-size: 25px;
@@ -552,7 +552,7 @@ export default {
 .eventText {
   position: absolute;
   text-align: center;
-  top: -450px;
+  top: 10%;
   right: -35px;
   font-family: 'Inria Serif';
   font-size: 25px;

@@ -1,4 +1,4 @@
-<!-- udah login  -->
+<!-- belum login -->
 
 <template>
   <div class="navbar" >
@@ -34,23 +34,11 @@
                 <li><a href="lotus">Lotus</a></li>
               </ul>
             </li>
-            <li>
-              <p  class="title" :class="{ 'navbar--white': isWhiteText, 'border': border }">Booking</p>
-              <ul class="dropdown-list">
-                <li><a href="checkoutkeraton">Paket Keraton</a></li>
-                <li><a href="booking">Tiket Event</a></li>
-              </ul>
+            <li class="title" :class="{ 'navbar--white': isWhiteText, 'border': border }">
+              <a href="signin">Booking</a>
             </li>
             <li>
-              <img src="../assets/images/avatar.png" class="avatar">
-              <ul class="dropdown-list">
-                <div class="user">
-                  <li><img src="../assets/images/avatar.png" class="avatar"></li>
-                  Sarika Jain<br>jainsarika@keraton.com
-                </div>
-                <li><a href="historytransaksi">Pembelian</a></li>
-                <li class="signout"><a href="../views/SignIn.vue" style="color: red;">Sign Out</a></li>
-              </ul>
+              <a href="signin"><button style="border-radius: 5px; background-color: #123B32; color: white; padding: 2px 8px; width: 162px; height: 34px; border: none; font-family: 'Raleway'; font-size: 14px; font-weight: 700;">Dapatkan Tiket</button></a>
             </li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 <script setup>
-import NavBar from '../components/NavBar.vue'
+import NavBar from '../components/NavBarend.vue'
 import { onMounted } from 'vue'
 import logoBJB from '../assets/images/bjb.png'
 import LoaderPayment from '../views/LoaderPayment.vue'

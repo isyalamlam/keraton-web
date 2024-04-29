@@ -315,7 +315,7 @@
         /></div>
         <img
           src="../assets/images/Line 17.png"
-          style="margin-left: -100px; margin-top: 15px"
+          style="margin-left: -100px; margin-top: 15px;"
         />
         <p class="Sulthan">
           <span class="sultan-title"><b>Sultan Sepuh XIII</b></span> <br /><br />
@@ -374,7 +374,7 @@
       <img src="../assets/images/sultan sepuh xiv.jpg" alt="Snow" style="margin-left: -150px;" >
     </div>
     <div class="column">
-      <img src="../assets/images/sultan sepuh xiv .2.jpg" alt="Forest" style="margin-left: 50px;" >
+      <img src="../assets/images/sultan sepuh xiv .2.jpg" alt="Forest" style="margin-left: 5px;" class="res">
     </div>
         </div>
         <img
@@ -406,7 +406,7 @@
       <img src="../assets/images/sultan sepuh xv.jpg" alt="Snow" style="margin-left: -150px;" >
     </div>
     <div class="column">
-      <img src="../assets/images/sultan sepuh xv .2.jpg" alt="Forest" style="margin-left: 50px;" >
+      <img src="../assets/images/sultan sepuh xv .2.jpg" alt="Forest" style="margin-left: 5px;" class="res">
     </div>
         </div>
         </div>
@@ -475,7 +475,7 @@
   </template>
   
 <script setup>
-import NavBar from '../components/NavBar.vue';
+import NavBar from '../components/NavBarend.vue';
 </script>
 
   <script>
@@ -488,6 +488,9 @@ import NavBar from '../components/NavBar.vue';
   @import url("https://fonts.gss2?family=Inter:wght@400;500&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
   
+  #app{
+    margin-left: 58px;
+  }
   
   .text-bawah {
     margin-left: -100px;
@@ -611,7 +614,7 @@ import NavBar from '../components/NavBar.vue';
   
   .image-container img:first-child {
     position: relative;
-    margin-right: -115px; /* Menyesuaikan margin kanan untuk menyesuaikan posisi dengan gambar kedua */
+   
   }
   
   .image-container img:last-child {
@@ -766,7 +769,7 @@ ul {
 }
 .footer-col-4 {
  margin-left: 139px;
- width: 434px;
+ width: 400px;
 }
 .footer-col li {
     color: #212121;
@@ -845,8 +848,8 @@ ul {
 
   /* coba responsif */
   .container {
-  width: 90%; /* Adjust width for larger screens */
-  max-width: 1200px; /* Limit maximum width for very large screens */
+  width: 100%; 
+  max-width: 1200px; 
   margin: 0 auto;
 }
 
@@ -856,36 +859,30 @@ ul {
 .seluruh{
     margin-left: 5% ;
   }
-.cover{
-  margin-left: 10%;
-}
 
 @media screen and (min-width: 768px) {
   .column {
     width: 50%; /* Take 50% width on screens larger than 768px */
   }
   .seluruh{
-    margin-left: 20%;
+    margin-left: 25%;
   }
   .cover{
-    display: flex;
     width: 100%;
-    margin-left: 5%;
   }
   
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .column {
     width: 33.33%; /* Take 33.33% width on screens larger than 1024px */
+    gap: 40px;
   }
   .seluruh{
-    margin-left: 20%;
+    margin-left: 15%;
   }
   .cover{
-    display: flex;
     width: 100%;
-    margin-left: 5%;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -893,12 +890,11 @@ ul {
     width: 25%; /* Take 25% width on screens larger than 1440px */
   }
   .seluruh{
-    margin-left: 20%;
+    margin-left: 2%;
   }
   .cover{
-    display: flex;
     width: 100%;
-    margin-left: 10%;
+    margin-right: -200px;
   }
 }
 
@@ -907,14 +903,11 @@ ul {
     width: 20%; /* Take 20% width on screens larger than 2560px */
   }
   .seluruh{
-    margin-left: -10%;
+    
     size: 20px;
   }
   .cover{
-    display: flex;
     width: 100%;
-    margin-left: 10%;
-    width: 300px;
     height: 1000px;
   }
 

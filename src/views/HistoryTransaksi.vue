@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import NavBar from '../components/NavBar.vue';
+import NavBar from '../components/NavBarend.vue';
 
 const detail = ref(false);
 const cara = ref(false);

@@ -180,7 +180,7 @@ export default {
       currentIndex: 2
     };
   },
-  computed: {
+computed: {
     bullets() {
       return Array(this.cards.length).fill('');
     }
@@ -202,7 +202,7 @@ export default {
     if (activeCard && cardContainer) {
   const index = this.currentIndex;
   const newPosition = -index * cardWidth + offset;
-  cardContainer.style.transform = translateX`(${newPosition}px)`; // Perhatikan penggunaan tanda kutip dan tanda kurung kurawal
+  cardContainer.style.transform = `translateX(${newPosition}px);` // Perhatikan penggunaan tanda kutip dan tanda kurung kurawal
 }
 
   
@@ -238,6 +238,7 @@ nav {
 body {
   width: 1300px;
   height: 768px;
+  overflow-y: 1024px;
 }
 
 * {
@@ -384,7 +385,7 @@ body {
   height: 649px;
   top: 5773px;
   left: 55px;
-  margin-left: 60px;
+  margin-left: 40px;
   border-radius: 30px;
   margin-top: 222px;
   border-radius: 30px;
@@ -401,7 +402,7 @@ body {
   top: 1773px;
   left: 685px;
   margin-top: 110px;
-  margin-left: -10px;
+  margin-left: -20px;
   border-radius: 30px;
   filter: opacity(70%);
   background-size: cover;
@@ -414,7 +415,7 @@ body {
   height: 649px;
   top: 1850px;
   left: 0;
-  margin-left: 60px;
+  margin-left: 40px;
   margin-top: 690px;
   border-radius: 30px;
   filter: opacity(70%);
@@ -433,7 +434,7 @@ body {
   top: 1850px;
   left: 685px;
   margin-top: 690px;
-  margin-left: -10px;
+  margin-left: -20px;
   border-radius: 30px;
   filter: opacity(70%);
   background-image: url(../assets/images/rec4.png);
@@ -443,7 +444,7 @@ body {
 }
 
 .card-text {
-  width: 1000px;
+  width: 600px;
   height: 48px;
   top: 662px;
   left: 242px;
@@ -451,7 +452,6 @@ body {
   font-size: 40px;
   font-weight: 700;
   padding-top: 489px;
-  margin-left: -180px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
@@ -460,7 +460,7 @@ body {
 
 
 .card-text2 {
-  width: 1000px;
+  width: 600px;
   height: 48px;
   top: 662px;
   left: 242px;
@@ -468,14 +468,13 @@ body {
   font-size: 40px;
   font-weight: 700;
   padding-top: 489px;
-  margin-left: -180px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
 }
 
 .card-text3 {
-  width: 1000px;
+  width: 600px;
   height: 48px;
   top: 662px;
   left: 242px;
@@ -483,22 +482,19 @@ body {
   font-size: 40px;
   font-weight: 700;
   padding-top: 489px;
-  margin-left: -180px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
 }
 
 .card-text4 {
-  width: 1000px;
-  height: 48px;
+  width: 600px;
+  height: 0px;
   top: 662px;
-  left: 242px;
   font-family: Raleway;
   font-size: 40px;
   font-weight: 700;
   padding-top: 489px;
-  margin-left: -180px;
   letter-spacing: 0em;
   text-align: center;
   color: #ffffff;
@@ -929,4 +925,46 @@ right: 100px;
 .button-slider1.active {
   background-color: rgb(0, 0, 0);
 }
+
+@media screen and (max-width: 1920px) {
+  body {
+    width: auto; /* Lebar auto untuk kecilin layout pada perangkat mobile */
+  }
+
+  nav {
+    width: 100%; /* Buat navbar penuh lebar pada layar kecil */
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .image-text {
+    font-family: 'Raleway', sans-serif;  /* Memastikan penggunaan font Raleway dengan fallback ke sans-serif */
+    position: absolute;
+    width: 52%; /* Mengubah lebar dari px ke persentase untuk responsivitas */
+    top: 40%; /* Mengubah posisi atas dari px ke persentase */
+    left: 12%; /* Mengubah posisi kiri dari px ke persentase */
+    color: white;
+    font-size: calc(1.5vw + 24px); /* Ukuran font dinamis berdasarkan lebar viewport */
+    font-weight: 700;
+    line-height: 1.1; /* Menyesuaikan line-height sebagai multiplier dari ukuran font */
+    letter-spacing: normal; /* Menggunakan 'normal' sebagai pengaturan standar untuk letter-spacing */
+    text-align: center;
+  }
+}
+@media screen and (max-width: 920px) {
+  .image {
+    font-family: 'Raleway', sans-serif;  /* Memastikan penggunaan font Raleway dengan fallback ke sans-serif */
+    position: absolute;
+    width: 72%; /* Mengubah lebar dari px ke persentase untuk responsivitas */
+    top: 0%; /* Mengubah posisi atas dari px ke persentase */
+    left: 0%; /* Mengubah posisi kiri dari px ke persentase */
+    color: white;
+    font-size: calc(1.5vw + 24px); /* Ukuran font dinamis berdasarkan lebar viewport */
+    letter-spacing: normal; /* Menggunakan 'normal' sebagai pengaturan standar untuk letter-spacing */
+    text-align: center;
+  }
+}
+
+
+
 </style>

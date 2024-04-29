@@ -164,7 +164,7 @@
 </script>
 
 <script>
-import navbar from '../components/NavBar.vue'
+import navbar from '../components/NavBarend.vue'
 export default {
   data() {
     return {
